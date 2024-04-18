@@ -1,5 +1,5 @@
 
-namespace Assets.Scripts.AI
+namespace Assets.Scripts.AI.Agents
 {
     public sealed class Car : Agent
     {
