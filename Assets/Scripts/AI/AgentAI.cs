@@ -9,6 +9,10 @@ namespace Assets.Scripts.AI
     [RequireComponent(typeof(NavMeshAgent))]
     public class Agent : MonoBehaviour
     {
+
+        private NavMeshAgent _agent;
+
+        
         // Start is called before the first frame update
         private void Start()
         {

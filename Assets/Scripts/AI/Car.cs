@@ -1,7 +1,7 @@
 
 namespace Assets.Scripts.AI
 {
-    public class Car : Agent
+    public sealed class Car : Agent
     {
         public Car()
         {
