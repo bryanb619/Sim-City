@@ -59,11 +59,71 @@ Caso a operação anterior realize-se com sucesso, será apresentado um menu de 
    -  _ItemAdder_ adiciona itens.  
   
 Portanto concluímos assim que as funções só fazem a uma função que lhes foi dada e não varias coisas diferentes.
-
-  
-
-  
 ### Diagrama _UML_
+
+```mermaid
+
+classDiagram
+
+    Character       "1"--* Program : Array Used in Main
+    Weapon          "1"<-- Character : Array of Weapon used in method
+    
+    Character       <|-- Enemy
+    Character       <|-- Player
+    Weapon          <|-- Gun
+    Weapon          <|-- Sword
+
+
+
+
+    class Program{
+       - Main()                 void
+     
+    }
+
+    class Character{
+        # weapons :             Weapons
+        + Name :                string
+
+        + Fight()               void
+
+
+    }
+
+    class Enemy{
+        + Enemy(string)        Constructor
+
+    }
+
+    class Player{
+        + Player(string)        Constructor
+
+
+    }
+
+    class Weapon{
+        # power :               float
+        + Weapon(float)         Constructor
+
+    }
+
+    class Sword{
+        + BladeLenght :         float
+        + Sword(float, float)   Constructor
+        + AttackWithSword()     void
+    }
+
+    class Gun{
+        + Ammo :                int
+        + Gun(float, int)       Constructor
+        + FireGun()             void
+
+    }
+
+
+ 
+
+```
 
 ## Referências 
 
