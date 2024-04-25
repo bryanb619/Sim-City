@@ -14,7 +14,7 @@ namespace Assets.Scripts.AI
         [SerializeField] 
         private AgentType _agentType;
 
-        //private Agent _agent;
+        private Agent _agent;
 
         
         /// <summary>
@@ -54,13 +54,14 @@ namespace Assets.Scripts.AI
             {
                 case AgentType.Vehicle:
                 {
-                    //_agent = new Car();
+                    _agent = new Car();
                     break;
                 }
                     
                 case AgentType.Pedestrian:
                 {
-                    //_agent = new Ped();
+                    _agent = new Ped();
+
                     break;
                 }
         
@@ -71,6 +72,8 @@ namespace Assets.Scripts.AI
                 }
             
             }
+
+            Debug.Log($"{_agent}");
         }
 
 
