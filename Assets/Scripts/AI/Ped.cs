@@ -1,7 +1,7 @@
 
-namespace Assets.Scripts.AI.Agents
+namespace Assets.Scripts.AI
 {
-    public sealed class Ped : Agent
+    public sealed class Ped : Agent, IPed
     {
         public Ped()
         {

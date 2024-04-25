@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Sim City.Assets.Scripts.AI
+namespace Assets.Scripts.AI
 {
     public interface ICar
     {
