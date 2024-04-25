@@ -7,37 +7,17 @@ namespace Assets.Scripts.AI
     {   
         public float Speed 
         {
-            get
-            {
-                return Speed;
-            }
-
-
-            set
-            {
-                if (value < 0) 
-                { 
-                    
-                }
-                else if (value > 120) 
-                { 
-
-                }
-                else
-                {
-                    Speed = value;
-                }
-            }
+            get; set;
         }
 
-        public Car()
+        public Car(float speed = 40f)
         {
-
+            Speed = speed;
         }
 
         public override string ToString()
         {
-            return $"{base.ToString()}";
+            return $"{base.ToString()}, Speed: {Speed}";
         }
 
     }
