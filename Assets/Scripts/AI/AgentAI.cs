@@ -6,7 +6,22 @@ namespace Assets.Scripts.AI
     // Automatically add the NavMeshAgent to the GameObject
     [RequireComponent(typeof(NavMeshAgent))]
     public class AgentAI : MonoBehaviour
-    {
+    {   
+        [Tooltip("The maximum speed of the agent in units / sec.")]
+        [Range(0, 100)]
+        [SerializeField] 
+        private float           speed;
+
+        [Tooltip("The maximum acceleration of the agent in units / sec^2.")]
+        [Range(0, 100)]
+        [SerializeField] 
+        private float           acceleration;
+
+        [Tooltip("The maximum turning speed in degrees per second that the agent can rotate.")]
+        [Range(0, 999)]
+        [SerializeField] 
+        private float           angularSpeed;
+
 
         // Reference to NavMeshAgent component
         private NavMeshAgent _navAgent;
@@ -22,11 +37,9 @@ namespace Assets.Scripts.AI
         /// </summary>
         private void Start()
         {
-
             GetComponents();
 
             SetAgentType();
-
             
         }
 
@@ -54,7 +67,7 @@ namespace Assets.Scripts.AI
             {
                 case AgentType.Vehicle:
                 {
-                    _agent = new Car();
+                    _agent = new Car(speed);
                     break;
                 }
                     
