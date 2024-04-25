@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.AI;
-using Assets.Scripts.AI.Agents;
 
 namespace Assets.Scripts.AI
 {
@@ -67,7 +66,7 @@ namespace Assets.Scripts.AI
         
                 case AgentType.TrafficLight:
                 {
-                    _agent = new TrafficLight();
+                    //_agent = new TrafficLight();
                     break;
                 }
             
