@@ -1,7 +1,7 @@
 
 namespace Assets.Scripts.AI.Agents
 {
-    public class Agent 
+    public abstract class Agent
     {
 
         public Agent()
