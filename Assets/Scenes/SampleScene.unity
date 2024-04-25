@@ -356,6 +356,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8be1c2c36b62404ca36f44b502f1c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
+  acceleration: 0
+  angularSpeed: 0
   _agentType: 1
 --- !u!195 &1434248201
 NavMeshAgent:
@@ -476,8 +479,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2093255846320422291, guid: 72653a3355323264c8a08aa2f93aeee9, type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093255846320422291, guid: 72653a3355323264c8a08aa2f93aeee9, type: 3}
       propertyPath: _agentType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093255846320422291, guid: 72653a3355323264c8a08aa2f93aeee9, type: 3}
+      propertyPath: acceleration
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093255846320422291, guid: 72653a3355323264c8a08aa2f93aeee9, type: 3}
+      propertyPath: angularSpeed
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 2612987384478664252, guid: 72653a3355323264c8a08aa2f93aeee9, type: 3}
       propertyPath: m_Name
