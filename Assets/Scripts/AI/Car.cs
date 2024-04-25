@@ -1,4 +1,6 @@
 
+using System;
+
 namespace Assets.Scripts.AI
 {
     public class Car : Agent, ICar
