@@ -1,7 +1,9 @@
 
+using Assets.Scripts.AI;
+
 namespace Assets.Scripts.AI
 {
-    public class Ped : IPed
+    public class Ped : Agent, IPed
     {
         public Ped()
         {
