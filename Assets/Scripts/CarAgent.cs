@@ -5,7 +5,7 @@ namespace Assets.Scripts.AI
 {
     // Automatically add the NavMeshAgent to the GameObject
     [RequireComponent(typeof(NavMeshAgent))]
-    public class AgentAI : MonoBehaviour
+    public class AgentCar : MonoBehaviour
     {   
         [Tooltip("The maximum speed of the agent in units / sec.")]
         [Range(0, 100)]
@@ -22,12 +22,20 @@ namespace Assets.Scripts.AI
         [SerializeField] 
         private float           angularSpeed;
 
+        [Tooltip("Size of the agent. This value influences the size of navmesh agent")]
+        [Range(5, 200)]
+        [SerializeField] 
+        private float           size; 
+
+
+        [Tooltip("Value of the mass.")]
+        [Range(5, 200)]
+        [SerializeField] 
+        private float           mass; 
+
 
         // Reference to NavMeshAgent component
         private NavMeshAgent _navAgent;
-
-        [SerializeField] 
-        private AgentType _agentType;
 
         private Agent _agent;
 
@@ -43,7 +51,7 @@ namespace Assets.Scripts.AI
 
             SetAgentType();
 
-            _navAgent.SetDestination(Target.position);
+            //_navAgent.SetDestination(Target.position);
             
         }
 
@@ -67,29 +75,9 @@ namespace Assets.Scripts.AI
         /// </summary>
         private void SetAgentType()
         {
-            switch (_agentType)
-            {
-                case AgentType.Vehicle:
-                {
-                    _agent = new Car(speed);
-                    break;
-                }
-                    
-                case AgentType.Pedestrian:
-                {
-                    _agent = new Ped();
 
-                    break;
-                }
-        
-                case AgentType.TrafficLight:
-                {
-                    //_agent = new TrafficLight();
-                    break;
-                }
-            
-            }
-
+            _agent = new Car(speed, acceleration, size, mass);
+               
             Debug.Log($"{_agent}");
         }
 

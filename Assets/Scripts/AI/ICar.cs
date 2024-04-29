@@ -7,7 +7,12 @@ namespace Assets.Scripts.AI
 {
     public interface ICar
     {
-        float Speed { get; set; }
-        
+        float Speed { get;}
+
+        float Acceleration { get; }
+
+        float Size { get; }
+
+        float Mass { get; }
     }
 }
