@@ -31,6 +31,8 @@ namespace Assets.Scripts.AI
 
         private Agent _agent;
 
+        [SerializeField] private Transform Target;
+
         
         /// <summary>
         /// Start is called before the first frame update
@@ -40,6 +42,8 @@ namespace Assets.Scripts.AI
             GetComponents();
 
             SetAgentType();
+
+            _navAgent.SetDestination(Target.position);
             
         }
 
