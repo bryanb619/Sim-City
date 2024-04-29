@@ -49,6 +49,8 @@ namespace Assets.Scripts.AI
 
             SetAgent();
 
+
+
             //_navAgent.SetDestination(Target.position);
             
         }
@@ -74,7 +76,16 @@ namespace Assets.Scripts.AI
         private void SetAgent()
         {
 
+            // setting car class properties
             _agent = new Car(speed, acceleration, size, mass);
+
+
+            // Setting navmesh agent properties
+            _navAgent.speed         = (_agent as Car).Speed;
+            _navAgent.acceleration  = (_agent as Car).Acceleration;
+            _navAgent.angularSpeed  = (_agent as Car).AngularSpeed;
+            _navAgent.radius        = (_agent as Car).Size;
+            
                
             Debug.Log($"{_agent}");
         }

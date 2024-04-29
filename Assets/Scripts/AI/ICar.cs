@@ -11,6 +11,8 @@ namespace Assets.Scripts.AI
 
         float Acceleration { get; }
 
+        float AngularSpeed { get; }
+
         float Size { get; }
 
         float Mass { get; }

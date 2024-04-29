@@ -1,4 +1,3 @@
-
 using System;
 
 namespace Assets.Scripts.AI
@@ -37,6 +36,11 @@ namespace Assets.Scripts.AI
             get; private set;
         }
 
+        public float AngularSpeed 
+        {
+            get; private set;
+        }
+
         public float Size 
         {
             get; private set;
@@ -61,7 +65,6 @@ namespace Assets.Scripts.AI
             Acceleration    = acceleration;
             Size            = size;
             Mass            = mass;
-
         }   
 
 
@@ -77,5 +80,9 @@ namespace Assets.Scripts.AI
             + $"Acceleration: {Acceleration} Size: {Size} Mass: {Mass}";
         }
 
+        public static implicit operator float(Car v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

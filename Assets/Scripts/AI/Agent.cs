@@ -6,6 +6,9 @@ namespace Assets.Scripts.AI
         public Agent() { }
 
 
+        public virtual float craziness { get; }
+
+
         public override string ToString ()
         { 
             return $"{GetType().Name}"; 
