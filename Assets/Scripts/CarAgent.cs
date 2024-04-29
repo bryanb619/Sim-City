@@ -35,11 +35,9 @@ namespace Assets.Scripts.AI
 
 
         // Reference to NavMeshAgent component
-        private NavMeshAgent _navAgent;
+        private NavMeshAgent    _navAgent;
 
-        private Agent _agent;
-
-        [SerializeField] private Transform Target;
+        private Agent           _agent;
 
         
         /// <summary>
@@ -49,7 +47,7 @@ namespace Assets.Scripts.AI
         {
             GetComponents();
 
-            SetAgentType();
+            SetAgent();
 
             //_navAgent.SetDestination(Target.position);
             
@@ -73,7 +71,7 @@ namespace Assets.Scripts.AI
         /// 2. Pedestrian
         /// 3. TrafficLight
         /// </summary>
-        private void SetAgentType()
+        private void SetAgent()
         {
 
             _agent = new Car(speed, acceleration, size, mass);
@@ -97,6 +95,17 @@ namespace Assets.Scripts.AI
             {
                 Debug.LogError("component not found: " + e.Message);
             }
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="destination"></param>
+        /// <param name="target"></param>
+        private void SetDestination(Vector3 destination, Transform target)
+        {
+
         }
     }
 

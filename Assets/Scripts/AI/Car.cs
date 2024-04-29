@@ -48,7 +48,13 @@ namespace Assets.Scripts.AI
         }
 
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="speed"></param>
+        /// <param name="acceleration"></param>
+        /// <param name="size"></param>
+        /// <param name="mass"></param>
         public Car(float speed, float acceleration, float size, float mass) 
         {
             Speed           = speed;
@@ -56,11 +62,19 @@ namespace Assets.Scripts.AI
             Size            = size;
             Mass            = mass;
 
-        }
+        }   
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>
+        /// Base string + 
+        /// </returns>
         public override string ToString()
         {
-            return $"{base.ToString()}, Speed: {Speed}";
+            return $"{base.ToString()}, Speed: {Speed} "
+            + $"Acceleration: {Acceleration} Size: {Size} Mass: {Mass}";
         }
 
     }
