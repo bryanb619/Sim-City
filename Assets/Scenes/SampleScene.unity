@@ -591,6 +591,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 777514019939549306, guid: 86c6dbeb7de232d4382b78052bf50dcd, type: 3}
+      propertyPath: _currentLightState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2552136936956049318, guid: 86c6dbeb7de232d4382b78052bf50dcd, type: 3}
       propertyPath: m_Name
       value: TraficLight
@@ -668,6 +672,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car
       objectReference: {fileID: 0}
+    - target: {fileID: 2612987384478664252, guid: 72653a3355323264c8a08aa2f93aeee9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7027944605463409603, guid: 72653a3355323264c8a08aa2f93aeee9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.9786606
@@ -724,6 +732,10 @@ PrefabInstance:
     - target: {fileID: 1636275931468771179, guid: 6e0d308cd8e20de4caa3e0f67d6b8d45, type: 3}
       propertyPath: m_Name
       value: Ped
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636275931468771179, guid: 6e0d308cd8e20de4caa3e0f67d6b8d45, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1717831420225686529, guid: 6e0d308cd8e20de4caa3e0f67d6b8d45, type: 3}
       propertyPath: m_LocalPosition.x

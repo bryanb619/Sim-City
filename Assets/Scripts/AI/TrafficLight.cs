@@ -8,17 +8,20 @@ namespace Assets.Scripts.AI
     /// <summary>
     /// A traffic light.
     /// </summary>{
-    public class TraficLight : MonoBehaviour, ITrafficLight
+    public class TrafficLight : MonoBehaviour, ITrafficLight
     {
         public float changeTime { get; private set; }
 
         private StateMachine _fsm;
 
         // -------------------- TEMP/TEST --------------------------------------
-        public enum lightState
+        private enum lightState
         {
-            yellow, red, green
+            green, yellow, red
         }
+
+        [Header("Traffic Light")]
+        [SerializeField]
         private lightState _currentLightState;
         //----------------------------------------------------------------------
 
@@ -75,6 +78,8 @@ namespace Assets.Scripts.AI
         /// </summary>
         private void Update()
         {
+           
+
             Action actions = _fsm.Update();
             actions?.Invoke();
         }
@@ -85,6 +90,13 @@ namespace Assets.Scripts.AI
         /// </summary>
         private void GreenLight()
         {
+            if(Time.time > 15)
+            {
+                _currentLightState = lightState.yellow;
+                print("Yellow Light");
+            }
+
+            print(Time.time);
 
         }
 
@@ -93,7 +105,11 @@ namespace Assets.Scripts.AI
         /// </summary>
         private void YellowLight()
         {
-
+            if(Time.time > 3)
+            {
+                _currentLightState = lightState.red;
+                print("Red light");
+            }
         }
 
         /// <summary>
@@ -101,6 +117,12 @@ namespace Assets.Scripts.AI
         /// </summary>
         private void RedLight()
         {
+            if(Time.time > 10)
+            {
+                _currentLightState = lightState.green;
+                print("Green  light");
+            }
+
 
         }
 
