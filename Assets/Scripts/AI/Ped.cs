@@ -1,4 +1,3 @@
-
 using Assets.Scripts.AI;
 
 namespace Assets.Scripts.AI
@@ -7,6 +6,7 @@ namespace Assets.Scripts.AI
     {
         public Ped()
         {
+            
 
             
         }
