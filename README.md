@@ -8,23 +8,10 @@
   
 ### Report:
 #### Diogo:
-- Sistema de inventário
-- Diagramas _UML_
-- Instanciação de objetos dentro do inventário
-- Inserção dos valores dos objetos presentes no dicionário
-- Criação das malas e leitura de objetos dentro da mala
 - _Bug fixing_  
 
 
 #### Steven: 
-- Leitura de diretório e ficheiros
-- Sistema de _warning_
-- _UI_:  
-  - indicação de Diretório  
-  - conteúdo de ficheiro  
-  -  ícones  
-  -  conteúdo de inventário   
-  -  código respectivo
 - Relatório
 
 - _Bug fixing_
@@ -35,10 +22,10 @@
 - Esconder Texto: (_Scrollable UI_): Tecla K
 - Esconder Legenda: Tecla L
 
-## Arquitetura da solução
+## Introdução
 ### Descrição da solução
 - Projeto desenvolvido utilizando o motor de jogo [_Unity Engine_ 2022.3.1 _LTS_](https://unity.com/releases/editor/whats-new/2022.3.1#release-notes).
-- Objetivo principal abrir um dado ficheiro e apresentar o seus conteúdos (itens para inventário neste caso) ao utilizador. 
+- Objetivo principal abrir é demonstrar técnicas de Inteligencia artificial num _sim city_ não jogável. 
 
 A solução do projeto consiste em abrir o diretório ambiente de trabalho (Tecla Q). Em seguida é apresentado um menu esilo _pop up_ o qual solicita ao utilizador inserir o número de linha correspondente ao ficheiro desejado (Clicar em _done_).    
 
@@ -48,17 +35,7 @@ Caso a operação anterior realize-se com sucesso, será apresentado um menu de 
 
 - Remover itens: Para remover itens devemos passar o rato em cima do item desejado (clicar no item para a janela de descrição fixar-se) e clicar no ícone x. Assim será removido do inventário o item escolhido.
 
-#
 
-#### Princípios _SOLID_
-
-- Princípios _SOLID_ utilizados nesse projeto foram: _**Single Responsability Principle**_.  
-  - O inventário ou a classe inventário apenas tem a responsabilidade de cuidar do inventário em si.  
-   - _ItemUI_ trata das funções presentes no _UI_ do item respectivo.  
-   -  _FileIO_ apenas trata dos ficheiros.
-   -  _ItemAdder_ adiciona itens.  
-  
-Portanto concluímos assim que as funções só fazem a uma função que lhes foi dada e não varias coisas diferentes.
 ### Diagrama _UML_
 
 ```mermaid
@@ -119,10 +96,6 @@ classDiagram
         + FireGun()             void
 
     }
-
-
- 
-
 ```
 
 ## Referências 

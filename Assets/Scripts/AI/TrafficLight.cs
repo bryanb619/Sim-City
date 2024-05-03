@@ -18,15 +18,15 @@ namespace Assets.Scripts.AI
         public LightState Light { get; private set; }
 
 
-        [Tooltip("Green light timer")]
+        [Header("Green light timer")]
         [Range(0, 50f)]
         [SerializeField] private int _greenTime = 5;
 
-        [Tooltip("Yellow light timer")]
+        [Header("Yellow light timer")]
         [Range(0, 50f)]
         [SerializeField] private int _yellowTime = 10;
 
-        [Tooltip("Red light timer")]
+        [Header("Red light timer")]
         [Range(0, 50f)]
         [SerializeField] private int _redTime = 10;
 
