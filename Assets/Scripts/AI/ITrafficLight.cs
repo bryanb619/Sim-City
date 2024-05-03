@@ -1,8 +1,9 @@
+using Assets.Scripts.AI;
+
+/// <summary>
+/// 
+/// </summary>
 public interface ITrafficLight 
 {
-    float changeTime { get; }
-
-
-
-    
+    LightState Light { get; }
 }
