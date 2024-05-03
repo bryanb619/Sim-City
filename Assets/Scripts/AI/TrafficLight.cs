@@ -1,8 +1,9 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using LibGameAI.FSMs;
-using System.Collections;
+
 
 namespace Assets.Scripts.AI
 {
