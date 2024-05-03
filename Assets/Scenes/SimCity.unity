@@ -3371,8 +3371,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 1560734203}
     m_Modifications:
     - target: {fileID: 130656, guid: a93a4058bd3225b4fb6d6b59fa5bc871, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 130656, guid: a93a4058bd3225b4fb6d6b59fa5bc871, type: 3}
       propertyPath: m_Name
-      value: sptp_grass_01 (1)
+      value: Park 4
       objectReference: {fileID: 0}
     - target: {fileID: 130656, guid: a93a4058bd3225b4fb6d6b59fa5bc871, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9858,8 +9862,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 1560734203}
     m_Modifications:
     - target: {fileID: 130656, guid: a93a4058bd3225b4fb6d6b59fa5bc871, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 130656, guid: a93a4058bd3225b4fb6d6b59fa5bc871, type: 3}
       propertyPath: m_Name
-      value: sptp_grass_01 (9)
+      value: Park 3
       objectReference: {fileID: 0}
     - target: {fileID: 130656, guid: a93a4058bd3225b4fb6d6b59fa5bc871, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -18656,8 +18664,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 1560734203}
     m_Modifications:
     - target: {fileID: 112316, guid: 7538a3c85f736c74ea56d203349fde92, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 112316, guid: 7538a3c85f736c74ea56d203349fde92, type: 3}
       propertyPath: m_Name
-      value: sptp_building_25 (1)
+      value: Coffee 5
       objectReference: {fileID: 0}
     - target: {fileID: 112316, guid: 7538a3c85f736c74ea56d203349fde92, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -22597,6 +22609,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1560734203}
     m_Modifications:
+    - target: {fileID: 173254, guid: 6f3f63053e017f4438955201b55656e0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 173254, guid: 6f3f63053e017f4438955201b55656e0, type: 3}
+      propertyPath: m_Name
+      value: Restaurant 2
+      objectReference: {fileID: 0}
     - target: {fileID: 173254, guid: 6f3f63053e017f4438955201b55656e0, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -32869,6 +32889,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 1560734203}
     m_Modifications:
     - target: {fileID: 180958, guid: 8c61acc35acbd6d489977c81317f86f3, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 180958, guid: 8c61acc35acbd6d489977c81317f86f3, type: 3}
+      propertyPath: m_Name
+      value: Restaurant
+      objectReference: {fileID: 0}
+    - target: {fileID: 180958, guid: 8c61acc35acbd6d489977c81317f86f3, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -37934,8 +37962,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 1560734203}
     m_Modifications:
     - target: {fileID: 130656, guid: a93a4058bd3225b4fb6d6b59fa5bc871, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 130656, guid: a93a4058bd3225b4fb6d6b59fa5bc871, type: 3}
       propertyPath: m_Name
-      value: sptp_grass_01 (7)
+      value: Park 5
       objectReference: {fileID: 0}
     - target: {fileID: 130656, guid: a93a4058bd3225b4fb6d6b59fa5bc871, type: 3}
       propertyPath: m_StaticEditorFlags
