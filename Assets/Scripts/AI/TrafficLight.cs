@@ -20,17 +20,15 @@ namespace Assets.Scripts.AI
 
         [Tooltip("Green light timer")]
         [Range(0, 50f)]
-        [SerializeField] private float _greenTime = 5f;
+        [SerializeField] private int _greenTime = 5;
 
         [Tooltip("Yellow light timer")]
         [Range(0, 50f)]
-        [SerializeField] private float _yellowTime = 10f;
+        [SerializeField] private int _yellowTime = 10;
 
         [Tooltip("Red light timer")]
         [Range(0, 50f)]
-        [SerializeField] private float _redTime = 10f;
-
-        [SerializeField] private float _updateCheck = 1f;
+        [SerializeField] private int _redTime = 10;
 
         private StateMachine _fsm;
 
@@ -60,6 +58,8 @@ namespace Assets.Scripts.AI
             System.Random rand = new System.Random();
 
             int i = rand.Next(0, 2);
+
+            print(i);
 
 
             // -------------------- States -------------------------------------
@@ -117,7 +117,6 @@ namespace Assets.Scripts.AI
         /// </returns>
         private IEnumerator UpdateLightState()
         {
-
             while (true)
             {
                 time += 1;
@@ -171,7 +170,7 @@ namespace Assets.Scripts.AI
                         }
                 }
 
-                yield return new WaitForSeconds(_updateCheck);
+                yield return new WaitForSeconds(1);
             }
         }
 
@@ -182,7 +181,7 @@ namespace Assets.Scripts.AI
         /// Returns true if time is greater
         /// Returns false if time is not greater
         /// </returns>
-        private bool IsGraterThan(float signalTimer)
+        private bool IsGraterThan(int signalTimer)
         {
             if(time > signalTimer) { return true; }
 
