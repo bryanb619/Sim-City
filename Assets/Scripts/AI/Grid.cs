@@ -22,7 +22,12 @@ namespace Assets.Scripts.AI
             _grid = new CellType[width, height];
         }
 
-
+        /// <summary>
+        /// Responsible for finding if cell type is walkable, 
+        /// </summary>
+        /// <param name="cellType"></param>
+        /// <param name="aiAgent"></param>
+        /// <returns></returns>
         public static bool IsCellWakable(CellType cellType, bool aiAgent = false)
         {
             if (aiAgent)
@@ -54,6 +59,7 @@ namespace Assets.Scripts.AI
             return 1;
         }
 
+
         public List<Point> GetAllAdjacentCells(int x, int y)
         {
             List<Point> adjacentCells = new List<Point>();
@@ -75,6 +81,7 @@ namespace Assets.Scripts.AI
             }
             return adjacentCells;
         }
+
 
         public List<Point> GetWakableAdjacentCells(int x, int y, bool isAgent)
         {
