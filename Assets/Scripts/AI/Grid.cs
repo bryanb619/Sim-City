@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-
-public class Grid : MonoBehaviour
+public class Grid 
 {
-    // Start is called before the first frame update
-    void Start()
+    private CellType[,] _grid;
+    private int _width;
+    private int _height;
+
+    public int Width 
     {
-        
+        get { return _width; }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public int Height 
+    {   
+        get { return _height; }
     }
+
+    
+
+
 }
