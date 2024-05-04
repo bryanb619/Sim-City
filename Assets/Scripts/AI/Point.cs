@@ -1,47 +1,49 @@
-
-public class Point 
+namespace Assets.Scripts.AI
 {
-    public int X { get; private set; }
-
-    public int Y { get; private set; }
-
-
-    public Point(int x, int y)
+    public class Point 
     {
-        X = x;
-        Y = y;
-    }
+        public int X { get; private set; }
 
-    public override bool Equals(object obj)
-    {
-        if(obj == null ) { return false; }
+        public int Y { get; private set; }
 
-        if(obj is Point)
+
+        public Point(int x, int y)
         {
-            Point p = obj as Point;
-            return this.X == p.X && this.Y == p.Y; 
+            this.X = x;
+            this.Y = y;
         }
 
-        return false;
-    }
-
-    public override int GetHashCode()
-    {
-        unchecked 
+        public override bool Equals(object obj)
         {
-            int hash = 6949;
+            if(obj == null ) { return false; }
 
-            hash = hash * 7907 + X.GetHashCode();
-            
-            hash = hash * 7907 + Y.GetHashCode();
+            if(obj is Point)
+            {
+                Point p = obj as Point;
+                return this.X == p.X && this.Y == p.Y; 
+            }
 
-            return hash; 
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked 
+            {
+                int hash = 6949;
+
+                hash = hash * 7907 + X.GetHashCode();
+                
+                hash = hash * 7907 + Y.GetHashCode();
+
+                return hash; 
+            }
+        }
+
+        public override string ToString()
+        {
+            return $"P({this.X} | {this.Y})";
         }
     }
-
-    public override string ToString()
-    {
-        return $"P({this.X} | {this.Y})";
-    }
-
 }
+
