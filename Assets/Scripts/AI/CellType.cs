@@ -1,1 +1,1 @@
-public enum CellType { Empty, Road, Structure}
+public enum CellType { Empty, Road, Structure, None}
