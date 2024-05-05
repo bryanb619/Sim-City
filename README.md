@@ -12,8 +12,17 @@
 
 
 #### Steven: 
+- Código 
+  - Agent
+  - Car 
+  - TrafficLight System:   
+    - LightState enum
+    - TrafficLight class
+    - ITrafficLight interface
+  - 
 - Relatório
-
+  - UML 
+  
 - _Bug fixing_
 
 
@@ -42,60 +51,51 @@ Caso a operação anterior realize-se com sucesso, será apresentado um menu de 
 
 classDiagram
 
-    Character       "1"--* Program : Array Used in Main
-    Weapon          "1"<-- Character : Array of Weapon used in method
-    
-    Character       <|-- Enemy
-    Character       <|-- Player
-    Weapon          <|-- Gun
-    Weapon          <|-- Sword
+    ITrafficLight          <|.. TrafficLight
+    LightState             <--  TrafficLight
 
 
 
 
-    class Program{
-       - Main()                 void
-     
-    }
+    class ITrafficLight
+    <<interface>> ITrafficLight
 
-    class Character{
-        # weapons :             Weapons
-        + Name :                string
+    class LightState
+    <<enumeration>> LightState 
 
-        + Fight()               void
 
+
+    class ITrafficLight{
+        + LightState :          Light
 
     }
 
-    class Enemy{
-        + Enemy(string)        Constructor
+     class LightState{
+        Green
+        Yellow
+        Red
 
     }
 
-    class Player{
-        + Player(string)        Constructor
 
+    class TrafficLight{
+        + LightState :          Light
+        - int :                 _greenTime
+        - int :                 _yellowTime
+        - int :                 _redTime
+        - StateMachine :        _fsm
 
+        - Start()               void   
+        - Update()              void
+        - UpdateLightState()    IEnumerator
+        - IsGraterThan(int)     bool
+
+        - GreenLight()          void
+        - YellowLight()         void
+        - RedLight()            void
     }
 
-    class Weapon{
-        # power :               float
-        + Weapon(float)         Constructor
-
-    }
-
-    class Sword{
-        + BladeLenght :         float
-        + Sword(float, float)   Constructor
-        + AttackWithSword()     void
-    }
-
-    class Gun{
-        + Ammo :                int
-        + Gun(float, int)       Constructor
-        + FireGun()             void
-
-    }
+  
 ```
 
 ## Referências 
@@ -112,9 +112,6 @@ classDiagram
 ### Consultas com docentes
 Relativamente a consulta feita com professores, um professor foi consultado para ajudar em algumas questões. Este foi o professor Diogo Andrade onde auxiliou em 2 questões sendo essas respectivamente:
 
-- [_UnauthorizedAccessException_](https://learn.microsoft.com/en-us/dotnet/api/system.unauthorizedaccessexception?view=netstandard-2.1). Este erro foi apresentado ao docente para poder obter-se alguma explicação do porque poderia estar a acontecer tal erro. Para resolver o problema foi sugerido pelo professor Diogo rever o código, verificar valor das variáveis e usar _Debug.log_ que indicassem exatamente o que acontecia com o código presente. Nenhum foi código foi fornecido pelo professor e erro resolveu-se utilizando a documentação [._NET STANDARD_ 2.1](https://learn.microsoft.com/en-us/dotnet/api/system.environment.specialfolder?view=netstandard-2.1#system-environment-specialfolder-desktopdirectory) onde verificou-se que há 2 tipos de ambientes de trabalho e de facto estavamos a usar o errado para além do facto de havia falhas no código de escritura.
-  
-- Gestão e criação de itens inventário. No que toca a criação do sistema de inventário consultou-se também o professor Diogo Andrade para saber qual a melhor de forma de podermos construir um sistema de inventário a partir de um dado ficheiro. O mesmo explicou que não existe nenhuma melhor de realizar sem ter em consideração o peso total do projeto em si. Novamente nenhum código foi fornecido por via de docentes da [Universidade Lusófona](https://www.ulusofona.pt/) ou qualuqer outro docente.  
   
   A Realização deste projeto consistiu essencialmente em pesquisa própria, conhecimento adquirido por trabalhos e ensino fornecido por proferessores em diversas unidades curriculares lecionadas na [licenciatura de Videojogos](https://www.ulusofona.pt/lisboa/licenciaturas/videojogos).
 #
@@ -122,28 +119,6 @@ Relativamente a consulta feita com professores, um professor foi consultado para
 ### Links de pesquisa utilizados para realização do projeto
 * [Criação de ficheiro](https://learn.microsoft.com/en-us/dotnet/api/system.io.file.create?view=netstandard-2.1#system-io-file-create(system-string))
   
-* [Ler linhas do ficheiro](https://learn.microsoft.com/en-us/dotnet/api/system.io.file.readlines?view=netstandard-2.1#system-io-file-readlines(system-string))
-  
-* [Ler texto do ficheiro](https://learn.microsoft.com/en-us/dotnet/api/system.io.file.readalltext?view=netstandard-2.1#system-io-file-readalltext(system-string))
-
-* [Remover linhas do ficheiro](https://stacktuts.com/how-to-delete-a-line-from-a-text-file-in-c)
-  
-* [Acessibilidade de ambiente de trabalho](https://learn.microsoft.com/en-us/dotnet/api/system.environment.specialfolder?view=netstandard-2.1#system-environment-specialfolder-desktopdirectory)
-
-* [Ficheiro de texto em _Unity UI_](https://forum.unity.com/threads/how-to-display-text-from-txt-file-in-ui.1068131/)
-
-* [Texto _Scrollable  Unity UI_](https://www.youtube.com/watch?v=Sw_tYG8CP-A&t=1s&ab_channel=ChristinaCreatesGames)
-  
-* [Mover ficheiro](https://learn.microsoft.com/en-us/dotnet/api/system.io.file.move?view=netstandard-2.1#system-io-file-move(system-string-system-string))
-  
-* [Ler ficheiros de diretório](https://learn.microsoft.com/en-us/dotnet/api/system.io.directory.getfiles?view=netstandard-2.1#system-io-directory-getfiles(system-string))
-  
-* [_Try get Value_](https://stackoverflow.com/questions/59890374/dictionary-trygetvalue-out-parameter)
-
-* [Funções de botões](https://docs.unity3d.com/2018.2/Documentation/ScriptReference/UI.Button.html)
-
-* [Rato sobre um button](https://discussions.unity.com/t/onmouseover-ui-button-c/166886)
-
 #
 
 
