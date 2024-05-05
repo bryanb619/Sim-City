@@ -212,7 +212,6 @@ namespace Assets.Scripts.AI
         {
             Debug.Log($"Current light is: {Light}");
         }
-
     }
 }
 
