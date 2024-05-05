@@ -11,7 +11,7 @@ namespace Assets.Scripts.AI
     /// A simple traffic light.
     /// Uses libGameAI (FSM) library to implement states & transitions for the
     /// signals.
-    /// </summary>{
+    /// </summary>
     public class TrafficLight : MonoBehaviour, ITrafficLight
     {
 
