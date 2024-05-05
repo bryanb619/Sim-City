@@ -7,11 +7,11 @@
 - Steven Hall   2200173
   
 ### Report:
-#### Diogo:
+#### Diogo Freire:
 - _Bug fixing_  
 
 
-#### Steven: 
+#### Steven Hall: 
 - Código 
   - Agent
   - Car 
