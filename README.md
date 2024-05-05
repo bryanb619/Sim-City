@@ -3,8 +3,8 @@
 ## Autoria
 
 ### Elementos do grupo:
-- Diogo Freire 22104684
-- Steven Hall 2200173
+- Diogo Freire  22104684
+- Steven Hall   2200173
   
 ### Report:
 #### Diogo:
@@ -19,6 +19,7 @@
     - LightState enum
     - TrafficLight class
     - ITrafficLight interface
+  - UI
   - 
 - Relatório
   - UML 
@@ -26,23 +27,11 @@
 - _Bug fixing_
 
 
-### Legendas de teclas
-- Abrir diretório: Tecla O
-- Esconder Texto: (_Scrollable UI_): Tecla K
-- Esconder Legenda: Tecla L
-
 ## Introdução
-### Descrição da solução
+
 - Projeto desenvolvido utilizando o motor de jogo [_Unity Engine_ 2022.3.1 _LTS_](https://unity.com/releases/editor/whats-new/2022.3.1#release-notes).
 - Objetivo principal abrir é demonstrar técnicas de Inteligencia artificial num _sim city_ não jogável. 
 
-A solução do projeto consiste em abrir o diretório ambiente de trabalho (Tecla Q). Em seguida é apresentado um menu esilo _pop up_ o qual solicita ao utilizador inserir o número de linha correspondente ao ficheiro desejado (Clicar em _done_).    
-
-Caso a operação anterior realize-se com sucesso, será apresentado um menu de inventário com os itens presentes no ficheiro selecionado no passo anterior.    
-
-- Adicionar itens: Para adicionar itens a este inventário (clicar em _add_) e em seguida é apresentado outro menu com a lista de todos os itens disponíveis (clicar no item desejado). Assim será adicionado o item escolhido ao inventário.
-
-- Remover itens: Para remover itens devemos passar o rato em cima do item desejado (clicar no item para a janela de descrição fixar-se) e clicar no ícone x. Assim será removido do inventário o item escolhido.
 
 
 ### Diagrama _UML_
@@ -108,6 +97,15 @@ classDiagram
   
 - Nenhum código fornecido por IAs generativas foi diretamente utilizado para a realização desse projeto como explicado acima, apenas a título de curiosidade, pesquisa, exemplos e explicação de tópicos da documentação.
 
+
+## Estudo da Arte
+
+## Metodologia
+
+
+## Resultados e discussão
+
+## Conclusões
 
 ### Consultas com docentes
 Relativamente a consulta feita com professores, um professor foi consultado para ajudar em algumas questões. Este foi o professor Diogo Andrade onde auxiliou em 2 questões sendo essas respectivamente:
