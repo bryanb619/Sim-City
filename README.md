@@ -34,60 +34,7 @@
 
 
 
-### Diagrama _UML_
-
-```mermaid
-
-classDiagram
-
-    ITrafficLight          <|.. TrafficLight
-    LightState             <--  TrafficLight
-
-
-
-
-    class ITrafficLight
-    <<interface>> ITrafficLight
-
-    class LightState
-    <<enumeration>> LightState 
-
-
-
-    class ITrafficLight{
-        + LightState :          Light
-
-    }
-
-     class LightState{
-        Green
-        Yellow
-        Red
-
-    }
-
-
-    class TrafficLight{
-        + LightState :          Light
-        - int :                 _greenTime
-        - int :                 _yellowTime
-        - int :                 _redTime
-        - StateMachine :        _fsm
-
-        - Start()               void   
-        - Update()              void
-        - UpdateLightState()    IEnumerator
-        - IsGraterThan(int)     bool
-
-        - GreenLight()          void
-        - YellowLight()         void
-        - RedLight()            void
-    }
-
-  
-```
-
-## Referências 
+## Referências  REMOVER
 
 ### IAs generativas
   O uso de IAs generativas foi usado e neste tópico explicaremos como: 
@@ -103,6 +50,28 @@ classDiagram
 ## Metodologia
 
 
+### Diagrama _UML_
+
+
+
+```mermaid
+
+classDiagram
+
+    ITrafficLight          <|.. TrafficLight
+    LightState             <--  TrafficLight
+
+
+    class ITrafficLight
+    <<interface>> ITrafficLight
+
+    class LightState
+    <<enumeration>> LightState 
+
+```
+
+
+
 ## Resultados e discussão
 
 ## Conclusões
@@ -114,7 +83,7 @@ Relativamente a consulta feita com professores, um professor foi consultado para
   A Realização deste projeto consistiu essencialmente em pesquisa própria, conhecimento adquirido por trabalhos e ensino fornecido por proferessores em diversas unidades curriculares lecionadas na [licenciatura de Videojogos](https://www.ulusofona.pt/lisboa/licenciaturas/videojogos).
 #
 
-### Links de pesquisa utilizados para realização do projeto
+### links REMOVER
 * [Criação de ficheiro](https://learn.microsoft.com/en-us/dotnet/api/system.io.file.create?view=netstandard-2.1#system-io-file-create(system-string))
   
 #
