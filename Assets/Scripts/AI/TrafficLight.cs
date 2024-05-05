@@ -35,9 +35,10 @@ namespace Assets.Scripts.AI
         float time = 0; 
 
 
+
 # if UNITY_EDITOR 
 
-        // -------------------- TEMP/TEST --------------------------------------
+        // -------------------- DEBUG/TEST --------------------------------------
         [Header("Traffic Light.\nChanging it does not affect signal")]
         [SerializeField]
         private LightState _currentLightState;
@@ -146,7 +147,7 @@ namespace Assets.Scripts.AI
                             {
 # if UNITY_EDITOR 
                                 _currentLightState = LightState.red;
-#endif
+# endif
 
                                 Light = LightState.red; 
                                 time = 0; 
@@ -161,7 +162,7 @@ namespace Assets.Scripts.AI
                             {
 # if UNITY_EDITOR 
                                 _currentLightState = LightState.green;
-#endif
+# endif
                                 Light = LightState.green; 
                                 time = 0; 
                             }
