@@ -1,13 +1,8 @@
-﻿/* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/.
- *
- * Author: Nuno Fachada
- * */
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
+using LibGameAI.DecisionTrees;
 
-namespace GameAIPrototypes.SimpleNavMesh
+namespace Assets.Scripts.AI
 {
     public class NavAgentBehaviour : MonoBehaviour
     {
@@ -17,18 +12,56 @@ namespace GameAIPrototypes.SimpleNavMesh
         // Reference to the NavMeshAgent component
         private NavMeshAgent agent;
 
+
+
+        // The root of the decision tree
+        private IDecisionTreeNode root;
+
+
+
         // Start is called before the first frame update
         private void Start()
         {
             // Get reference to the NavMeshAgent component
             agent = GetComponent<NavMeshAgent>();
             // Set initial agent goal
-            //agent.SetDestination(goal.position[]);
+            agent.SetDestination(goal[0].position);
+
+
+            RandomDecisionBehaviour rdb = new RandomDecisionBehaviour(
+            () => Random.value,() => Time.time, 25);
+
+
+            // stand action
+            IDecisionTreeNode standStill = new ActionNode(Stand);
+
+            // Move to target action
+            IDecisionTreeNode GoToNextPont = new ActionNode(Move);
+
+                                                        // if                   // true, false
+            IDecisionTreeNode nodeA = new DecisionNode(rdb.RandomDecision,  GoToNextPont,  standStill); 
         }
+
+
+
+        // Run the decision tree and execute the returned action
+        private void Update()
+        {
+            // /////////////////////// //
+            // Run decision tree here! //
+            // /////////////////////// //
+
+
+            (root.MakeDecision() as ActionNode).Execute();
+
+        }
+
 
         // Method called when agent collides with something
         private void OnTriggerEnter(Collider other)
         {
+            int pos = Random.Range(0, goal.Length);
+
             // Did agent collide with goal?
             if (other.name == "Goal")
                 // If so, update destination (let goal reposition itself first)
@@ -40,6 +73,21 @@ namespace GameAIPrototypes.SimpleNavMesh
         {
             // Set destination to current goal position
             agent.SetDestination(goal[pos].position);
+        }
+
+
+
+        // ----------------------- ACTIONS -------------------------------------
+
+        private void Stand()
+        {
+            // Move towards player
+            //MoveTowardsTarget(player.transform.position);
+        }
+
+        private void Move()
+        {
+            
         }
     }
 }

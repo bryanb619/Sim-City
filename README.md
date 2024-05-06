@@ -89,4 +89,6 @@ Relativamente a consulta feita com professores, um professor foi consultado para
 #
 
 
+https://docs.unity3d.com/ScriptReference/Random.Range.html
+
 https://www.youtube.com/watch?v=uBWEjqtdcgM&list=PLcRSafycjWFd6YOvRE3GQqURFpIxZpErI&index=3
