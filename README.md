@@ -29,12 +29,9 @@
 
 ## Introdução
 
-- Projeto foi desenvolvido utilizando o motor de jogo [_Unity Engine_ 2022.3.1 _LTS_](https://unity.com/releases/editor/whats-new/2022.3.1#release-notes).
+- O projeto desenvolvido constitui uma Simulação de automóveis e peões numa cidade fictícia. Desenvolvido utilizando o motor de jogo [_Unity Engine_ 2022.3.1 _LTS_](https://unity.com/releases/editor/whats-new/2022.3.1#release-notes) 
  Objetivo principal foi demonstrar as técnicas de Inteligencia artificial num _sim city_ não jogável com automóveis, peões e sinais de trânsito (sinalização luminosa). 
 
-
-
-## Referências  REMOVER
 
 ### IAs generativas
   O uso de IAs generativas foi usado e neste tópico explicaremos como: 
@@ -76,19 +73,28 @@ classDiagram
 
 ## Conclusões
 
-### Consultas com docentes
-Relativamente a consulta feita com professores, um professor foi consultado para ajudar em algumas questões. Este foi o professor Diogo Andrade onde auxiliou em 2 questões sendo essas respectivamente:
 
   
-  A Realização deste projeto consistiu essencialmente em pesquisa própria, conhecimento adquirido por trabalhos e ensino fornecido por proferessores em diversas unidades curriculares lecionadas na [licenciatura de Videojogos](https://www.ulusofona.pt/lisboa/licenciaturas/videojogos).
+A Realização deste projeto consistiu essencialmente em pesquisa própria, conhecimento adquirido por trabalhos e ensino fornecido por proferessores em diversas unidades curriculares lecionadas na [licenciatura de Videojogos](https://www.ulusofona.pt/lisboa/licenciaturas/videojogos).
 #
 
-### links REMOVER
-* [Criação de ficheiro](https://learn.microsoft.com/en-us/dotnet/api/system.io.file.create?view=netstandard-2.1#system-io-file-create(system-string))
+## Referências
+
+### Código, tutoriais e planeamento utlizados:
+
+Technologies, U. (n.d.). Unity - Scripting API: Random.Range. https://docs.unity3d.com/ScriptReference/Random.Range.html
   
+Sunny Valley Studio. (2020, August 26). Project setup - City Builder Unity tutorial P3 [Video]. YouTube. https://www.youtube.com/watch?v=uBWEjqtdcgM
+
+Kink3d. (n.d.). GitHub - Kink3d/SimpleTraffic: A simple traffic simulation using Unity’s Nav Mesh Components. GitHub. https://github.com/Kink3d/SimpleTraffic?tab=readme-ov-file
+
+### _Assets_ de terceiros:
+  
+SimplePoly - Town Pack | 3D Environments | Unity Asset Store. (2024, January 7). Unity Asset Store. https://assetstore.unity.com/packages/3d/environments/simplepoly-town-pack-62400
+
+School bus, simple, isometric | 3D Land | Unity Asset Store. (2020, November 16). Unity Asset Store. https://assetstore.unity.com/packages/3d/vehicles/land/school-bus-simple-isometric-106250
+
+HD Low Poly Racing Car No.1201 | 3D Land | Unity Asset Store. (2024, March 16). Unity Asset Store. https://assetstore.unity.com/packages/3d/vehicles/land/hd-low-poly-racing-car-no-1201-118603
+
 #
-
-
-https://docs.unity3d.com/ScriptReference/Random.Range.html
-
-https://www.youtube.com/watch?v=uBWEjqtdcgM&list=PLcRSafycjWFd6YOvRE3GQqURFpIxZpErI&index=3
+  
