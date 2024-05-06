@@ -9,17 +9,18 @@ namespace Assets.Scripts.AI
         {
             get
             {
-                return Speed;
+                return this.Speed;
             }
             
             private set
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException("Speed cannot be negative");
+                
                 }
+                
 
-                else if (value > 150)
+                if (value > 150)
                 {
                     throw new ArgumentException("Speed cannot be greater than 150");
                 }

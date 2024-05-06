@@ -184,9 +184,9 @@ namespace Assets.Scripts.AI
         /// </returns>
         private bool IsGraterThan(int signalTimer)
         {
-            if(time > signalTimer) { return true; }
+            if(time > signalTimer) return true; 
 
-            else { return false; }
+            else return false; 
         }
 
 

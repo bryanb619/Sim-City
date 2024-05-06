@@ -29,8 +29,8 @@
 
 ## Introdução
 
-- Projeto desenvolvido utilizando o motor de jogo [_Unity Engine_ 2022.3.1 _LTS_](https://unity.com/releases/editor/whats-new/2022.3.1#release-notes).
-- Objetivo principal abrir é demonstrar técnicas de Inteligencia artificial num _sim city_ não jogável. 
+- Projeto foi desenvolvido utilizando o motor de jogo [_Unity Engine_ 2022.3.1 _LTS_](https://unity.com/releases/editor/whats-new/2022.3.1#release-notes).
+ Objetivo principal foi demonstrar as técnicas de Inteligencia artificial num _sim city_ não jogável com automóveis, peões e sinais de trânsito (sinalização luminosa). 
 
 
 
