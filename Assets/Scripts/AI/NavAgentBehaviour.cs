@@ -7,7 +7,7 @@ namespace Assets.Scripts.AI
     public class NavAgentBehaviour : MonoBehaviour
     {
         // Current goal of navigation agent
-        [SerializeField] private Transform[] goal;
+        [SerializeField] private GameObject[] goal;
 
         // Reference to the NavMeshAgent component
         private NavMeshAgent agent;
@@ -18,14 +18,24 @@ namespace Assets.Scripts.AI
         private IDecisionTreeNode root;
 
 
+        // 
+        private void Awake()
+        {
+
+            goal = GameObject.FindGameObjectsWithTag("Dest");
+
+            // Get reference to the NavMeshAgent component
+            agent = GetComponent<NavMeshAgent>();
+
+        }
+
 
         // Start is called before the first frame update
         private void Start()
         {
-            // Get reference to the NavMeshAgent component
-            agent = GetComponent<NavMeshAgent>();
+            
             // Set initial agent goal
-            agent.SetDestination(goal[0].position);
+            agent.SetDestination(goal[0].transform.position);
 
 
             RandomDecisionBehaviour rdb = new RandomDecisionBehaviour(
@@ -51,8 +61,12 @@ namespace Assets.Scripts.AI
             // Run decision tree here! //
             // /////////////////////// //
 
+            ActionNode actionNode = root.MakeDecision() as ActionNode;
+            //if(ActionNode)
 
-            (root.MakeDecision() as ActionNode).Execute();
+            actionNode.Execute();
+
+            //(root.MakeDecision() as ActionNode).Execute();
 
         }
 
@@ -85,7 +99,7 @@ namespace Assets.Scripts.AI
 
             int pos = Random.Range(0, goal.Length);
 
-            UpdateDestination(pos );
+            UpdateDestination(pos);
             
         }
 
@@ -94,7 +108,7 @@ namespace Assets.Scripts.AI
         private void UpdateDestination(int pos)
         {
             // Set destination to current goal position
-            agent.SetDestination(goal[pos].position);
+            agent.SetDestination(goal[pos].transform.position);
         }
     }
 }

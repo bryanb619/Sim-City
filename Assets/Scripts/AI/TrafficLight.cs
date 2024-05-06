@@ -121,7 +121,11 @@ namespace Assets.Scripts.AI
             while (true)
             {
                 time += 1;
-                print(time);
+
+# if UNITY_EDITOR // DEBUG TIME
+
+               // print(time);
+# endif
 
                 switch (Light)
                 {

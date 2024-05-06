@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 6642853}
   m_Layer: 0
   m_Name: goal (24)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1756,7 +1756,7 @@ GameObject:
   - component: {fileID: 54671152}
   m_Layer: 0
   m_Name: goal (1)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2273,7 +2273,7 @@ GameObject:
   - component: {fileID: 67009588}
   m_Layer: 0
   m_Name: goal (26)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2845,7 +2845,7 @@ GameObject:
   - component: {fileID: 84043753}
   m_Layer: 0
   m_Name: goal (13)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3120,7 +3120,7 @@ GameObject:
   - component: {fileID: 86562825}
   m_Layer: 0
   m_Name: goal (20)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3671,7 +3671,7 @@ GameObject:
   - component: {fileID: 102725885}
   m_Layer: 0
   m_Name: goal (31)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4675,7 +4675,7 @@ GameObject:
   - component: {fileID: 139445609}
   m_Layer: 0
   m_Name: goal (16)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5483,7 +5483,7 @@ GameObject:
   - component: {fileID: 166902872}
   m_Layer: 0
   m_Name: goal (27)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5952,7 +5952,7 @@ GameObject:
   - component: {fileID: 181733408}
   m_Layer: 0
   m_Name: goal (3)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10641,7 +10641,7 @@ GameObject:
   - component: {fileID: 353039724}
   m_Layer: 0
   m_Name: goal (6)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11245,7 +11245,7 @@ GameObject:
   - component: {fileID: 374939272}
   m_Layer: 0
   m_Name: goal (4)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13411,7 +13411,7 @@ GameObject:
   - component: {fileID: 453682722}
   m_Layer: 0
   m_Name: goal (29)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14848,7 +14848,7 @@ GameObject:
   - component: {fileID: 509927087}
   m_Layer: 0
   m_Name: goal (17)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19684,7 +19684,7 @@ GameObject:
   - component: {fileID: 739589563}
   m_Layer: 0
   m_Name: goal (11)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22677,7 +22677,7 @@ GameObject:
   - component: {fileID: 832589006}
   m_Layer: 0
   m_Name: goal (28)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23669,7 +23669,7 @@ GameObject:
   - component: {fileID: 854327195}
   m_Layer: 0
   m_Name: goal (25)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24852,7 +24852,7 @@ GameObject:
   - component: {fileID: 896174807}
   m_Layer: 0
   m_Name: goal (32)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25069,7 +25069,7 @@ GameObject:
   - component: {fileID: 904480913}
   m_Layer: 0
   m_Name: goal (8)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27910,7 +27910,7 @@ GameObject:
   - component: {fileID: 1003338708}
   m_Layer: 0
   m_Name: goal (9)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28860,7 +28860,7 @@ GameObject:
   - component: {fileID: 1031927726}
   m_Layer: 0
   m_Name: goal (21)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30241,7 +30241,7 @@ GameObject:
   - component: {fileID: 1101083614}
   m_Layer: 0
   m_Name: goal (2)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31020,7 +31020,7 @@ GameObject:
   - component: {fileID: 1128529559}
   m_Layer: 0
   m_Name: goal (18)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31051,7 +31051,7 @@ GameObject:
   - component: {fileID: 1129198686}
   m_Layer: 0
   m_Name: goal (23)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38369,7 +38369,7 @@ GameObject:
   - component: {fileID: 1405570401}
   m_Layer: 0
   m_Name: goal (12)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43578,7 +43578,7 @@ GameObject:
   - component: {fileID: 1563540711}
   m_Layer: 0
   m_Name: goal
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44916,7 +44916,7 @@ GameObject:
   - component: {fileID: 1628059749}
   m_Layer: 0
   m_Name: goal (15)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44947,7 +44947,7 @@ GameObject:
   - component: {fileID: 1634343366}
   m_Layer: 0
   m_Name: goal (22)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46456,7 +46456,7 @@ GameObject:
   - component: {fileID: 1693921710}
   m_Layer: 0
   m_Name: goal (14)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49368,7 +49368,7 @@ GameObject:
   - component: {fileID: 1791064744}
   m_Layer: 0
   m_Name: goal (10)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53594,7 +53594,7 @@ GameObject:
   - component: {fileID: 1933191043}
   m_Layer: 0
   m_Name: goal (19)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53625,7 +53625,7 @@ GameObject:
   - component: {fileID: 1939251342}
   m_Layer: 0
   m_Name: goal (5)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54117,7 +54117,7 @@ GameObject:
   - component: {fileID: 1951923470}
   m_Layer: 0
   m_Name: goal (7)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54852,7 +54852,7 @@ GameObject:
   - component: {fileID: 1995476470}
   m_Layer: 0
   m_Name: goal (30)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57260,7 +57260,7 @@ GameObject:
   - component: {fileID: 2074024437}
   m_Layer: 0
   m_Name: goal (33)
-  m_TagString: Untagged
+  m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57641,7 +57641,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2094611917}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Destinations
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
