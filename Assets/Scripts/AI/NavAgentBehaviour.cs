@@ -60,20 +60,15 @@ namespace Assets.Scripts.AI
         // Method called when agent collides with something
         private void OnTriggerEnter(Collider other)
         {
-            int pos = Random.Range(0, goal.Length);
-
+           
             // Did agent collide with goal?
             if (other.name == "Goal")
                 // If so, update destination (let goal reposition itself first)
-                Invoke("UpdateDestination", 0.1f);
+
+                // MUST ADD INT POS
+                Invoke("Move", 0.1f);
         }
 
-        // Update destination
-        private void UpdateDestination(int pos)
-        {
-            // Set destination to current goal position
-            agent.SetDestination(goal[pos].position);
-        }
 
 
 
@@ -87,7 +82,19 @@ namespace Assets.Scripts.AI
 
         private void Move()
         {
+
+            int pos = Random.Range(0, goal.Length);
+
+            UpdateDestination(pos );
             
+        }
+
+
+        // Update destination
+        private void UpdateDestination(int pos)
+        {
+            // Set destination to current goal position
+            agent.SetDestination(goal[pos].position);
         }
     }
 }
