@@ -35,16 +35,15 @@
 
 ### IAs generativas
   O uso de IAs generativas foi usado e neste tópico explicaremos como: 
-- O _Chat Bing_ (_Chat GPT-4_) foi utilizado para tirar dúvidas e explicar itens da [documentação](https://learn.microsoft.com/en-us/dotnet/api/?view=netstandard-2.1) de forma mais clara e simples, erros, exemplos e também para obter de forma mais rápida _links_ com código útil com foi o caso particular do tópico [Remover linhas do ficheiro](https://stacktuts.com/how-to-delete-a-line-from-a-text-file-in-c).   
-  Sem mencionar que um é um erro comum quando o nome de ficheiro não é válido ao utilzarmos o [_stream reader_](https://learn.microsoft.com/en-us/dotnet/api/system.io.streamreader?view=netstandard-2.1) onde pelo menos podemos dizer que foi a nossa experiência ao utilizar esta classe do [_C#_](https://learn.microsoft.com/en-us/dotnet/csharp/).
-
-  
-- Nenhum código fornecido por IAs generativas foi diretamente utilizado para a realização desse projeto como explicado acima, apenas a título de curiosidade, pesquisa, exemplos e explicação de tópicos da documentação.
-
+- O _Chat Bing_ (_Chat GPT-4_) foi utilizado para tirar dúvidas e explicar itens da [documentação](https://learn.microsoft.com/en-us/dotnet/api/?view=netstandard-2.1) de forma mais clara e simples, erros, exemplos e também para obter de forma mais rápida _links_ com código útil.
 
 ## Estudo da Arte
+_SimCity_   Tropico 4
 
+![SimCity GIF](./Images/traffic-small.gif)
+- Referência 
 ## Metodologia
+
 
 
 ### Diagrama _UML_
@@ -76,17 +75,18 @@ classDiagram
 
   
 A Realização deste projeto consistiu essencialmente em pesquisa própria, conhecimento adquirido por trabalhos e ensino fornecido por proferessores em diversas unidades curriculares lecionadas na [licenciatura de Videojogos](https://www.ulusofona.pt/lisboa/licenciaturas/videojogos).
-#
 
 ## Referências
 
-### Código, tutoriais e planeamento utlizados:
+### Código, tutoriais, planeamento utlizados e pesquisa:
 
 Technologies, U. (n.d.). Unity - Scripting API: Random.Range. https://docs.unity3d.com/ScriptReference/Random.Range.html
   
 Sunny Valley Studio. (2020, August 26). Project setup - City Builder Unity tutorial P3 [Video]. YouTube. https://www.youtube.com/watch?v=uBWEjqtdcgM
 
 Kink3d. (n.d.). GitHub - Kink3d/SimpleTraffic: A simple traffic simulation using Unity’s Nav Mesh Components. GitHub. https://github.com/Kink3d/SimpleTraffic?tab=readme-ov-file
+
+Mike, V. a. P. B. (2012, October 1). SimCity: traffic system, public transportation and international airports. Simcitizens. https://simcitizens.com/simcity-traffic-system-public-transportation-and-international-airports/
 
 ### _Assets_ de terceiros:
   
@@ -98,3 +98,20 @@ HD Low Poly Racing Car No.1201 | 3D Land | Unity Asset Store. (2024, March 16). 
 
 #
   
+chegar
+Inbuilding => desativa mesh e inicia um temporizador
+
+Moving => deslocar-se (peões feito)
+
+descontrolo=> clica numa tecla (desrespeita os sinais e aumenta a velocidade) so pode entrar se estiver em moving manter durante tempo aleatorio 
+
+acidente piscar
+
+
+
+
+
+
+
+
+
