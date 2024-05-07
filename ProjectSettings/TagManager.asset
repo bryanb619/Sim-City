@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Dest
   - CarDest
+  - Pedestrian
+  - Vehicle
   layers:
   - Default
   - TransparentFX

@@ -21,8 +21,10 @@ namespace Assets.Scripts.AI
         // 
         private void Awake()
         {
-
-            goal = GameObject.FindGameObjectsWithTag("Dest");
+            if (this.tag == "Pedestrian")
+                goal = GameObject.FindGameObjectsWithTag("Dest");
+            else
+                goal = GameObject.FindGameObjectsWithTag("CarDest");
 
             // Get reference to the NavMeshAgent component
             agent = GetComponent<NavMeshAgent>();
