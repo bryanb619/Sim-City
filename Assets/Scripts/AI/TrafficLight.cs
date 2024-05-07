@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using LibGameAI.FSMs;
+using System.Data.Common;
 
 
 namespace Assets.Scripts.AI
@@ -15,6 +16,7 @@ namespace Assets.Scripts.AI
     public class TrafficLight : MonoBehaviour, ITrafficLight
     {
 
+        [SerializeField]
         public LightState Light { get; private set; }
 
 
@@ -40,7 +42,8 @@ namespace Assets.Scripts.AI
 
         float time = 0; 
 
-
+        [SerializeField]
+        private LightState initialLightState;
 
 # if UNITY_EDITOR 
 
@@ -61,10 +64,6 @@ namespace Assets.Scripts.AI
         /// </summary>
         private void Start()
         {
-
-            System.Random rand = new System.Random();
-
-            int i = rand.Next(0, 2);
 
             //print(i);
 
@@ -95,10 +94,23 @@ namespace Assets.Scripts.AI
             redState.AddTransition(new Transition(
                 () => Light == LightState.green,
                 null, greenState));
-
-            _fsm = new StateMachine(states[i]);
             
-            //_fsm = new StateMachine(greenState);
+
+            if (initialLightState == LightState.yellow)
+            {
+                Light = LightState.yellow;
+                _fsm = new StateMachine(yellowState);
+            }
+            else if (initialLightState == LightState.red)
+            {
+                Light = LightState.red;
+                _fsm = new StateMachine(redState);
+            }
+            else if (initialLightState == LightState.green)
+            {
+                Light = LightState.green;
+                _fsm = new StateMachine(greenState);
+            }
 
             StartCoroutine(UpdateLightState());
         }
