@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 3376694160712849734}
   - component: {fileID: 2872576657212288933}
   - component: {fileID: 5065956173016052522}
-  - component: {fileID: 3479763611918160314}
   m_Layer: 0
   m_Name: Vehicle
   m_TagString: Vehicle
@@ -147,7 +146,7 @@ NavMeshAgent:
   m_AgentTypeID: -1372625422
   m_Radius: 0.25
   m_Speed: 5
-  m_Acceleration: 20
+  m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 200
   m_StoppingDistance: 0
@@ -171,19 +170,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: []
---- !u!208 &3479763611918160314
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5436836182280403281}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.935, y: 0.39, z: 0.795}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
