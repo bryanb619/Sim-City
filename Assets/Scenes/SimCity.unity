@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 6642853}
   - component: {fileID: 6642854}
   m_Layer: 0
-  m_Name: goal (24)
+  m_Name: Restaurant
   m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -371,7 +371,7 @@ Transform:
   m_GameObject: {fileID: 6642852}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.5, y: 0, z: 70}
+  m_LocalPosition: {x: -16.28, y: 0, z: 72.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1809,7 +1809,7 @@ GameObject:
   - component: {fileID: 54671152}
   - component: {fileID: 54671153}
   m_Layer: 0
-  m_Name: goal (1)
+  m_Name: Hotel 3
   m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1824,7 +1824,7 @@ Transform:
   m_GameObject: {fileID: 54671151}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.25, y: 0, z: -22.25}
+  m_LocalPosition: {x: -12.28, y: 0, z: -22.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2367,7 +2367,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2094611917}
+  m_Father: {fileID: 2037535974}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &67009589
 BoxCollider:
@@ -2961,7 +2961,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2094611917}
+  m_Father: {fileID: 2074613967}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &84043754
 BoxCollider:
@@ -3258,7 +3258,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2094611917}
+  m_Father: {fileID: 1122498793}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &86562826
 BoxCollider:
@@ -3687,7 +3687,7 @@ PrefabInstance:
       objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 130656, guid: a93a4058bd3225b4fb6d6b59fa5bc871, type: 3}
       propertyPath: m_Name
-      value: Park 4
+      value: Park
       objectReference: {fileID: 0}
     - target: {fileID: 130656, guid: a93a4058bd3225b4fb6d6b59fa5bc871, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3831,7 +3831,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2094611917}
+  m_Father: {fileID: 2123561865}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &102725886
 BoxCollider:
@@ -4838,7 +4838,7 @@ GameObject:
   - component: {fileID: 139445609}
   - component: {fileID: 139445610}
   m_Layer: 0
-  m_Name: goal (16)
+  m_Name: Coffee 1
   m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4853,7 +4853,7 @@ Transform:
   m_GameObject: {fileID: 139445608}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.75, y: 0, z: 48.75}
+  m_LocalPosition: {x: 15.25, y: 0, z: 50.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5321,7 +5321,7 @@ GameObject:
   - component: {fileID: 152038699}
   - component: {fileID: 152038700}
   m_Layer: 0
-  m_Name: goal (2)
+  m_Name: Supermarket
   m_TagString: CarDest
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -5740,7 +5740,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2094611917}
+  m_Father: {fileID: 282436557}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &166902873
 BoxCollider:
@@ -6212,7 +6212,7 @@ GameObject:
   - component: {fileID: 181733408}
   - component: {fileID: 181733409}
   m_Layer: 0
-  m_Name: goal (3)
+  m_Name: Auto Parts
   m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -6227,7 +6227,7 @@ Transform:
   m_GameObject: {fileID: 181733407}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 43.25, y: 0, z: -47.75}
+  m_LocalPosition: {x: 33, y: 0, z: -27.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8333,10 +8333,10 @@ PrefabInstance:
     - target: {fileID: 130656, guid: a93a4058bd3225b4fb6d6b59fa5bc871, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: 0}
     - target: {fileID: 130656, guid: a93a4058bd3225b4fb6d6b59fa5bc871, type: 3}
       propertyPath: m_Name
-      value: Park 2
+      value: Park
       objectReference: {fileID: 0}
     - target: {fileID: 130656, guid: a93a4058bd3225b4fb6d6b59fa5bc871, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9301,6 +9301,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 467192, guid: 52e3c281ef0f0ea4985188d26644edcb, type: 3}
   m_PrefabInstance: {fileID: 282368566}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &282436556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 282436557}
+  m_Layer: 0
+  m_Name: Park2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &282436557
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282436556}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 353039724}
+  - {fileID: 166902872}
+  - {fileID: 1628059749}
+  - {fileID: 1693921710}
+  m_Father: {fileID: 2094611917}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &282764037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10624,7 +10659,7 @@ PrefabInstance:
       objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 130656, guid: a93a4058bd3225b4fb6d6b59fa5bc871, type: 3}
       propertyPath: m_Name
-      value: Park 3
+      value: Park
       objectReference: {fileID: 0}
     - target: {fileID: 130656, guid: a93a4058bd3225b4fb6d6b59fa5bc871, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -10942,7 +10977,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2094611917}
+  m_Father: {fileID: 282436557}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &353039725
 BoxCollider:
@@ -11549,7 +11584,7 @@ GameObject:
   - component: {fileID: 374939272}
   - component: {fileID: 374939273}
   m_Layer: 0
-  m_Name: goal (4)
+  m_Name: Coffee 4
   m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -11564,7 +11599,7 @@ Transform:
   m_GameObject: {fileID: 374939271}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 74.25, y: 0, z: -7.25}
+  m_LocalPosition: {x: 71.6, y: 0, z: -5.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13726,59 +13761,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 489578, guid: d59da3d7b9c463c478d64b0722fd1ff5, type: 3}
   m_PrefabInstance: {fileID: 453370489}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &453682721
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 453682722}
-  - component: {fileID: 453682723}
-  m_Layer: 0
-  m_Name: goal (29)
-  m_TagString: Dest
-  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &453682722
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 453682721}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 82.25, y: 0, z: 155.75}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2094611917}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &453682723
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 453682721}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: 0, y: 0.72, z: 0}
 --- !u!1001 &454638151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14762,7 +14744,7 @@ GameObject:
   - component: {fileID: 488210156}
   - component: {fileID: 488210157}
   m_Layer: 0
-  m_Name: goal (1)
+  m_Name: Supermarket 2
   m_TagString: CarDest
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -15249,7 +15231,7 @@ GameObject:
   - component: {fileID: 509927087}
   - component: {fileID: 509927088}
   m_Layer: 0
-  m_Name: goal (17)
+  m_Name: Coffee 2
   m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -15264,7 +15246,7 @@ Transform:
   m_GameObject: {fileID: 509927086}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7, y: 0, z: 73.5}
+  m_LocalPosition: {x: 8.61, y: 0, z: 75.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17758,7 +17740,7 @@ GameObject:
   - component: {fileID: 626463366}
   - component: {fileID: 626463367}
   m_Layer: 0
-  m_Name: goal (4)
+  m_Name: Auto Shop
   m_TagString: CarDest
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -20216,7 +20198,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2094611917}
+  m_Father: {fileID: 2074613967}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &739589564
 BoxCollider:
@@ -23212,7 +23194,7 @@ GameObject:
   - component: {fileID: 832589006}
   - component: {fileID: 832589007}
   m_Layer: 0
-  m_Name: goal (28)
+  m_Name: Supermarket 2
   m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -23227,7 +23209,7 @@ Transform:
   m_GameObject: {fileID: 832589005}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 82.25, y: 0, z: 155.75}
+  m_LocalPosition: {x: 84.99, y: 0, z: 154.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24245,7 +24227,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2094611917}
+  m_Father: {fileID: 2037535974}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &854327196
 BoxCollider:
@@ -25450,7 +25432,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2094611917}
+  m_Father: {fileID: 2123561865}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &896174808
 BoxCollider:
@@ -25670,7 +25652,7 @@ GameObject:
   - component: {fileID: 904480913}
   - component: {fileID: 904480914}
   m_Layer: 0
-  m_Name: goal (8)
+  m_Name: Supermarket
   m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -25685,7 +25667,7 @@ Transform:
   m_GameObject: {fileID: 904480912}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 112, y: 0, z: 34}
+  m_LocalPosition: {x: 114.5, y: 0, z: 32.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28533,7 +28515,7 @@ GameObject:
   - component: {fileID: 1003338708}
   - component: {fileID: 1003338709}
   m_Layer: 0
-  m_Name: goal (9)
+  m_Name: Coffee 3
   m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -28548,7 +28530,7 @@ Transform:
   m_GameObject: {fileID: 1003338707}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 96.75, y: 0, z: 42}
+  m_LocalPosition: {x: 97.036, y: 0, z: 43.864}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29524,7 +29506,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2094611917}
+  m_Father: {fileID: 1122498793}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1031927727
 BoxCollider:
@@ -30927,7 +30909,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2094611917}
+  m_Father: {fileID: 2037535974}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1101083615
 BoxCollider:
@@ -31570,6 +31552,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 401076, guid: 8aed0f8fb93c2ed4c96a99dcc130b90d, type: 3}
   m_PrefabInstance: {fileID: 1120842711}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1122498792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1122498793}
+  m_Layer: 0
+  m_Name: Park4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1122498793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122498792}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1031927726}
+  - {fileID: 86562825}
+  - {fileID: 1933191043}
+  m_Father: {fileID: 2094611917}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1126264998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31709,7 +31725,7 @@ GameObject:
   - component: {fileID: 1128529559}
   - component: {fileID: 1128529560}
   m_Layer: 0
-  m_Name: goal (18)
+  m_Name: Gas Station
   m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -31724,7 +31740,7 @@ Transform:
   m_GameObject: {fileID: 1128529558}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.25, y: 0, z: 79.25}
+  m_LocalPosition: {x: -21.25, y: 0, z: 98.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31762,7 +31778,7 @@ GameObject:
   - component: {fileID: 1129198686}
   - component: {fileID: 1129198687}
   m_Layer: 0
-  m_Name: goal (23)
+  m_Name: Hotel 1
   m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -31777,7 +31793,7 @@ Transform:
   m_GameObject: {fileID: 1129198685}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.75, y: 0, z: 166.75}
+  m_LocalPosition: {x: 25.99, y: 0, z: 169.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -35522,6 +35538,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 6493706, guid: 8c61acc35acbd6d489977c81317f86f3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -39121,7 +39141,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2094611917}
+  m_Father: {fileID: 2074613967}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1405570402
 BoxCollider:
@@ -40082,7 +40102,7 @@ GameObject:
   - component: {fileID: 1451226839}
   - component: {fileID: 1451226840}
   m_Layer: 0
-  m_Name: goal (5)
+  m_Name: Gas Station
   m_TagString: CarDest
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -40843,7 +40863,7 @@ PrefabInstance:
       objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 130656, guid: a93a4058bd3225b4fb6d6b59fa5bc871, type: 3}
       propertyPath: m_Name
-      value: Park 5
+      value: Park
       objectReference: {fileID: 0}
     - target: {fileID: 130656, guid: a93a4058bd3225b4fb6d6b59fa5bc871, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -44386,7 +44406,7 @@ GameObject:
   - component: {fileID: 1563540711}
   - component: {fileID: 1563540712}
   m_Layer: 0
-  m_Name: goal
+  m_Name: Hotel 2
   m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -44401,7 +44421,7 @@ Transform:
   m_GameObject: {fileID: 1563540710}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.5, y: 0, z: 6.75}
+  m_LocalPosition: {x: -8.907, y: 0, z: 7.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45765,7 +45785,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2094611917}
+  m_Father: {fileID: 282436557}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1628059750
 BoxCollider:
@@ -45799,7 +45819,7 @@ GameObject:
   - component: {fileID: 1634343366}
   - component: {fileID: 1634343367}
   m_Layer: 0
-  m_Name: goal (22)
+  m_Name: Auto Shop
   m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -45814,7 +45834,7 @@ Transform:
   m_GameObject: {fileID: 1634343365}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 45.75, y: 0, z: 182.5}
+  m_LocalPosition: {x: 47.15, y: 0, z: 184.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47349,7 +47369,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2094611917}
+  m_Father: {fileID: 282436557}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1693921711
 BoxCollider:
@@ -48875,7 +48895,7 @@ GameObject:
   - component: {fileID: 1740216607}
   - component: {fileID: 1740216608}
   m_Layer: 0
-  m_Name: goal (3)
+  m_Name: Auto Parts
   m_TagString: CarDest
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -50317,7 +50337,7 @@ GameObject:
   - component: {fileID: 1791064744}
   - component: {fileID: 1791064745}
   m_Layer: 0
-  m_Name: goal (10)
+  m_Name: Coffee 5
   m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -50332,7 +50352,7 @@ Transform:
   m_GameObject: {fileID: 1791064743}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 77.25, y: 0, z: 69.75}
+  m_LocalPosition: {x: 74.72, y: 0, z: 71.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -52473,7 +52493,7 @@ PrefabInstance:
       objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 130656, guid: a93a4058bd3225b4fb6d6b59fa5bc871, type: 3}
       propertyPath: m_Name
-      value: Park 1
+      value: Park
       objectReference: {fileID: 0}
     - target: {fileID: 130656, guid: a93a4058bd3225b4fb6d6b59fa5bc871, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -54584,7 +54604,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2094611917}
+  m_Father: {fileID: 1122498793}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1933191044
 BoxCollider:
@@ -54618,7 +54638,7 @@ GameObject:
   - component: {fileID: 1939251342}
   - component: {fileID: 1939251343}
   m_Layer: 0
-  m_Name: goal (5)
+  m_Name: Restaurant 2
   m_TagString: Dest
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -54633,7 +54653,7 @@ Transform:
   m_GameObject: {fileID: 1939251341}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 52, y: 0, z: 6.5}
+  m_LocalPosition: {x: 52, y: 0, z: 6.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55121,59 +55141,6 @@ MonoBehaviour:
   _yellowTime: 10
   _redTime: 10
   _currentLightState: 0
---- !u!1 &1951923469
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1951923470}
-  - component: {fileID: 1951923471}
-  m_Layer: 0
-  m_Name: goal (7)
-  m_TagString: Dest
-  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1951923470
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1951923469}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 82.25, y: 0, z: 155.75}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2094611917}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1951923471
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1951923469}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: 0, y: 0.72, z: 0}
 --- !u!1001 &1951960999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55908,7 +55875,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2094611917}
+  m_Father: {fileID: 2123561865}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1995476471
 BoxCollider:
@@ -57444,6 +57411,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 467192, guid: 52e3c281ef0f0ea4985188d26644edcb, type: 3}
   m_PrefabInstance: {fileID: 2036978418}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2037535973
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2037535974}
+  m_Layer: 0
+  m_Name: Park1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2037535974
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037535973}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1101083614}
+  - {fileID: 2074024437}
+  - {fileID: 67009588}
+  - {fileID: 854327195}
+  m_Father: {fileID: 2094611917}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2039630725
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58338,7 +58340,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2094611917}
+  m_Father: {fileID: 2037535974}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2074024438
 BoxCollider:
@@ -58361,6 +58363,40 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0.72, z: 0}
+--- !u!1 &2074613966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2074613967}
+  m_Layer: 0
+  m_Name: Park3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2074613967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074613966}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 84043753}
+  - {fileID: 1405570401}
+  - {fileID: 739589563}
+  m_Father: {fileID: 2094611917}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2076817850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58742,40 +58778,26 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1563540711}
-  - {fileID: 54671152}
-  - {fileID: 1101083614}
   - {fileID: 181733408}
-  - {fileID: 374939272}
-  - {fileID: 353039724}
-  - {fileID: 1951923470}
-  - {fileID: 166902872}
-  - {fileID: 2074024437}
-  - {fileID: 896174807}
-  - {fileID: 102725885}
-  - {fileID: 1995476470}
-  - {fileID: 453682722}
-  - {fileID: 832589006}
-  - {fileID: 67009588}
-  - {fileID: 854327195}
-  - {fileID: 6642853}
-  - {fileID: 1129198686}
   - {fileID: 1634343366}
-  - {fileID: 1031927726}
-  - {fileID: 86562825}
-  - {fileID: 1933191043}
-  - {fileID: 1128529559}
+  - {fileID: 1791064744}
+  - {fileID: 374939272}
+  - {fileID: 1003338708}
   - {fileID: 509927087}
   - {fileID: 139445609}
-  - {fileID: 1628059749}
-  - {fileID: 1693921710}
-  - {fileID: 84043753}
-  - {fileID: 1405570401}
-  - {fileID: 739589563}
-  - {fileID: 1791064744}
-  - {fileID: 1003338708}
-  - {fileID: 904480913}
+  - {fileID: 1128529559}
+  - {fileID: 1129198686}
+  - {fileID: 1563540711}
+  - {fileID: 54671152}
+  - {fileID: 2123561865}
+  - {fileID: 1122498793}
+  - {fileID: 2074613967}
+  - {fileID: 282436557}
+  - {fileID: 2037535974}
+  - {fileID: 6642853}
   - {fileID: 1939251342}
+  - {fileID: 904480913}
+  - {fileID: 832589006}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2094924847
@@ -59845,6 +59867,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 480072, guid: c0f33eb139fcff34c8de2acd690a23fe, type: 3}
   m_PrefabInstance: {fileID: 2123303746}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2123561864
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2123561865}
+  m_Layer: 0
+  m_Name: Park5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2123561865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123561864}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 896174807}
+  - {fileID: 102725885}
+  - {fileID: 1995476470}
+  m_Father: {fileID: 2094611917}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2125966506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60512,9 +60568,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7276114033731924, guid: 0ac8608ed22f0d04e9559a21799bf26e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996024863818151161, guid: 0ac8608ed22f0d04e9559a21799bf26e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 1900709587850200048, guid: 0ac8608ed22f0d04e9559a21799bf26e, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: 522b1b33501820341bf74f29e2d88b85, type: 2}
+    - target: {fileID: 2541164920509357690, guid: 0ac8608ed22f0d04e9559a21799bf26e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762498974749014620, guid: 0ac8608ed22f0d04e9559a21799bf26e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5537645165926862272, guid: 0ac8608ed22f0d04e9559a21799bf26e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.113686
+      objectReference: {fileID: 0}
+    - target: {fileID: 5537645165926862272, guid: 0ac8608ed22f0d04e9559a21799bf26e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 26.8798
+      objectReference: {fileID: 0}
     - target: {fileID: 5919283529096107020, guid: 0ac8608ed22f0d04e9559a21799bf26e, type: 3}
       propertyPath: m_Name
       value: Navmesh creator
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974056224011579043, guid: 0ac8608ed22f0d04e9559a21799bf26e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.006401
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974056224011579043, guid: 0ac8608ed22f0d04e9559a21799bf26e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 108.763
       objectReference: {fileID: 0}
     - target: {fileID: 7181499324327607443, guid: 0ac8608ed22f0d04e9559a21799bf26e, type: 3}
       propertyPath: m_LocalPosition.x
