@@ -36,8 +36,7 @@ namespace Assets.Scripts.AI
         private GameObject[] _lightMat;
 
         [SerializeField]
-        private GameObject triggerBox;
-        private GameObject crosswalkColliders;
+        private GameObject triggerBox, crosswalkColliders;
 
         float time = 0; 
 
