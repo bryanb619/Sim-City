@@ -15,7 +15,7 @@
   - AIDirector
 - Scene:
   - _NavMesh Bake_
-  - _Waypoits_ automóveis e peões
+  - _Waypoints_ automóveis e peões
 - _Bug fixing_  
 
 #### Steven Hall: 
@@ -23,14 +23,14 @@
   - Implementação de FSM
   - AgentState enum
   - IAgent interface
-  - TrafficLight System:   
+  - TrafficLight System implementation:   
     - LightState enum
     - TrafficLight class
     - ITrafficLight interface
   - UI
   - AIDirector
 - Scene
-  - Posicionamento de sinais de trânsito e _colliders_ 
+  - Posicionamento de sinais de trânsito, transição de cor, _colliders_ e locais de destino 
 - Relatório:
   - UML
   - Diagramas
@@ -39,7 +39,24 @@
 
 ## Introdução
 
-- O projeto desenvolvido consiste em uma simulação de automóveis e pedestres em uma cidade fictícia. Foi desenvolvido utilizando o motor de jogo [_Unity Engine_ 2022.3.1 _LTS_](https://unity.com/releases/editor/whats-new/2022.3.1#release-notes). O objetivo principal foi demonstrar as técnicas de Inteligência Artificial em uma espécie de _SimCity_ não jogável, com automóveis, pedestres e sinais de trânsito (sinalização luminosa).
+ O projeto desenvolvido consiste em uma simulação de automóveis e pedestres em uma cidade fictícia. Foi desenvolvido utilizando o motor de jogo [_Unity Engine_ 2022.3.1 _LTS_](https://unity.com/releases/editor/whats-new/2022.3.1#release-notes). O objetivo principal foi demonstrar as técnicas de Inteligência Artificial em uma espécie de _SimCity_ não jogável, com automóveis, peões e sinais de trânsito (sinalização luminosa).
+
+
+- Objetivos desta simulação:
+  - Fazer com que os automóveis respeitem as regras de trânsito, como sinais luminosos, passadeiras e outros veículos na via.
+  - Permitir que os pedestres utilizem passeios e passadeiras quando o sinal luminoso permitir.
+  - Simular acidentes entre agentes.
+  - Implementar um modo de descontrole que escolhe um agente aleatório e aumenta o seu nível de "insanidade".
+  
+- Objetivos alcançados:
+  - Implementação de sinais luminosos utilizando máquina de estados (_FSM_).
+  - Transição entre estado de agentes (automóveis e peões).
+  - Obedecer regras de trânsito
+  - Estado descontrolo
+  
+- Simulação Monte Carlo: 
+
+Um método que cria eventos aleatórios assemelha-se à implementação do agente aleatório em modo de descontrole. Isto introduz uma aleatoriedade no sistema de trânsito, representando um agente que não respeita as regras como os outros, podendo causar acidentes. 
 
 
 
@@ -49,9 +66,7 @@ Um importante referencial para a realização deste projeto é o famoso jogo _Si
 
 ![SimCity GIF](./Images/traffic-small.gif)
 
-- Referência 
   
-
 ## Metodologia
 
 A simulação desenvolvida é em 3D e as técnicas de Inteligência Artificial utilizadas foram, respectivamente, _FSM's_ (uma biblioteca essencial para a realização de transições entre estados) e _A* (Unity NavMesh)_, que é essencial para o _Pathfinding_ de agentes como carros e peões.
@@ -64,11 +79,6 @@ A simulação desenvolvida é em 3D e as técnicas de Inteligência Artificial u
 ### Diagrama _FSM_ de sinais luminosos
 
 ![SimCity FSM](./Images/traffic.drawio.png)
-
-
-
-
-
 
 ### Diagrama Geral do Projeto em _UML_
 
@@ -86,16 +96,18 @@ classDiagram
 
     class LightState
     <<enumeration>> LightState 
-
 ```
 
 ## Resultados e discussão
 
 ## Conclusões
 
+Para concluir, o projeto desenvolvido consistiu 
 
-  
-A Realização deste projeto consistiu essencialmente em pesquisa própria, conhecimento adquirido por trabalhos e ensino fornecido por proferessores em diversas unidades curriculares lecionadas na [licenciatura de Videojogos](https://www.ulusofona.pt/lisboa/licenciaturas/videojogos).
+
+
+
+A realização deste projeto consistiu essencialmente em pesquisa própria, conhecimento adquirido por meio de trabalhos e ensino fornecido por professores em diversas unidades curriculares lecionadas na [licenciatura de Videojogos](https://www.ulusofona.pt/lisboa/licenciaturas/videojogos).
 
 ## Referências
 
@@ -122,6 +134,9 @@ School bus, simple, isometric | 3D Land | Unity Asset Store. (2020, November 16)
 
 HD Low Poly Racing Car No.1201 | 3D Land | Unity Asset Store. (2024, March 16). Unity Asset Store. https://assetstore.unity.com/packages/3d/vehicles/land/hd-low-poly-racing-car-no-1201-118603
 
+Microsimulation of traffic flow: Onramp. (n.d.). https://www.traffic-simulation.de/
+
+Wikipedia contributors. (2024, March 15). Traffic simulation. Wikipedia. https://en.wikipedia.org/wiki/Traffic_simulation
 #
 
 
