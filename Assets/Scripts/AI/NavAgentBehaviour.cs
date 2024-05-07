@@ -6,7 +6,6 @@ using LibGameAI.FSMs;
 using Random = UnityEngine.Random;
 
 
-
 namespace Assets.Scripts.AI
 {
     // Automatically add the NavMeshAgent to the GameObject
@@ -15,7 +14,7 @@ namespace Assets.Scripts.AI
     {   
         // ---------------- interface ------------------------------------------
 
-        public AgentState State { get; private set; }
+        public AgentState State { get; set; }
         // ---------------------------------------------------------------------
 
         // Current goal of navigation agent
@@ -23,6 +22,7 @@ namespace Assets.Scripts.AI
 
         // Reference to the NavMeshAgent component
         private NavMeshAgent agent;
+        private float initialAgentSpeed;
 
 
         // ------------- FSM ---------------------------------------------------
@@ -41,13 +41,14 @@ namespace Assets.Scripts.AI
         // 
         private void Awake()
         {
-            if (this.tag == "Pedestrian")
+            if (CompareTag("Pedestrian"))
                 goal = GameObject.FindGameObjectsWithTag("Dest");
             else
                 goal = GameObject.FindGameObjectsWithTag("CarDest");
 
             // Get reference to the NavMeshAgent component
             agent = GetComponent<NavMeshAgent>();
+            initialAgentSpeed = agent.speed;
 
             mesh = GetComponent<MeshRenderer>();
         }
@@ -82,7 +83,6 @@ namespace Assets.Scripts.AI
             MovingState.AddTransition(new Transition(
                 () => State == AgentState.Idle,
                 null, IdleState));
-
             // Move => Crazy
             MovingState.AddTransition(new Transition(
                 () => State == AgentState.Crazy,
@@ -114,7 +114,6 @@ namespace Assets.Scripts.AI
             _fsm = new StateMachine(MovingState);
             //------------------------------------------------------------------
 
-            
             // Set initial agent goal
             agent.SetDestination(
                 goal[Random.Range(0, goal.Length)].transform.position);
@@ -140,9 +139,28 @@ namespace Assets.Scripts.AI
         // Method called when agent collides with something
         private void OnTriggerEnter(Collider other)
         { 
-            
-            if (other.tag == "CarDest")
+            if (other.CompareTag("CarDest"))
                 Invoke("Idle", 0.1f);
+        }
+
+        private void OnTriggerStay(Collider other)
+        {
+            if (other.CompareTag("Vehicle") && State != AgentState.Crazy)
+                agent.speed = Mathf.Lerp(agent.speed, 
+                                        other.GetComponent<NavMeshAgent>().speed, 
+                                        Time.deltaTime);
+            else if (other.CompareTag("Pedestrian") || other.CompareTag("RedLight"))
+            {
+                agent.speed = Mathf.Lerp(agent.speed, 0, Time.deltaTime * 50);
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if(other.CompareTag("Vehicle") || other.CompareTag("Pedestrian"))
+            {
+                agent.speed = initialAgentSpeed;
+            }
         }
 
 

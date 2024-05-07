@@ -1,4 +1,4 @@
 public enum AgentState 
 {
-    Idle, Move, Crazy, Accident
+    Move, Idle, Crazy, Accident
 }

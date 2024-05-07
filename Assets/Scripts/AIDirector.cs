@@ -38,8 +38,7 @@ public class AIDirector : MonoBehaviour
         
         if(navAgent[i].State == AgentState.Move)
         {
-            // TODO : CALL CRAZY METHOD IN THIS AI AGENT
-
+            navAgent[i].State = AgentState.Crazy;
         }
     }
 }

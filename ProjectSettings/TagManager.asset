@@ -8,6 +8,7 @@ TagManager:
   - CarDest
   - Pedestrian
   - Vehicle
+  - RedLight
   layers:
   - Default
   - TransparentFX
