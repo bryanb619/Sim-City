@@ -157,12 +157,14 @@ namespace Assets.Scripts.AI
         private void Idle()
         {
 
+            SetAgentMovement(true);
             mesh.enabled = false;
             agent.enabled = false;
         }
 
         private void Move()
         {
+            SetAgentMovement(false);
             mesh.enabled = true;
             agent.enabled = true;
 
