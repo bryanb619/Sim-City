@@ -74,7 +74,7 @@ namespace Assets.Scripts.AI
             // IDLE => Move
             IdleState.AddTransition(new Transition(
                 () => State == AgentState.Move,
-                null, MovingState));
+                () => Move(), MovingState));
 
 
             // ----------------------------------------
@@ -82,33 +82,35 @@ namespace Assets.Scripts.AI
             // Move => Idle
             MovingState.AddTransition(new Transition(
                 () => State == AgentState.Idle,
-                null, IdleState));
+                () => Idle(), 
+                IdleState));
             // Move => Crazy
             MovingState.AddTransition(new Transition(
                 () => State == AgentState.Crazy,
-                null, CrazyState));
+                () => Crazy(), 
+                CrazyState));
 
             // Move => Accident
             MovingState.AddTransition(new Transition(
                 () => State == AgentState.Idle,
-                null, IdleState));
+                () => Accident(), IdleState));
 
             // ---------------------------------------
 
             // Crazy => Accident
             CrazyState.AddTransition(new Transition(
                 () => State == AgentState.Accident,
-                null, AccidentState));
+                () => Accident(), AccidentState));
 
             // Crazy => Move
             CrazyState.AddTransition(new Transition(
                 () => State == AgentState.Move,
-                null, MovingState));
+                () => Move(), MovingState));
 
             // Crazy => Idle
             CrazyState.AddTransition(new Transition(
                 () => State == AgentState.Idle,
-                null, MovingState));
+                () => Idle(), MovingState));
 
 
             _fsm = new StateMachine(MovingState);
@@ -157,7 +159,8 @@ namespace Assets.Scripts.AI
 
         private void OnTriggerExit(Collider other)
         {
-            if(other.CompareTag("Vehicle") || other.CompareTag("Pedestrian"))
+            if(other.CompareTag("Vehicle") || other.CompareTag("Pedestrian") 
+                || other.CompareTag("RedLight"))
             {
                 agent.speed = initialAgentSpeed;
             }
