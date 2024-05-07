@@ -32,6 +32,9 @@ namespace Assets.Scripts.AI
 
         private StateMachine _fsm;
 
+        [SerializeField]
+        private GameObject[] _lightMat;
+
         float time = 0; 
 
 
@@ -60,7 +63,7 @@ namespace Assets.Scripts.AI
 
             int i = rand.Next(0, 2);
 
-            print(i);
+            //print(i);
 
 
             // -------------------- States -------------------------------------
@@ -199,6 +202,8 @@ namespace Assets.Scripts.AI
         /// </summary>
         private void GreenLight()
         {
+            SwitchMatLight();
+
             Debug.Log($"Current light is: {Light}");
         }
 
@@ -207,6 +212,8 @@ namespace Assets.Scripts.AI
         /// </summary>
         private void YellowLight()
         {
+            SwitchMatLight();
+
             Debug.Log($"Current light is: {Light}");
         }
 
@@ -215,7 +222,55 @@ namespace Assets.Scripts.AI
         /// </summary>
         private void RedLight()
         {
+            SwitchMatLight();
+
             Debug.Log($"Current light is: {Light}");
+        }
+
+        /// <summary>
+        /// 0 = Green
+        /// 1 = Yellow
+        /// 2 = Red
+        /// </summary>
+        private void SwitchMatLight()
+        {   
+
+            switch (Light)
+            {
+                case LightState.green:
+                    {
+                        
+                        _lightMat[0].SetActive(true);
+
+                        _lightMat[1].SetActive(false);
+                        _lightMat[2].SetActive(false);
+
+                        break;
+                    }
+
+                case LightState.yellow:
+                    {
+
+                        _lightMat[0].SetActive(false);
+                        _lightMat[1].SetActive(true);
+
+                        _lightMat[2].SetActive(false);
+
+                        break;
+                    }
+                    
+                case LightState.red:
+                    {
+
+                        _lightMat[0].SetActive(false);
+                        _lightMat[1].SetActive(false);
+
+                        _lightMat[2].SetActive(true);
+
+                        break;
+                    }
+            }
+
         }
     }
 }
