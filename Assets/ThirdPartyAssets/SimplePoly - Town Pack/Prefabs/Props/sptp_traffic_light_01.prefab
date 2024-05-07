@@ -18,7 +18,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &444314
 Transform:
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 148458}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -122,13 +122,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd53a5129eb3e843a4f7470625acfda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _greenTime: 5
+  _greenTime: 10
   _yellowTime: 10
   _redTime: 10
   _lightMat:
   - {fileID: 6379820491965556027}
   - {fileID: 6370129222505254832}
   - {fileID: 8429342728465972190}
+  triggerBox: {fileID: 0}
   _currentLightState: 0
 --- !u!1 &6370129222505254832
 GameObject:

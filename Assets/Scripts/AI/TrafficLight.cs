@@ -35,6 +35,10 @@ namespace Assets.Scripts.AI
         [SerializeField]
         private GameObject[] _lightMat;
 
+        [SerializeField]
+        private GameObject triggerBox;
+        private GameObject crosswalkColliders;
+
         float time = 0; 
 
 
@@ -134,7 +138,7 @@ namespace Assets.Scripts.AI
                 {
                     case LightState.green:
                         {
-                            if(IsGraterThan(_greenTime)) 
+                            if(IsGreaterThan(_greenTime)) 
                             {
 
 # if UNITY_EDITOR 
@@ -150,7 +154,7 @@ namespace Assets.Scripts.AI
 
                     case LightState.yellow:
                         {
-                            if(IsGraterThan(_yellowTime)) 
+                            if(IsGreaterThan(_yellowTime)) 
                             {
 # if UNITY_EDITOR 
                                 _currentLightState = LightState.red;
@@ -165,7 +169,7 @@ namespace Assets.Scripts.AI
 
                     case LightState.red:
                         {
-                            if(IsGraterThan(_redTime)) 
+                            if(IsGreaterThan(_redTime)) 
                             {
 # if UNITY_EDITOR 
                                 _currentLightState = LightState.green;
@@ -189,7 +193,7 @@ namespace Assets.Scripts.AI
         /// Returns true if time is greater
         /// Returns false if time is not greater
         /// </returns>
-        private bool IsGraterThan(int signalTimer)
+        private bool IsGreaterThan(int signalTimer)
         {
             if(time > signalTimer) return true; 
 
@@ -204,7 +208,9 @@ namespace Assets.Scripts.AI
         {
             SwitchMatLight();
 
-            Debug.Log($"Current light is: {Light}");
+            triggerBox.gameObject.SetActive(false);
+            crosswalkColliders.gameObject.SetActive(true);
+            
         }
 
         /// <summary>
@@ -213,8 +219,6 @@ namespace Assets.Scripts.AI
         private void YellowLight()
         {
             SwitchMatLight();
-
-            Debug.Log($"Current light is: {Light}");
         }
 
         /// <summary>
@@ -224,7 +228,8 @@ namespace Assets.Scripts.AI
         {
             SwitchMatLight();
 
-            Debug.Log($"Current light is: {Light}");
+            triggerBox.gameObject.SetActive(true);
+            crosswalkColliders.gameObject.SetActive(false);
         }
 
         /// <summary>
