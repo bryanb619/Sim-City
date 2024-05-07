@@ -53,7 +53,7 @@ A simulação desenvolvida é em 3D e as técnicas de Inteligência Artificial u
 
 ### Diagrama _FSM_ de agentes móveis
 
-![SimCity FSM](./Images/AgentFSM.drawio.png)
+![SimCity FSM](./Images/agent.drawio.png)
 
 #
 ### Diagrama _FSM_ de sinais luminosos
