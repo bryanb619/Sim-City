@@ -269,6 +269,7 @@ namespace Assets.Scripts.AI
 
                         break;
                     }
+                default : { break; }
             }
 
         }
