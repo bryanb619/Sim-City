@@ -111,15 +111,15 @@ Para concluir, o projeto desenvolvido consistiu em implementar uma simulação d
 - Transições do estado dos agentes
 
 
-
-A realização deste projeto consistiu essencialmente em pesquisa própria, conhecimento adquirido por meio de trabalhos e ensino fornecido por professores em diversas unidades curriculares lecionadas na [licenciatura de Videojogos](https://www.ulusofona.pt/lisboa/licenciaturas/videojogos).
-
 ## Referências
 
 
 ### IAs generativas
 O uso de IAs generativas foi usado e neste tópico explicaremos como: 
 - O _Chat Bing_ (_Chat GPT-4_) foi utilizado para tirar dúvidas e explicar itens da [documentação](https://learn.microsoft.com/en-us/dotnet/api/?view=netstandard-2.1) de forma mais clara e simples, erros, exemplos e também para obter de forma mais rápida _links_ com código útil, mas nunca diretamente utilizado no código do projeto.
+
+
+A realização deste projeto consistiu essencialmente em pesquisa própria, conhecimento adquirido por meio de trabalhos e ensino fornecido por professores em diversas unidades curriculares lecionadas na [licenciatura de Videojogos](https://www.ulusofona.pt/lisboa/licenciaturas/videojogos).
 
 ### Código, tutoriais, planeamento utlizados e pesquisa:
 
