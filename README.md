@@ -10,13 +10,17 @@
 
 #### Diogo Freire:
 - Código: 
-  - NavAgentBehaviour
+  - NavAgentBehaviour:
+    - Melhoria do comportamento do Agent
   - TrafficLight
   - AIDirector
 - Scene:
   - _NavMesh Bake_
+  - _NavMesh Link_
   - _Waypoints_ automóveis e peões
-- Relatório
+- Relatório:
+  - Conclusão
+  - Verificação ortográfica
 - _Bug fixing_  
 
 #### Steven Hall: 
@@ -54,6 +58,7 @@
   - Transição entre estado de agentes (automóveis e peões).
   - Obedecer regras de trânsito
   - Estado descontrolo
+  - Abrandar a para evitar colisões
   
 - Simulação Monte Carlo: 
 
@@ -107,9 +112,13 @@ Ao analisar a simulação, é possível observar que os agentes se deslocam para
 
 Para concluir, o projeto desenvolvido consistiu em implementar uma simulação de trânsito com automóveis, peões e sinais luminosos. Os resultados obtidos na simulação foram: 
 
-- Resspeito pelas regras de trânsito
+- Respeito pelas regras de trânsito
+- Uso com sucesso do NavMesh Link para cruzamentos
 - Transições do estado dos agentes
-
+- Alterações de estados os agentes a meio do programa
+- Multiplos locais como destino
+- Escolha ao calhas dos locais para destino
+- Desaparecimento visual do agente, porem este mantem-se na cena
 
 ## Referências
 
