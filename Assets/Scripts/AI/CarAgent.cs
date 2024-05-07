@@ -1,121 +1,245 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using LibGameAI.FSMs;
+using Random = UnityEngine.Random;
+
+
 
 namespace Assets.Scripts.AI
 {
     // Automatically add the NavMeshAgent to the GameObject
     [RequireComponent(typeof(NavMeshAgent))]
-    public class AgentCar : MonoBehaviour
+    public class AgentCar : MonoBehaviour, IAgent
     {   
-        [Tooltip("The maximum speed of the agent in units / sec.")]
-        [Range(0, 100)]
-        [SerializeField] 
-        private float           speed;
+        // ---------------- interface ------------------------------------------
 
-        [Tooltip("The maximum acceleration of the agent in units / sec^2.")]
-        [Range(0, 100)]
-        [SerializeField] 
-        private float           acceleration;
+        public AgentState State { get; private set; }
+        // ---------------------------------------------------------------------
 
-        [Tooltip("The maximum turning speed in degrees per second that the agent can rotate.")]
-        [Range(0, 999)]
-        [SerializeField] 
-        private float           angularSpeed;
+        // Current goal of navigation agent
+        [SerializeField] private GameObject[] goal;
 
-        [Tooltip("Size of the agent. This value influences the size of navmesh agent")]
-        [Range(5, 200)]
-        [SerializeField] 
-        private float           size; 
+        // Reference to the NavMeshAgent component
+        private NavMeshAgent agent;
 
 
-        [Tooltip("Value of the mass.")]
-        [Range(5, 200)]
-        [SerializeField] 
-        private float           mass; 
+        // ------------- FSM ---------------------------------------------------
+
+        private StateMachine _fsm;
+
+        private Color _color;
+
+        private MeshRenderer mesh;
+
+        //----------------------------------------------------------------------
 
 
-        // Reference to NavMeshAgent component
-        private NavMeshAgent    _navAgent;
+        // The root of the decision tree
 
-        private Agent           _agent;
-
-        
-        /// <summary>
-        /// Start is called before the first frame update
-        /// </summary>
-        private void Start()
+        // 
+        private void Awake()
         {
-            GetComponents();
+            if (this.tag == "Pedestrian")
+                goal = GameObject.FindGameObjectsWithTag("Dest");
+            else
+                goal = GameObject.FindGameObjectsWithTag("CarDest");
 
-            SetAgent();
+            // Get reference to the NavMeshAgent component
+            agent = GetComponent<NavMeshAgent>();
+
+            MeshRenderer mesh = GetComponent<MeshRenderer>();
+    
+
+        }
+
+
+        // Start is called before the first frame update
+        private void Start()
+        {   
+
+            // --------------------- STATES ------------------------------------
+
+
+            State IdleState     = new State("Iddle",Idle, null, null);
+            State MovingState   = new State("Moving",Move, null, null);
+            State AccidentState = new State("Accident",Accident, null, null);
+            State CrazyState    = new State("Crazy", Crazy, null, null);
+
+            // ------------------- Color ---------------------------------------
+             _color = mesh.material.color;
+           
+
+            // ------------------------ TRANSITIONS ----------------------------
+
+
+            // IDLE => Move
+            IdleState.AddTransition(new Transition(
+                () => State == AgentState.Move,
+                null, MovingState));
+
+
+            // ----------------------------------------
+
+            // Move => Idle
+            MovingState.AddTransition(new Transition(
+                () => State == AgentState.Idle,
+                null, IdleState));
+
+            // Move => Crazy
+            MovingState.AddTransition(new Transition(
+                () => State == AgentState.Crazy,
+                null, CrazyState));
+
+            // Move => Accident
+            MovingState.AddTransition(new Transition(
+                () => State == AgentState.Idle,
+                null, IdleState));
+
+            // ---------------------------------------
+
+            // Crazy => Accident
+            CrazyState.AddTransition(new Transition(
+                () => State == AgentState.Accident,
+                null, AccidentState));
+
+            CrazyState.AddTransition(new Transition(
+                () => State == AgentState.Move,
+                null, MovingState));
 
 
 
-            //_navAgent.SetDestination(Target.position);
+            _fsm = new StateMachine(MovingState);
+            //------------------------------------------------------------------
+
             
+            // Set initial agent goal
+            agent.SetDestination(
+                goal[Random.Range(0, goal.Length)].transform.position);
+
+
         }
 
 
 
-        /// <summary>
-        /// Update is called once per frame
-        /// </summary>
+        // Run the decision tree and execute the returned action
         private void Update()
         {
+
+            //----------------- Update FSM -------------------------------------
+            Action actions = _fsm.Update();
+            actions?.Invoke();
+
+            //------------------------------------------------------------------
+         
+        }
+
+
+        // Method called when agent collides with something
+        private void OnTriggerEnter(Collider other)
+        {
+           
+            // Did agent collide with goal?
+            if (other.name == "Goal")
+                // If so, update destination (let goal reposition itself first)
+
+                // MUST ADD INT POS
+                Invoke("Move", 0.1f);
+        }
+
+
+
+
+        // ----------------------- ACTIONS -------------------------------------
+
+#region  Idle & Move
+        private void Idle()
+        {
+
+            mesh.enabled = false;
+            agent.enabled = false;
+        }
+
+        private void Move()
+        {
+            mesh.enabled = true;
+            agent.enabled = true;
+
+            int pos = Random.Range(0, goal.Length);
+
+            UpdateDestination(pos);
             
         }
 
-        /// <summary>
-        /// Sets the agent type according to the AgentType enumerator defined 
-        /// in the inspector with a dropdown menu.
-        /// Agent type can be:
-        /// 1. Vehicle
-        /// 2. Pedestrian
-        /// 3. TrafficLight
-        /// </summary>
-        private void SetAgent()
+#endregion
+
+#region  Crazy
+        private void Crazy()
         {
+          
+            float time = Random.Range(10F, 60F);
+            StartCoroutine(HitFlash(time));
 
-            // setting car class properties
-            _agent = new Car(speed, acceleration, size, mass);
+        }
+
+        // receive time of flash 
+        private IEnumerator HitFlash(float time)
+        {
+            int timer = 0; 
+
+            while (true)
+            {
+                timer ++;
 
 
-            // Setting navmesh agent properties
-            _navAgent.speed         = (_agent as Car).Speed;
-            _navAgent.acceleration  = (_agent as Car).Acceleration;
-            _navAgent.angularSpeed  = (_agent as Car).AngularSpeed;
-            _navAgent.radius        = (_agent as Car).Size;
+                if(timer< time)
+                {
+                    mesh.material.color = Color.yellow;
+                    yield return new WaitForSeconds(0.2f);
+                    mesh.material.color = _color;
+                }
+              
+            }
             
-               
-            Debug.Log($"{_agent}");
+        }
+
+#endregion
+
+
+#region Accident Actions
+        private void Accident()
+        {
+            SetAgentMovement(true);
+            mesh.material.color = Color.red;
+        
+        }
+
+      
+#endregion
+
+        // ---------------------------------------------------------------------
+
+
+        // Update destination
+        private void UpdateDestination(int pos)
+        {
+            // Set destination to current goal position
+            agent.SetDestination(goal[pos].transform.position);
         }
 
 
-        /// <summary>
-        /// Method attempts to get the NavMeshAgent component
-        /// 
-        /// </summary>
-        private void GetComponents()
+        private void SetAgentMovement(bool stop)
         {
-            try
+            if(stop)
             {
-                _navAgent = GetComponent<NavMeshAgent>();
-
+                agent.speed = 0; 
             }
-            catch (System.Exception e)
-            {
-                Debug.LogError("component not found: " + e.Message);
+            else
+            {   
+                // TODO ADD A default speed
+                agent.speed = 3.5f;
             }
-        }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="destination"></param>
-        /// <param name="target"></param>
-        private void SetDestination(Vector3 destination, Transform target)
-        {
 
         }
     }
