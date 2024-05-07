@@ -45268,6 +45268,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 638019810}
     - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: initialLightState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _currentLightState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
       propertyPath: crosswalkColliders
       value: 
       objectReference: {fileID: 1680875542}

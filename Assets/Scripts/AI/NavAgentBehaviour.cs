@@ -74,7 +74,7 @@ namespace Assets.Scripts.AI
             // IDLE => Move
             IdleState.AddTransition(new Transition(
                 () => State == AgentState.Move,
-                null, MovingState));
+                () => Move(), MovingState));
 
 
             // ----------------------------------------
@@ -82,33 +82,35 @@ namespace Assets.Scripts.AI
             // Move => Idle
             MovingState.AddTransition(new Transition(
                 () => State == AgentState.Idle,
-                null, IdleState));
+                () => Idle(), 
+                IdleState));
             // Move => Crazy
             MovingState.AddTransition(new Transition(
                 () => State == AgentState.Crazy,
-                null, CrazyState));
+                () => Crazy(), 
+                CrazyState));
 
             // Move => Accident
             MovingState.AddTransition(new Transition(
                 () => State == AgentState.Idle,
-                null, IdleState));
+                () => Accident(), IdleState));
 
             // ---------------------------------------
 
             // Crazy => Accident
             CrazyState.AddTransition(new Transition(
                 () => State == AgentState.Accident,
-                null, AccidentState));
+                () => Accident(), AccidentState));
 
             // Crazy => Move
             CrazyState.AddTransition(new Transition(
                 () => State == AgentState.Move,
-                null, MovingState));
+                () => Move(), MovingState));
 
             // Crazy => Idle
             CrazyState.AddTransition(new Transition(
                 () => State == AgentState.Idle,
-                null, MovingState));
+                () => Idle(), MovingState));
 
 
             _fsm = new StateMachine(MovingState);
@@ -117,7 +119,6 @@ namespace Assets.Scripts.AI
             // Set initial agent goal
             agent.SetDestination(
                 goal[Random.Range(0, goal.Length)].transform.position);
-
 
         }
 
@@ -145,21 +146,28 @@ namespace Assets.Scripts.AI
 
         private void OnTriggerStay(Collider other)
         {
-            if (other.CompareTag("Vehicle") && State != AgentState.Crazy)
-                agent.speed = Mathf.Lerp(agent.speed, 
-                                        other.GetComponent<NavMeshAgent>().speed, 
-                                        Time.deltaTime);
-            else if (other.CompareTag("Pedestrian") || other.CompareTag("RedLight"))
+            if (State != AgentState.Crazy)
             {
-                agent.speed = Mathf.Lerp(agent.speed, 0, Time.deltaTime * 50);
+                if (other.CompareTag("Vehicle"))
+                    agent.speed = Mathf.Lerp(agent.speed, 
+                                            other.GetComponent<NavMeshAgent>().speed, 
+                                            Time.deltaTime);
+                else if (other.CompareTag("Pedestrian") || other.CompareTag("RedLight"))
+                {
+                    agent.speed = Mathf.Lerp(agent.speed, 0, Time.deltaTime * 50);
+                }
             }
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if(other.CompareTag("Vehicle") || other.CompareTag("Pedestrian"))
+            if (State != AgentState.Crazy)
             {
-                agent.speed = initialAgentSpeed;
+                if(other.CompareTag("Vehicle") || other.CompareTag("Pedestrian")
+                    || other.CompareTag("RedLight"))
+                {
+                    agent.speed = initialAgentSpeed;
+                }
             }
         }
 
@@ -173,14 +181,21 @@ namespace Assets.Scripts.AI
         {
             SetAgentMovement(true);
             mesh.enabled = false;
-            agent.enabled = false;
+            if (agent.GetComponent<BoxCollider>() != null)
+                agent.GetComponent<BoxCollider>().enabled = false;
+            else
+                agent.GetComponent<CapsuleCollider>().enabled = false;
         }
 
         private void Move()
         {
             SetAgentMovement(false);
+            agent.speed = initialAgentSpeed;
             mesh.enabled = true;
-            agent.enabled = true;
+            if (agent.GetComponent<BoxCollider>() != null)
+                agent.GetComponent<BoxCollider>().enabled = true;
+            else
+                agent.GetComponent<CapsuleCollider>().enabled = true;
 
             int pos = Random.Range(0, goal.Length);
 
@@ -195,6 +210,7 @@ namespace Assets.Scripts.AI
         {
           
             float time = Random.Range(10F, 60F);
+            agent.speed *= 3;
             StartCoroutine(HitFlash(time));
 
         }
