@@ -51,10 +51,15 @@ Um importante trabalho de referência para a realização deste projeto é o _Si
 
 A simulação desenvolvida é em 3D e as técnicas de Inteligência Artificial utilizadas foram, respectivamente, _FSM's_ (uma biblioteca essencial para a realização de transições entre estados) e _A* (Unity NavMesh)_, que é essencial para o _Pathfinding_ de agentes como carros e peões.
 
-
 ### Diagrama _FSM_ de agentes móveis
 
 ![SimCity FSM](./Images/AgentFSM.drawio.png)
+
+#
+### Diagrama _FSM_ de sinais luminosos
+
+![SimCity FSM](./Images/traffic.drawio.png)
+
 
 
 
