@@ -90,7 +90,7 @@ classDiagram
     ITrafficLight          <|.. TrafficLight
     LightState             <--  TrafficLight
     NavAgentBehaviour      --*  AIDirector           
-
+    UI                     <..  AIDirector
 
     class ITrafficLight
     <<interface>> ITrafficLight
