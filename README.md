@@ -16,6 +16,7 @@
 - Scene:
   - _NavMesh Bake_
   - _Waypoints_ automóveis e peões
+- Relatório
 - _Bug fixing_  
 
 #### Steven Hall: 
@@ -99,11 +100,15 @@ classDiagram
 ```
 
 ## Resultados e discussão
+Ao analisar a simulação, é possível observar que os agentes se deslocam para os seus alvos. Os semáforos (sinal luminoso) podem impedi-los de avançar e, se houver uma passadeira, os pedestres podem prosseguir, caso esta seja a situação na zona da simulação.
+
 
 ## Conclusões
 
-Para concluir, o projeto desenvolvido consistiu 
+Para concluir, o projeto desenvolvido consistiu em implementar uma simulação de trânsito com automóveis, peões e sinais luminosos. Os resultados obtidos na simulação foram: 
 
+- Resspeito pelas regras de trânsito
+- Transições do estado dos agentes
 
 
 
