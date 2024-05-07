@@ -37,7 +37,7 @@ namespace Assets.Scripts.AI
         {
             
             // Set initial agent goal
-            agent.SetDestination(goal[0].transform.position);
+            agent.SetDestination(goal[Random.Range(0, goal.Length)].transform.position);
 
 
             RandomDecisionBehaviour rdb = new RandomDecisionBehaviour(
