@@ -7,14 +7,22 @@
 - Steven Hall   2200173
   
 ### Report:
-#### Diogo Freire:
-- _Bug fixing_  
 
+#### Diogo Freire:
+- Código: 
+  - NavAgentBehaviour
+  - TrafficLight
+  - AIDirector
+- Scene:
+  - _NavMesh Bake_
+  - _Waypoits_ automóveis e peões
+- _Bug fixing_  
 
 #### Steven Hall: 
 - Código: 
   - Implementação de FSM
-  - IAgentn interface
+  - AgentState enum
+  - IAgent interface
   - TrafficLight System:   
     - LightState enum
     - TrafficLight class
@@ -22,24 +30,21 @@
   - UI
   - AIDirector
 - Scene
-  - Posicionamento de sinais de trânsito
+  - Posicionamento de sinais de trânsito e _colliders_ 
 - Relatório:
   - UML
-  -  
-  
+  - Diagramas
 - _Bug fixing_
 
 
 ## Introdução
 
-- O projeto desenvolvido constitui uma Simulação de automóveis e peões numa cidade fictícia. Desenvolvido utilizando o motor de jogo [_Unity Engine_ 2022.3.1 _LTS_](https://unity.com/releases/editor/whats-new/2022.3.1#release-notes) 
- Objetivo principal foi demonstrar as técnicas de Inteligencia artificial num _sim city_ não jogável com automóveis, peões e sinais de trânsito (sinalização luminosa). 
-
+- O projeto desenvolvido consiste em uma simulação de automóveis e pedestres em uma cidade fictícia. Foi desenvolvido utilizando o motor de jogo [_Unity Engine_ 2022.3.1 _LTS_](https://unity.com/releases/editor/whats-new/2022.3.1#release-notes). O objetivo principal foi demonstrar as técnicas de Inteligência Artificial em uma espécie de _SimCity_ não jogável, com automóveis, pedestres e sinais de trânsito (sinalização luminosa).
 
 
 
 ## Estudo da Arte
-Um importante trabalho de referência para a realização deste projeto é o _SimCity_, 
+Um importante referencial para a realização deste projeto é o famoso jogo _SimCity_, que possui diversas edições. Este jogo apresenta uma inteligência artificial bastante interessante, incluindo comboios, veículos elétricos, autocarros, alguns outros veículos e peões.
 
 
 ![SimCity GIF](./Images/traffic-small.gif)
@@ -65,8 +70,6 @@ A simulação desenvolvida é em 3D e as técnicas de Inteligência Artificial u
 
 
 
-
-
 ### Diagrama Geral do Projeto em _UML_
 
 ```mermaid
@@ -75,6 +78,7 @@ classDiagram
 
     ITrafficLight          <|.. TrafficLight
     LightState             <--  TrafficLight
+    NavAgentBehaviour      --*  AIDirector           
 
 
     class ITrafficLight
@@ -84,12 +88,6 @@ classDiagram
     <<enumeration>> LightState 
 
 ```
-
-
-
-
-
-
 
 ## Resultados e discussão
 
