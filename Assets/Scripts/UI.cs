@@ -10,11 +10,21 @@ namespace Assets.Scripts.AI
 
         [Tooltip("Ref to UI. Can be null. If Null it will automatically " 
         +"find the first Image component in the children.")]
-        [SerializeField]    private GameObject      _ui;
+        [SerializeField] private GameObject      _ui;
 
         // Key to toggle the UI on/off
         [Tooltip("Key to toggle the UI on/off")]
-        [SerializeField]    private KeyCode         _key;
+        [SerializeField] private KeyCode         _key;
+
+
+        [SerializeField] private Slider         _maxCarSlider;
+        [SerializeField] private Slider         _maxPedSlider;
+        [SerializeField] private Slider         _maxCarTimeStoped;
+        [SerializeField] private Slider         _maxPedTimeStopped;
+        [SerializeField] private Slider         _maxTimeInAccident;
+        [SerializeField] private Slider         _maxTimeInCrazy;
+
+
 
         /// <summary>
         /// Start is called before the first frame update.
@@ -22,10 +32,7 @@ namespace Assets.Scripts.AI
         /// </summary>
         private void Start()
         {
-            if (_ui == null)
-            {
-                _ui =  GetComponentInChildren<Image>().gameObject;
-            }
+            _ui =  GetComponentInChildren<Image>().gameObject;
         }
 
 
