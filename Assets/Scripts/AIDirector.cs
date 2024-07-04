@@ -25,9 +25,6 @@ public class AIDirector : MonoBehaviour
     private void Start()
     {
 
-        //navAgent = new NavAgentBehaviour[_ui.]
-        // car spawn 
-    
         SimStar = true;
 
         print("Simulation Started");
