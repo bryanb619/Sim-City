@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using Assets.Scripts.AI;
 using UnityEngine;
 
@@ -11,6 +9,14 @@ public class AIDirector : MonoBehaviour
 
     private NavAgentBehaviour[] navAgent;
 
+    [SerializeField] private UI _ui;
+
+    [SerializeField] private GameObject _car;  
+
+    [SerializeField] private GameObject _ped;
+
+    public bool SimStar { get; private set; } = false; 
+
 
     /// <summary>
     /// Start is called before the first frame update
@@ -18,12 +24,34 @@ public class AIDirector : MonoBehaviour
     private void Start()
     {
 
-        for(int i = 0; _agents.Length < i; i++)
-        {
-            Instantiate(_agents[i], transform.position, transform.rotation);
+        //navAgent = new NavAgentBehaviour[_ui.]
+        // car spawn 
+        SpawnAgents(_car, _ui.MaxCars);
 
-            navAgent[i] = GetComponent<NavAgentBehaviour>();
+        SimStar = true;
+        
+        print("Simulation Started");
+
+        // ped spawn
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="objAI"></param>
+    private void SpawnAgents(GameObject objAI, int quantity)
+    {   
+
+        // loop
+        for(int i = 0; quantity < i; i++)
+        {
+            Instantiate(objAI, transform.position, transform.rotation);
+
+            _agents[i] = objAI;
+
+            navAgent[i] = _agents[i].GetComponent<NavAgentBehaviour>();
         }
+
     }
 
 
@@ -33,6 +61,7 @@ public class AIDirector : MonoBehaviour
     public void ActivateCrazyAgent()
     {
         
+        /*
         int i = Random.Range(0, _agents.Length);
 
         
@@ -40,5 +69,6 @@ public class AIDirector : MonoBehaviour
         {
             navAgent[i].State = AgentState.Crazy;
         }
+        */
     }
 }
