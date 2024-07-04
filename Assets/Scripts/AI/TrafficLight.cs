@@ -16,9 +16,7 @@ namespace Assets.Scripts.AI
     public class TrafficLight : MonoBehaviour, ITrafficLight
     {
 
-        [SerializeField]
-        public LightState Light { get; private set; }
-
+#region Variables
 
         [Header("Green light timer")]
         [Range(0, 50f)]
@@ -45,6 +43,11 @@ namespace Assets.Scripts.AI
         [SerializeField]
         private LightState initialLightState;
 
+#endregion
+
+        [SerializeField]
+        public LightState Light { get; private set; }
+
 # if UNITY_EDITOR 
 
         // -------------------- DEBUG/TEST --------------------------------------
@@ -70,38 +73,25 @@ namespace Assets.Scripts.AI
 
             // -------------------- States -------------------------------------
 
-            State yellowState = new State("Yellow", YellowLight, null, null);
             State redState = new State("Red", RedLight, null, null);
             State greenState = new State("Green", GreenLight, null, null);
 
 
             List<State> states = new List<State>
             {
-                yellowState, redState, greenState
+                redState, greenState
             };
 
 
             // -------------------- Transitions --------------------------------
-
-            greenState.AddTransition(new Transition(
-                () => Light == LightState.yellow,
-                null, yellowState));
-
-            yellowState.AddTransition(new Transition(
-                () => Light == LightState.red,
-                null, redState));
 
             redState.AddTransition(new Transition(
                 () => Light == LightState.green,
                 null, greenState));
             
 
-            if (initialLightState == LightState.yellow)
-            {
-                Light = LightState.yellow;
-                _fsm = new StateMachine(yellowState);
-            }
-            else if (initialLightState == LightState.red)
+           
+            if (initialLightState == LightState.red)
             {
                 Light = LightState.red;
                 _fsm = new StateMachine(redState);
@@ -153,28 +143,13 @@ namespace Assets.Scripts.AI
                             {
 
 # if UNITY_EDITOR 
-                                _currentLightState = LightState.yellow;
+                                _currentLightState = LightState.green;
 # endif
 
-                                Light = LightState.yellow;
+                                Light = LightState.red;
                                 time = 0; 
                             }
                             
-                            break;
-                        }
-
-                    case LightState.yellow:
-                        {
-                            if(IsGreaterThan(_yellowTime)) 
-                            {
-# if UNITY_EDITOR 
-                                _currentLightState = LightState.red;
-# endif
-
-                                Light = LightState.red; 
-                                time = 0; 
-                            }
-
                             break;
                         }
 
@@ -227,14 +202,6 @@ namespace Assets.Scripts.AI
         /// <summary>
         /// 
         /// </summary>
-        private void YellowLight()
-        {
-            SwitchMatLight();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
         private void RedLight()
         {
             SwitchMatLight();
@@ -245,8 +212,7 @@ namespace Assets.Scripts.AI
 
         /// <summary>
         /// 0 = Green
-        /// 1 = Yellow
-        /// 2 = Red
+        /// 1 = Red
         /// </summary>
         private void SwitchMatLight()
         {   
@@ -264,17 +230,6 @@ namespace Assets.Scripts.AI
                         break;
                     }
 
-                case LightState.yellow:
-                    {
-
-                        _lightMat[0].SetActive(false);
-                        _lightMat[1].SetActive(true);
-
-                        _lightMat[2].SetActive(false);
-
-                        break;
-                    }
-                    
                 case LightState.red:
                     {
 
