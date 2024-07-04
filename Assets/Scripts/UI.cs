@@ -78,9 +78,10 @@ namespace Assets.Scripts.AI
         /// <summary>
         /// Start is called before the first frame update
         /// </summary>
-        private void Start()
+        private void Awake()
         {   
             _ui.SetActive(true);
+            _aiDirector.SetActive(false);
 
             // get AIDirector component and pass it to aIDirector
             aIDirector = _aiDirector.GetComponent<AIDirector>();
@@ -93,13 +94,14 @@ namespace Assets.Scripts.AI
         {
             _ui.SetActive(false);
             _aiDirector.SetActive(true);
-            
+
             if(!aIDirector.SimStar)
             {
                 
             }
 
         }
+
     }
 }
 // -----------------------------------------------------------------------------
