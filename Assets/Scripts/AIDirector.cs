@@ -1,19 +1,20 @@
+using System.Collections.Generic;
 using Assets.Scripts.AI;
 using UnityEngine;
 
 public class AIDirector : MonoBehaviour
 {
 
-    [SerializeField]
-    private GameObject[] _agents;
-
-    private NavAgentBehaviour[] navAgent;
-
     [SerializeField] private UI _ui;
 
     [SerializeField] private GameObject _car;  
 
     [SerializeField] private GameObject _ped;
+
+    private List<GameObject> _carList = new List<GameObject>();
+
+    private List<GameObject> _pedList = new List<GameObject>();
+
 
     public bool SimStar { get; private set; } = false; 
 
@@ -26,11 +27,14 @@ public class AIDirector : MonoBehaviour
 
         //navAgent = new NavAgentBehaviour[_ui.]
         // car spawn 
-        SpawnAgents(_car, _ui.MaxCars);
-
+    
         SimStar = true;
-        
+
         print("Simulation Started");
+
+        print(_ui.MaxCars);
+
+        SpawnAgents(_car, _ui.MaxCars);
 
         // ped spawn
     }
@@ -43,13 +47,16 @@ public class AIDirector : MonoBehaviour
     {   
 
         // loop
-        for(int i = 0; quantity < i; i++)
+        for(int i = 0;  i < quantity ; i++)
         {
             Instantiate(objAI, transform.position, transform.rotation);
 
-            _agents[i] = objAI;
+            print("Agent " + i + " spawned");
 
-            navAgent[i] = _agents[i].GetComponent<NavAgentBehaviour>();
+            if (objAI == _car) { _carList.Add(objAI); }
+
+            else { _pedList.Add(objAI); }
+            
         }
 
     }
