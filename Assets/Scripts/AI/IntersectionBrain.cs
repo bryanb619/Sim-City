@@ -99,19 +99,22 @@ namespace Assets.Scripts.AI
 
                     foreach (TrafficLight trafficLight in controlPoints)
                     {
-                        trafficLight.SwapLightState();
+                        if(trafficLight != null)
+                            trafficLight.SwapLightState();
                     }
 
                     time = 0;
                 }
 
-                // wait 1 second
-                yield return new WaitForSeconds(1);
-
 #if UNITY_EDITOR // DEBUG TIME
 
                 print(time);
 #endif
+
+                // wait 1 second
+                yield return new WaitForSeconds(1);
+
+
 
 
             }
