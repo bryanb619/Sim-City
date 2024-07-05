@@ -123,14 +123,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _greenTime: 10
-  _yellowTime: 10
   _redTime: 10
   _lightMat:
   - {fileID: 6379820491965556027}
   - {fileID: 6370129222505254832}
   - {fileID: 8429342728465972190}
   triggerBox: {fileID: 0}
-  _currentLightState: 0
+  crosswalkColliders: {fileID: 0}
+  initialLightState: 1
 --- !u!1 &6370129222505254832
 GameObject:
   m_ObjectHideFlags: 0
