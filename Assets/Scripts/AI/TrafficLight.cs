@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using LibGameAI.FSMs;
@@ -15,19 +14,8 @@ namespace Assets.Scripts.AI
     public class TrafficLight : MonoBehaviour, ITrafficLight
     {
 
-#region Variables
-
-        [Header("Green light timer")]
-        [Range(0, 50f)]
-        [SerializeField] private int _greenTime = 5;
-
-
-        [Header("Red light timer")]
-        [Range(0, 50f)]
-        [SerializeField] private int _redTime = 10;
-
+        #region Variables
         private StateMachine _fsm;
-        private Action actions;
 
         [SerializeField]
         private GameObject[] _lightMat;
@@ -35,12 +23,8 @@ namespace Assets.Scripts.AI
         [SerializeField]
         private GameObject triggerBox, crosswalkColliders;
 
-        private float time = 0; 
-
-        [SerializeField]
-        private LightState initialLightState;
-
-#endregion
+        //private float time = 0;
+        #endregion
 
         public LightState Light { get; private set; }
 
@@ -56,16 +40,18 @@ namespace Assets.Scripts.AI
         {
 
             //print(i);
-
+#region  FSM Initialization
 
             // -------------------- States -------------------------------------
 
-            State redState = new State("Red", 
-            RedLight, null, ()=> Debug.Log("left red Light"));
+            State redState = new State("Red",
+                RedLight, null,
+                () => Debug.Log("left red Light"));
 
 
             State greenState = new State("Green",
-             GreenLight, null, ()=> Debug.Log("left green Light"));
+                GreenLight, null,
+                () => Debug.Log("left green Light"));
 
 
             List<State> states = new List<State>
@@ -78,15 +64,15 @@ namespace Assets.Scripts.AI
 
             redState.AddTransition(new Transition(
                 () => Light == LightState.green,
-                ()=> Debug.Log("enter green Light"),
+                () => Debug.Log("enter green Light"),
                  greenState));
 
 
             greenState.AddTransition(new Transition(
-                () => Light == LightState.red, 
-                ()=> Debug.Log("enter red Light"), 
+                () => Light == LightState.red,
+                () => Debug.Log("enter red Light"),
                 redState));
-            
+
             /*
 
             if (initialLightState == LightState.red)
@@ -102,7 +88,8 @@ namespace Assets.Scripts.AI
             */
             _fsm = new StateMachine(redState);
 
-            StartCoroutine(UpdateLightState());
+#endregion
+            //StartCoroutine(UpdateLightState());
         }
 
 
@@ -112,74 +99,97 @@ namespace Assets.Scripts.AI
         /// </summary>
         private void Update()
         {
-            actions = _fsm.Update();
+            Action actions = _fsm.Update();
             actions?.Invoke();
         }
 
-
-        /// <summary>
-        /// Coroutine updates time, checks and changes the singal states while 
-        /// also reseting the time
-        /// </summary>
-        /// <returns>
-        ///  waits for seconds
-        /// </returns>
-        private IEnumerator UpdateLightState()
+#region Swap Light State
+        public void SwapLightState()
         {
-            while (true)
+            
+            switch (Light)
             {
-                time++;
+                case LightState.green:
+                    {
+                        Light = LightState.red;
+                        break;
+                    }
 
-# if UNITY_EDITOR // DEBUG TIME
+                case LightState.red:
+                    {
+                        Light = LightState.green;
+                        break;
+                    }
+            }
 
-               // print(time);
-# endif
-
-                switch (Light)
+        }
+#endregion
+        /*
+                /// <summary>
+                /// Coroutine updates time, checks and changes the singal states while 
+                /// also reseting the time
+                /// </summary>
+                /// <returns>
+                ///  waits for seconds
+                /// </returns>
+                private IEnumerator UpdateLightState()
                 {
-                    case LightState.green:
-                        {
-                            if(IsGreaterThan(_greenTime)) 
-                            {
+                    while (true)
+                    {
+                        time++;
 
-                                Light = LightState.red;
-                                time = 0; 
-                            }
-                            
-                            break;
+        # if UNITY_EDITOR // DEBUG TIME
+
+                       // print(time);
+        # endif
+
+                        switch (Light)
+                        {
+                            case LightState.green:
+                                {
+                                    if(IsGreaterThan(_greenTime)) 
+                                    {
+
+                                        Light = LightState.red;
+                                        time = 0; 
+                                    }
+
+                                    break;
+                                }
+
+
+                            case LightState.red:
+                                {
+                                    if(IsGreaterThan(_redTime)) 
+                                    {
+
+                                        Light = LightState.green; 
+                                        time = 0; 
+                                    }
+
+                                    break;
+                                }
                         }
 
-
-                    case LightState.red:
-                        {
-                            if(IsGreaterThan(_redTime)) 
-                            {
-
-                                Light = LightState.green; 
-                                time = 0; 
-                            }
-
-                            break;
-                        }
+                        yield return new WaitForSeconds(1);
+                    }
                 }
 
-                yield return new WaitForSeconds(1);
-            }
-        }
 
-        /// <summary>
-        /// Checks if time is greater than a passed value
-        /// </summary>
-        /// <returns>
-        /// Returns true if time is greater
-        /// Returns false if time is not greater
-        /// </returns>
-        private bool IsGreaterThan(int signalTimer)
-        {
-            if(time > signalTimer) return true; 
+                /// <summary>
+                /// Checks if time is greater than a passed value
+                /// </summary>
+                /// <returns>
+                /// Returns true if time is greater
+                /// Returns false if time is not greater
+                /// </returns>
+                private bool IsGreaterThan(int signalTimer)
+                {
+                    if(time > signalTimer) return true; 
 
-            else return false; 
-        }
+                    else return false; 
+                }
+                */
 
 
         /// <summary>
@@ -191,7 +201,7 @@ namespace Assets.Scripts.AI
 
             triggerBox.gameObject.SetActive(false);
             crosswalkColliders.gameObject.SetActive(true);
-            
+
         }
 
         /// <summary>
@@ -210,13 +220,13 @@ namespace Assets.Scripts.AI
         /// 1 = Red
         /// </summary>
         private void SwitchMatLight()
-        {   
+        {
 
             switch (Light)
             {
                 case LightState.green:
                     {
-                        
+
                         _lightMat[0].SetActive(true);
                         _lightMat[1].SetActive(false);
 
@@ -233,7 +243,7 @@ namespace Assets.Scripts.AI
                         break;
                     }
 
-                default : { break; }
+                default: { break; }
             }
 
         }
