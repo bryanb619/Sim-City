@@ -82,9 +82,12 @@ namespace Assets.Scripts.AI
 
 
         /// <summary>
-        /// 
+        /// Coroutine updates time, checks and changes the singal states while 
+        /// also reseting the time
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        ///  waits for seconds
+        /// </returns>
         private IEnumerator UpdateLightState()
         {
             int time = 0;
