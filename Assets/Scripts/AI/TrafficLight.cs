@@ -103,10 +103,19 @@ namespace Assets.Scripts.AI
             actions?.Invoke();
         }
 
-#region Swap Light State
+
+
+
+#region Light State Control
+
+        public void SetInitialState(LightState state)
+        {
+            Light = state;
+        }
+
         public void SwapLightState()
         {
-            
+
             switch (Light)
             {
                 case LightState.green:
