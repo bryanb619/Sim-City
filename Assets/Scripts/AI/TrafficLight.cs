@@ -113,6 +113,8 @@ namespace Assets.Scripts.AI
             Light = state;
         }
 
+
+
         public void SwapLightState()
         {
 
@@ -208,8 +210,8 @@ namespace Assets.Scripts.AI
         {
             SwitchMatLight();
 
-            triggerBox.gameObject.SetActive(false);
-            crosswalkColliders.gameObject.SetActive(true);
+           // triggerBox.gameObject.SetActive(false);
+            //crosswalkColliders.gameObject.SetActive(true);
 
         }
 
@@ -220,8 +222,8 @@ namespace Assets.Scripts.AI
         {
             SwitchMatLight();
 
-            triggerBox.gameObject.SetActive(true);
-            crosswalkColliders.gameObject.SetActive(false);
+            //triggerBox.gameObject.SetActive(true);
+            //crosswalkColliders.gameObject.SetActive(false);
         }
 
         /// <summary>
