@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AIDirector : MonoBehaviour
 {
-
     [SerializeField] private UI _ui;
 
     [SerializeField] private GameObject _car;  
@@ -14,7 +13,6 @@ public class AIDirector : MonoBehaviour
     private List<GameObject> _carList = new List<GameObject>();
 
     private List<GameObject> _pedList = new List<GameObject>();
-
 
     public bool SimStar { get; private set; } = false; 
 
