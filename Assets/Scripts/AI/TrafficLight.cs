@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 using LibGameAI.FSMs;
 
@@ -14,7 +13,7 @@ namespace Assets.Scripts.AI
     public class TrafficLight : MonoBehaviour, ITrafficLight
     {
 
-        #region Variables
+#region Variables
         private StateMachine _fsm;
 
         [SerializeField]
@@ -23,8 +22,7 @@ namespace Assets.Scripts.AI
         [SerializeField]
         private GameObject triggerBox, crosswalkColliders;
 
-        //private float time = 0;
-        #endregion
+#endregion
 
         public LightState Light { get; private set; }
 
@@ -39,7 +37,6 @@ namespace Assets.Scripts.AI
         private void Start()
         {
 
-            //print(i);
 #region  FSM Initialization
 
             // -------------------- States -------------------------------------
@@ -53,11 +50,6 @@ namespace Assets.Scripts.AI
                 GreenLight, null,
                 () => Debug.Log("left green Light"));
 
-
-            List<State> states = new List<State>
-            {
-                redState, greenState
-            };
 
 
             // -------------------- Transitions --------------------------------
@@ -73,24 +65,11 @@ namespace Assets.Scripts.AI
                 () => Debug.Log("enter red Light"),
                 redState));
 
-            /*
 
-            if (initialLightState == LightState.red)
-            {
-                Light = LightState.red;
-                _fsm = new StateMachine(redState);
-            }
-            else if (initialLightState == LightState.green)
-            {
-                Light = LightState.green;
-                _fsm = new StateMachine(greenState);
-            }
-            */
             _fsm = new StateMachine(redState);
 
-#endregion
-            //StartCoroutine(UpdateLightState());
         }
+#endregion
 
 
         /// <summary>
@@ -104,8 +83,6 @@ namespace Assets.Scripts.AI
         }
 
 
-
-
 #region Light State Control
 
         public void SetInitialState(LightState state)
@@ -114,7 +91,9 @@ namespace Assets.Scripts.AI
         }
 
 
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void SwapLightState()
         {
 
@@ -135,74 +114,9 @@ namespace Assets.Scripts.AI
 
         }
 #endregion
-        /*
-                /// <summary>
-                /// Coroutine updates time, checks and changes the singal states while 
-                /// also reseting the time
-                /// </summary>
-                /// <returns>
-                ///  waits for seconds
-                /// </returns>
-                private IEnumerator UpdateLightState()
-                {
-                    while (true)
-                    {
-                        time++;
-
-        # if UNITY_EDITOR // DEBUG TIME
-
-                       // print(time);
-        # endif
-
-                        switch (Light)
-                        {
-                            case LightState.green:
-                                {
-                                    if(IsGreaterThan(_greenTime)) 
-                                    {
-
-                                        Light = LightState.red;
-                                        time = 0; 
-                                    }
-
-                                    break;
-                                }
 
 
-                            case LightState.red:
-                                {
-                                    if(IsGreaterThan(_redTime)) 
-                                    {
-
-                                        Light = LightState.green; 
-                                        time = 0; 
-                                    }
-
-                                    break;
-                                }
-                        }
-
-                        yield return new WaitForSeconds(1);
-                    }
-                }
-
-
-                /// <summary>
-                /// Checks if time is greater than a passed value
-                /// </summary>
-                /// <returns>
-                /// Returns true if time is greater
-                /// Returns false if time is not greater
-                /// </returns>
-                private bool IsGreaterThan(int signalTimer)
-                {
-                    if(time > signalTimer) return true; 
-
-                    else return false; 
-                }
-                */
-
-
+#region  Action Methods
         /// <summary>
         /// 
         /// </summary>
@@ -226,6 +140,11 @@ namespace Assets.Scripts.AI
             //crosswalkColliders.gameObject.SetActive(false);
         }
 
+#endregion
+    
+
+#region Visual Light change
+
         /// <summary>
         /// 0 = Green
         /// 1 = Red
@@ -241,13 +160,11 @@ namespace Assets.Scripts.AI
                         _lightMat[0].SetActive(true);
                         _lightMat[1].SetActive(false);
 
-
                         break;
                     }
 
                 case LightState.red:
                     {
-
                         _lightMat[0].SetActive(false);
                         _lightMat[1].SetActive(true);
 
@@ -258,6 +175,8 @@ namespace Assets.Scripts.AI
             }
 
         }
+
+#endregion
     }
 }
 
