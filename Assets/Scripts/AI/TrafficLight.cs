@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using LibGameAI.FSMs;
-using System.Data.Common;
 
 
 namespace Assets.Scripts.AI
@@ -22,15 +21,13 @@ namespace Assets.Scripts.AI
         [Range(0, 50f)]
         [SerializeField] private int _greenTime = 5;
 
-        [Header("Yellow light timer")]
-        [Range(0, 50f)]
-        [SerializeField] private int _yellowTime = 10;
 
         [Header("Red light timer")]
         [Range(0, 50f)]
         [SerializeField] private int _redTime = 10;
 
         private StateMachine _fsm;
+        private Action actions;
 
         [SerializeField]
         private GameObject[] _lightMat;
@@ -38,24 +35,14 @@ namespace Assets.Scripts.AI
         [SerializeField]
         private GameObject triggerBox, crosswalkColliders;
 
-        float time = 0; 
+        private float time = 0; 
 
         [SerializeField]
         private LightState initialLightState;
 
 #endregion
 
-        [SerializeField]
         public LightState Light { get; private set; }
-
-# if UNITY_EDITOR 
-
-        // -------------------- DEBUG/TEST --------------------------------------
-        [Header("Traffic Light.\nChanging it does not affect signal")]
-        [SerializeField]
-        private LightState _currentLightState;
-        //----------------------------------------------------------------------
-# endif
 
 
         /// <summary>
@@ -73,8 +60,12 @@ namespace Assets.Scripts.AI
 
             // -------------------- States -------------------------------------
 
-            State redState = new State("Red", RedLight, null, null);
-            State greenState = new State("Green", GreenLight, null, null);
+            State redState = new State("Red", 
+            RedLight, null, ()=> Debug.Log("left red Light"));
+
+
+            State greenState = new State("Green",
+             GreenLight, null, ()=> Debug.Log("left green Light"));
 
 
             List<State> states = new List<State>
@@ -87,10 +78,17 @@ namespace Assets.Scripts.AI
 
             redState.AddTransition(new Transition(
                 () => Light == LightState.green,
-                null, greenState));
-            
+                ()=> Debug.Log("enter green Light"),
+                 greenState));
 
-           
+
+            greenState.AddTransition(new Transition(
+                () => Light == LightState.red, 
+                ()=> Debug.Log("enter red Light"), 
+                redState));
+            
+            /*
+
             if (initialLightState == LightState.red)
             {
                 Light = LightState.red;
@@ -101,6 +99,8 @@ namespace Assets.Scripts.AI
                 Light = LightState.green;
                 _fsm = new StateMachine(greenState);
             }
+            */
+            _fsm = new StateMachine(redState);
 
             StartCoroutine(UpdateLightState());
         }
@@ -112,7 +112,7 @@ namespace Assets.Scripts.AI
         /// </summary>
         private void Update()
         {
-            Action actions = _fsm.Update();
+            actions = _fsm.Update();
             actions?.Invoke();
         }
 
@@ -128,7 +128,7 @@ namespace Assets.Scripts.AI
         {
             while (true)
             {
-                time += 1;
+                time++;
 
 # if UNITY_EDITOR // DEBUG TIME
 
@@ -142,10 +142,6 @@ namespace Assets.Scripts.AI
                             if(IsGreaterThan(_greenTime)) 
                             {
 
-# if UNITY_EDITOR 
-                                _currentLightState = LightState.green;
-# endif
-
                                 Light = LightState.red;
                                 time = 0; 
                             }
@@ -153,13 +149,12 @@ namespace Assets.Scripts.AI
                             break;
                         }
 
+
                     case LightState.red:
                         {
                             if(IsGreaterThan(_redTime)) 
                             {
-# if UNITY_EDITOR 
-                                _currentLightState = LightState.green;
-# endif
+
                                 Light = LightState.green; 
                                 time = 0; 
                             }
@@ -223,9 +218,8 @@ namespace Assets.Scripts.AI
                     {
                         
                         _lightMat[0].SetActive(true);
-
                         _lightMat[1].SetActive(false);
-                        _lightMat[2].SetActive(false);
+
 
                         break;
                     }
@@ -234,12 +228,11 @@ namespace Assets.Scripts.AI
                     {
 
                         _lightMat[0].SetActive(false);
-                        _lightMat[1].SetActive(false);
-
-                        _lightMat[2].SetActive(true);
+                        _lightMat[1].SetActive(true);
 
                         break;
                     }
+
                 default : { break; }
             }
 
