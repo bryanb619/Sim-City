@@ -21,8 +21,9 @@ namespace Assets.Scripts.AI
 
         [SerializeField] private bool randomTime = false;
 
-        [Header("List of control points for the intersection\n" +
-        "Element 0: Up\nElement 1: Down\nElement 2: Left\nElement 3: Right")]
+        [Header("List of Traffic lights for the selected intersection\n" +
+        "Traffic light 0: Up\nTraffic light 1: Down\nTraffic light 2: Left\n" + 
+        "Traffic light: Right")]
 
         [Tooltip("This is a list this intersection's traffic lights.")]
 
@@ -98,7 +99,6 @@ namespace Assets.Scripts.AI
 
                 if (time >= lightMaxTime)
                 {
-                    // swap light state in up & down
 
                     foreach (TrafficLight trafficLight in controlPoints)
                     {
@@ -111,15 +111,11 @@ namespace Assets.Scripts.AI
 
 #if UNITY_EDITOR // DEBUG TIME
 
-                print(time);
+                //print(time);
 #endif
 
                 // wait 1 second
                 yield return new WaitForSeconds(1);
-
-
-
-
             }
         }
 
