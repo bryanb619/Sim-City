@@ -2039,12 +2039,24 @@ PrefabInstance:
       objectReference: {fileID: 2058132862}
     - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
       propertyPath: initialLightState
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
       propertyPath: crosswalkColliders
       value: 
       objectReference: {fileID: 1680875543}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.data[0]
+      value: 
+      objectReference: {fileID: 273738243}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.data[1]
+      value: 
+      objectReference: {fileID: 592976530}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9651,6 +9663,11 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &273738243 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6379820491965556027, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+  m_PrefabInstance: {fileID: 1685254662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &275458832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12851,6 +12868,18 @@ PrefabInstance:
       propertyPath: crosswalkColliders
       value: 
       objectReference: {fileID: 1680875539}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.data[0]
+      value: 
+      objectReference: {fileID: 273738243}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.data[1]
+      value: 
+      objectReference: {fileID: 592976530}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17478,6 +17507,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 405128, guid: 156fad5b84ed1104d948668aca70b1ff, type: 3}
   m_PrefabInstance: {fileID: 591733465}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &592976530 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8429342728465972190, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+  m_PrefabInstance: {fileID: 1685254662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &595220638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17594,12 +17628,24 @@ PrefabInstance:
       objectReference: {fileID: 1291982853}
     - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
       propertyPath: initialLightState
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
       propertyPath: crosswalkColliders
       value: 
       objectReference: {fileID: 1680875540}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.data[0]
+      value: 
+      objectReference: {fileID: 273738243}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.data[1]
+      value: 
+      objectReference: {fileID: 592976530}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21568,6 +21614,18 @@ PrefabInstance:
       propertyPath: crosswalkColliders
       value: 
       objectReference: {fileID: 1680875538}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.data[0]
+      value: 
+      objectReference: {fileID: 273738243}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.data[1]
+      value: 
+      objectReference: {fileID: 592976530}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22955,7 +23013,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efba96bab8a7c8645a14eab33ca12e9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _agents: []
   _ui: {fileID: 735004742}
   _car: {fileID: 5436836182280403281, guid: b537487b6fd0cd043a4d7fbbed29fc47, type: 3}
   _ped: {fileID: 0}
@@ -24869,12 +24926,24 @@ PrefabInstance:
       objectReference: {fileID: 670854465}
     - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
       propertyPath: initialLightState
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
       propertyPath: crosswalkColliders
       value: 
       objectReference: {fileID: 1680875544}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.data[0]
+      value: 
+      objectReference: {fileID: 273738243}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.data[1]
+      value: 
+      objectReference: {fileID: 592976530}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28987,6 +29056,18 @@ PrefabInstance:
       propertyPath: crosswalkColliders
       value: 
       objectReference: {fileID: 1680875536}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.data[0]
+      value: 
+      objectReference: {fileID: 273738243}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.data[1]
+      value: 
+      objectReference: {fileID: 592976530}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -34343,12 +34424,24 @@ PrefabInstance:
       objectReference: {fileID: 405657479}
     - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
       propertyPath: initialLightState
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
       propertyPath: crosswalkColliders
       value: 
       objectReference: {fileID: 1680875534}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.data[0]
+      value: 
+      objectReference: {fileID: 273738243}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.data[1]
+      value: 
+      objectReference: {fileID: 592976530}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -39389,6 +39482,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1342253410}
   m_CullTransparentMesh: 1
+--- !u!1001 &1342656912
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1833598266}
+    m_Modifications:
+    - target: {fileID: 148458, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_Name
+      value: sptp_traffic_light_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.943342
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.21521759
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.000000104308114
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+--- !u!4 &1342656913 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+  m_PrefabInstance: {fileID: 1342656912}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1343707565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40653,6 +40808,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 489578, guid: d59da3d7b9c463c478d64b0722fd1ff5, type: 3}
   m_PrefabInstance: {fileID: 1388110498}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1392029103
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1833598266}
+    m_Modifications:
+    - target: {fileID: 148458, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_Name
+      value: sptp_traffic_light_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.9578686
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.715217
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+--- !u!4 &1392029104 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+  m_PrefabInstance: {fileID: 1392029103}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1394858825
 PrefabInstance:
@@ -49492,6 +49709,14 @@ PrefabInstance:
       propertyPath: crosswalkColliders
       value: 
       objectReference: {fileID: 1680875542}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.data[1]
+      value: 
+      objectReference: {fileID: 592976530}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -50900,6 +51125,18 @@ PrefabInstance:
       propertyPath: crosswalkColliders
       value: 
       objectReference: {fileID: 1680875535}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.data[0]
+      value: 
+      objectReference: {fileID: 273738243}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.data[1]
+      value: 
+      objectReference: {fileID: 592976530}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -51509,6 +51746,18 @@ PrefabInstance:
       propertyPath: crosswalkColliders
       value: 
       objectReference: {fileID: 1680875541}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.data[0]
+      value: 
+      objectReference: {fileID: 273738243}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.data[1]
+      value: 
+      objectReference: {fileID: 592976530}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -52889,6 +53138,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 423560, guid: bfdde53371ba3b349b61d5bafef700d7, type: 3}
   m_PrefabInstance: {fileID: 1800571783}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1800670618
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1833598266}
+    m_Modifications:
+    - target: {fileID: 148458, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_Name
+      value: sptp_traffic_light_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.9927363
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.665822
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+--- !u!4 &1800670619 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 444314, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+  m_PrefabInstance: {fileID: 1800670618}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1803464546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54195,6 +54506,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 452202, guid: a31d75f154921304794bf1d122281cac, type: 3}
   m_PrefabInstance: {fileID: 1833403818}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1833598265
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1833598266}
+  - component: {fileID: 1833598267}
+  m_Layer: 0
+  m_Name: Intersection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1833598266
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833598265}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.5, y: 0, z: -19.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1392029104}
+  - {fileID: 1800670619}
+  - {fileID: 1342656913}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1833598267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833598265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d3d8abf54b6743418037350bfac155b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &1833826020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57745,12 +58108,24 @@ PrefabInstance:
       objectReference: {fileID: 1925929747}
     - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
       propertyPath: initialLightState
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
       propertyPath: crosswalkColliders
       value: 
       objectReference: {fileID: 1680875533}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.data[0]
+      value: 
+      objectReference: {fileID: 273738243}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.data[1]
+      value: 
+      objectReference: {fileID: 592976530}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -62755,12 +63130,24 @@ PrefabInstance:
       objectReference: {fileID: 838592301}
     - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
       propertyPath: initialLightState
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
       propertyPath: crosswalkColliders
       value: 
       objectReference: {fileID: 1680875537}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.data[0]
+      value: 
+      objectReference: {fileID: 273738243}
+    - target: {fileID: 8136585710526180524, guid: 7f9ea44d759da6b4e995d9fa92373629, type: 3}
+      propertyPath: _lightMat.Array.data[1]
+      value: 
+      objectReference: {fileID: 592976530}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -63202,3 +63589,4 @@ SceneRoots:
   - {fileID: 735004741}
   - {fileID: 1021244565}
   - {fileID: 781990276}
+  - {fileID: 1833598266}
