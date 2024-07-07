@@ -9,17 +9,10 @@ namespace Assets.Scripts.AI
     /// </summary>
     public class IntersectionBrain : MonoBehaviour
     {
-        [Header("Time for the light to change state. Default is 10 seconds.\n" +
-        "Min: 5 | Max: 25 seconds.")]
-        [Range(5, 25)]
+        [Header("Max time for each light signal")]
+        [Range(5, 15)]
         [SerializeField]
-        private int lightMaxTime = 10;
-
-        [Header("Random Timer")]
-
-        [Tooltip("If true, the light will have a random time to change states.")]
-
-        [SerializeField] private bool randomTime = false;
+        private int lightMaxTime = 5;
 
         [Header("List of Traffic lights for the selected intersection\n" +
         "Traffic light 0: Up\nTraffic light 1: Down\nTraffic light 2: Left\n" + 
@@ -30,12 +23,13 @@ namespace Assets.Scripts.AI
         [SerializeField]
         private List<TrafficLight> controlPoints = new List<TrafficLight>();
 
+
         /// <summary>
         /// Start is called before the first frame update
         /// </summary>
         private void Awake()
         {
-            SetLightsStates();
+            CheckLightConfig();
         }
 
         /// <summary>
@@ -43,42 +37,16 @@ namespace Assets.Scripts.AI
         /// </summary>
         private void Start()
         {
-
-            if (randomTime)
-            {
-                lightMaxTime = GetRandomTime();
-            }
-
-
             StartCoroutine(UpdateLightState());
         }
 
 
-        private int GetRandomTime()
-        {
-            return Random.Range(5, 25);
-        }
-
-
-        private void SetLightsStates()
+        private void CheckLightConfig()
         {
             if (controlPoints.Count == 0 || controlPoints == null)
             {
-                Debug.LogError("No traffic lights found.");
+                Debug.LogError("No traffic lights found or configured!");
             }
-
-
-            if (controlPoints[0] != null)
-                controlPoints[0].SetInitialState(LightState.green);
-
-            if (controlPoints[1] != null)
-                controlPoints[1].SetInitialState(LightState.green);
-
-            if (controlPoints[2] != null)
-                controlPoints[2].SetInitialState(LightState.red);
-
-            if (controlPoints[3] != null)
-                controlPoints[3].SetInitialState(LightState.red);
         }
 
 
@@ -102,23 +70,27 @@ namespace Assets.Scripts.AI
 
                     foreach (TrafficLight trafficLight in controlPoints)
                     {
+
                         if(trafficLight != null)
+                        {
                             trafficLight.SwapLightState();
+                            
+                        }
+
                     }
 
+                    // reset time
                     time = 0;
                 }
 
 #if UNITY_EDITOR // DEBUG TIME
 
-                //print(time);
+                print(time);
 #endif
 
                 // wait 1 second
                 yield return new WaitForSeconds(1);
             }
         }
-
-
     }
 }
