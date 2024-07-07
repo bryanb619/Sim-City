@@ -73,7 +73,6 @@ A simulação desenvolvida é em 3D e as técnicas de Inteligência Artificial u
 
 ### Carros
 
-
 ### Peões
 
 ### Semáforos
@@ -88,11 +87,17 @@ TODO: MOSTRAR COMO FUNCIONA
 
 É um _Game Object_ que permite o controlo  ....  da simulação. Aqui é permitido que a simulação seja personalizada com parâmetros ajustáveis, sendo estes:
 
-![SimCity AIDirecto](./Images/aidirector.png)
+- Carros
 
-TODO: MOSTRAR IMAGEM
+![SimCity AIDirector](./Images/carAI.png)
 
+- Peões
 
+![SimCity AIDirector](./Images/pedAI.png)
+
+- Acidente e Caos
+
+![SimCity AIDirector](./Images/generalAIsetts.png)
 
 ### Diagrama Geral do Projeto em _UML_
 

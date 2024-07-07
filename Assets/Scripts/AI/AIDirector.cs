@@ -9,40 +9,58 @@ namespace Assets.Scripts.AI
     public class AIDirector : MonoBehaviour
     {
 
-        [Header("Max Cars")]
+        [Header("== Car ==")]
         [Range(0, 50)]
         [SerializeField] 
         private int        _cars = 25;
 
-        [Header("Max Peds")]
-        [Range(0, 75)]
         [SerializeField] 
-        private int         _peds = 30;
+        private List<Transform> _carSpawnPoints = new List<Transform>();
 
-
-        [Header("AI Parameters")]
         [Range(0, 75)]
         [SerializeField] 
         private int        _carTimeStoped = 10;
 
+        [SerializeField] 
+        private GameObject _car;
+
+        [Header("== Ped ==")]
         [Range(0, 75)]
         [SerializeField] 
-        private int         _pedTimeStopped = 10;
+        private int         _peds = 30;
 
+        [SerializeField] 
+        private List<Transform> _pedSpawnPoints = new List<Transform>();
+
+        [Range(0, 75)]
+
+        [SerializeField] 
+        private int         _pedTimeStopped = 10;
+                
+        [SerializeField] 
+        private GameObject _ped;
+
+
+        
+        [Header("== Accident ==")]
         [Range(0, 75)]
         [SerializeField] 
         private int         _maxTimeInAccident = 15;
 
+
+        [Header("== Chaos ==")]
         [Range(0, 75)]
         [SerializeField] 
         private int         _maxTimeInCrazy = 30;
 
-
+        [Range(0, 75)]
         [SerializeField] 
-        private GameObject _car;
+        private int         _chaosChance = 5;
 
-        [SerializeField] 
-        private GameObject _ped;
+
+
+ 
+
 
         private List<GameObject> _carList = new List<GameObject>();
 
