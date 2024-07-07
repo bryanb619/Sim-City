@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Assets.Scripts.AI;
 using UnityEngine;
 
 namespace Assets.Scripts.AI
@@ -51,11 +50,28 @@ namespace Assets.Scripts.AI
             {
                 Instantiate(objAI, transform.position, transform.rotation);
 
-                print("Agent " + i + " spawned");
+                NavAgentBehaviour agent = 
+                objAI.GetComponent<NavAgentBehaviour>();
 
-                if (objAI == _car) { _carList.Add(objAI); }
+                if (objAI == _car) 
+                {
+                    _carList.Add(objAI); 
 
-                else { _pedList.Add(objAI); }
+                    agent.SetParameters(_ui.CarStoppedTime, 
+                    _ui.MaxTimeInAccident, _ui.MaxTimeInCrazy);
+
+
+                    //print($"Car {i} spawned");
+                }
+
+                else 
+                { 
+                    _pedList.Add(objAI); 
+                    agent.SetParameters(_ui.PedStoppedTime,
+                    _ui.MaxTimeInAccident, _ui.MaxTimeInCrazy);
+
+                    //print($"Ped {i} spawned");
+                }
 
             }
 
@@ -65,8 +81,35 @@ namespace Assets.Scripts.AI
         /// <summary>
         /// 
         /// </summary>
-        public void ActivateCrazyAgent()
+        public void SelectCarCrazyMode()
         {
+
+            int i = Random.Range(0, _carList.Count);
+
+            _carList[i].GetComponent<NavAgentBehaviour>();
+
+
+
+            /*
+            int i = Random.Range(0, _agents.Length);
+
+            if(navAgent[i].State == AgentState.Move)
+            {
+                navAgent[i].State = AgentState.Crazy;
+            }
+            */
+        }
+
+        public void SelectPedCrazyMode()
+        {
+
+            int i = Random.Range(0, _pedList.Count);
+
+            _pedList[i].GetComponent<NavAgentBehaviour>();
+
+
+
+
 
             /*
             int i = Random.Range(0, _agents.Length);
