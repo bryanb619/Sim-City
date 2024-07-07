@@ -71,9 +71,25 @@ Um importante referencial para a realização deste projeto é o famoso jogo _Si
 
 A simulação desenvolvida é em 3D e as técnicas de Inteligência Artificial utilizadas foram, respectivamente, _FSM's_ (uma biblioteca essencial para a realização de transições entre estados) e _A* (Unity NavMesh)_, que é essencial para o _Pathfinding_ de agentes como carros e peões.
 
+### Diagramas _FSM_
+
+#### Agentes Móveis
+
+As imagens nesta secção apresentam visualmente o código desenvolvido para efetuar as transições e estados tanto de agentes móveis (carros e peões) como também agentes fixos (sinais luminosos de transito)
+
+![SimCity FSM](./Images/agent.drawio.png)
+
+#### Agentes Fixos
+
+![SimCity FSM](./Images/traffic.drawio.png)
+
 ### Carros
 
+Agentes móveis
+
 ### Peões
+
+Assim como os carros  
 
 ### Semáforos
 
@@ -114,19 +130,10 @@ TODO: MOSTRAR COMO FUNCIONA
 
 ### Diagrama Geral do Projeto em _UML_
 
-### Diagrama _FSM_ de agentes móveis
-
-![SimCity FSM](./Images/agent.drawio.png)
-
-### Diagrama _FSM_ de sinais luminosos
-
-![SimCity FSM](./Images/traffic.drawio.png)
-
 ```mermaid
 
 classDiagram
 
-    ITrafficLight          <|.. TrafficLight
     LightState             <--  TrafficLight
     NavAgentBehaviour      --*  AIDirector           
     UI                     <..  AIDirector
