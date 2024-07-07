@@ -35,7 +35,6 @@ namespace Assets.Scripts.AI
 
         //----------------------------------------------------------------------
 
-
         // The root of the decision tree
 
         // 
@@ -273,6 +272,17 @@ namespace Assets.Scripts.AI
                 agent.speed = 3.5f;
             }
 
+        }
+
+        public void SetParameters(int maxStopTime, int maxAccidentTime, 
+        int maxCrazyTime)
+
+        {   
+            // TODO: 
+
+            // Set the maximum time the agent can be stopped
+            // Set the maximum time the agent can be in an accident
+            // Set the maximum time the agent can be crazy
         }
     }
 
