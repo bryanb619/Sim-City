@@ -8,23 +8,28 @@ namespace Assets.Scripts.AI
     /// <summary>
     /// A simple traffic light.
     /// Uses libGameAI (FSM) library to implement states & transitions for the
-    /// signals.
+    /// light signals.
     /// </summary>
-    public class TrafficLight : MonoBehaviour, ITrafficLight
+    public class TrafficLight : MonoBehaviour
     {
 
-#region Variables
         private StateMachine _fsm;
 
         [SerializeField]
         private GameObject[] _lightMat;
 
-        [SerializeField]
-        private GameObject triggerBox, crosswalkColliders;
+        [SerializeField] 
+        private LightState _startLightState;
 
-#endregion
+        private LightState _light;
 
-        public LightState Light { get; private set; }
+        [SerializeField] 
+        private GameObject _crossWalkColls;
+
+        [SerializeField] 
+        private GameObject _carColls;
+
+
 
 
         /// <summary>
@@ -36,9 +41,14 @@ namespace Assets.Scripts.AI
         /// </summary>
         private void Start()
         {
+            StartFSM();
+        }
 
-#region  FSM Initialization
 
+    #region  FSM Initialization
+        private void StartFSM()
+        {
+        
             // -------------------- States -------------------------------------
 
             State redState = new State("Red",
@@ -51,22 +61,38 @@ namespace Assets.Scripts.AI
                 () => Debug.Log("left green Light"));
 
 
-
             // -------------------- Transitions --------------------------------
 
             redState.AddTransition(new Transition(
-                () => Light == LightState.green,
+                () => _light == LightState.green,
                 () => Debug.Log("enter green Light"),
                  greenState));
 
 
             greenState.AddTransition(new Transition(
-                () => Light == LightState.red,
+                () => _light == LightState.red,
                 () => Debug.Log("enter red Light"),
                 redState));
 
 
-            _fsm = new StateMachine(redState);
+            if (_startLightState == LightState.green)
+            {   
+                _light = _startLightState;
+                _fsm = new StateMachine(greenState);
+            }
+            else if (_startLightState == LightState.red)
+            {   
+                _light = _startLightState;
+                _fsm = new StateMachine(redState);
+            }
+
+            
+            else
+            {
+                Debug.LogError("Invalid initial start state");
+            }
+
+            SwitchMatLight();
 
         }
 #endregion
@@ -85,29 +111,23 @@ namespace Assets.Scripts.AI
 
 #region Light State Control
 
-        public void SetInitialState(LightState state)
-        {
-            Light = state;
-        }
-
-
         /// <summary>
         /// 
         /// </summary>
         public void SwapLightState()
         {
 
-            switch (Light)
+            switch (_light)
             {
                 case LightState.green:
                     {
-                        Light = LightState.red;
+                        _light = LightState.red;
                         break;
                     }
 
                 case LightState.red:
                     {
-                        Light = LightState.green;
+                        _light = LightState.green;
                         break;
                     }
             }
@@ -124,9 +144,8 @@ namespace Assets.Scripts.AI
         {
             SwitchMatLight();
 
-           // triggerBox.gameObject.SetActive(false);
-            //crosswalkColliders.gameObject.SetActive(true);
-
+            _carColls.SetActive(false);
+            _crossWalkColls.SetActive(true);
         }
 
         /// <summary>
@@ -136,8 +155,8 @@ namespace Assets.Scripts.AI
         {
             SwitchMatLight();
 
-            //triggerBox.gameObject.SetActive(true);
-            //crosswalkColliders.gameObject.SetActive(false);
+            _carColls.SetActive(true);
+            _crossWalkColls.SetActive(false);
         }
 
 #endregion
@@ -152,7 +171,7 @@ namespace Assets.Scripts.AI
         private void SwitchMatLight()
         {
 
-            switch (Light)
+            switch (_light)
             {
                 case LightState.green:
                     {
