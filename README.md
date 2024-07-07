@@ -88,15 +88,28 @@ TODO: MOSTRAR COMO FUNCIONA
 É um _Game Object_ que permite o controlo  ....  da simulação. Aqui é permitido que a simulação seja personalizada com parâmetros ajustáveis, sendo estes:
 
 - Carros
+  - **_Cars_**: número de veículos a serem instanciados no início da simulação.
+  - **_Car Spawn points_**: Lista de posições onde carros serão instanciados no início da simulação.
+  - **_Car Time Stoped_**: tempo máximo (segundos) para veículo estar estacionário no seu destino
+  - **_Cars_**: _prefab_ de veículo a ser instanciado
 
 ![SimCity AIDirector](./Images/carAI.png)
 
 - Peões
+  - **_Peds_**: número de pões a serem instanciados no início da simulação.
+  - **_Ped Spawn points_**:Lista de posições onde peões serão instanciados no início da simulação.
+  - **_Ped Time Stoped_**: tempo máximo (segundos) para peão estar parado no seu destino
+  - **_Ped_**: _prefab_ de peão a ser instanciado.
 
 ![SimCity AIDirector](./Images/pedAI.png)
 
-- Acidente e Caos
-
+- Acidente
+  - **_Max Time In Accident_**: tempo máximo (segundos) em que agente pode estar em modo acidente.
+  
+- Caos
+  - **_Max Time in Crazy_**: tempo máximo (segundos) em que agente pode estar em modo caos
+  - **_Chaos Chance_**: probabilidade de um agente começar em modo caos.
+  
 ![SimCity AIDirector](./Images/generalAIsetts.png)
 
 ### Diagrama Geral do Projeto em _UML_
