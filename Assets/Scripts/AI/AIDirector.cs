@@ -12,12 +12,12 @@ namespace Assets.Scripts.AI
         [Header("Max Cars")]
         [Range(0, 50)]
         [SerializeField] 
-        private int        _carSlider = 25;
+        private int        _cars = 25;
 
-        [Header("Max Ped")]
+        [Header("Max Peds")]
         [Range(0, 75)]
         [SerializeField] 
-        private int         _pedSlider = 30;
+        private int         _peds = 30;
 
 
         [Header("AI Parameters")]
@@ -57,7 +57,7 @@ namespace Assets.Scripts.AI
 
             print("Simulation Started");
 
-            SpawnAgents(_car, _carSlider);
+            SpawnAgents(_car, _cars);
 
             // ped spawn
         }
