@@ -19447,17 +19447,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 439608, guid: d9c2a6cb99ea45945b24d88f8b8e88ff, type: 3}
   m_PrefabInstance: {fileID: 726503604}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &735004742 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7086110037975825993, guid: b3403fb1352c6ee4f831a6c2d9ced6dd, type: 3}
-  m_PrefabInstance: {fileID: 2232618501841903464}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7d7e9a3db896de49869571f8c8967dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &735961240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21344,7 +21333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &781990275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21357,7 +21346,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efba96bab8a7c8645a14eab33ca12e9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ui: {fileID: 735004742}
+  _carSlider: 25
+  _pedSlider: 30
+  _carTimeStoped: 10
+  _pedTimeStopped: 10
+  _maxTimeInAccident: 15
+  _maxTimeInCrazy: 30
   _car: {fileID: 5436836182280403281, guid: b537487b6fd0cd043a4d7fbbed29fc47, type: 3}
   _ped: {fileID: 0}
 --- !u!4 &781990276

@@ -8,17 +8,45 @@ namespace Assets.Scripts.AI
     /// </summary>
     public class AIDirector : MonoBehaviour
     {
-        [SerializeField] private UI _ui;
 
-        [SerializeField] private GameObject _car;
+        [Header("Max Cars")]
+        [Range(0, 50)]
+        [SerializeField] 
+        private int        _carSlider = 25;
 
-        [SerializeField] private GameObject _ped;
+        [Header("Max Ped")]
+        [Range(0, 75)]
+        [SerializeField] 
+        private int         _pedSlider = 30;
+
+
+        [Header("AI Parameters")]
+        [Range(0, 75)]
+        [SerializeField] 
+        private int        _carTimeStoped = 10;
+
+        [Range(0, 75)]
+        [SerializeField] 
+        private int         _pedTimeStopped = 10;
+
+        [Range(0, 75)]
+        [SerializeField] 
+        private int         _maxTimeInAccident = 15;
+
+        [Range(0, 75)]
+        [SerializeField] 
+        private int         _maxTimeInCrazy = 30;
+
+
+        [SerializeField] 
+        private GameObject _car;
+
+        [SerializeField] 
+        private GameObject _ped;
 
         private List<GameObject> _carList = new List<GameObject>();
 
         private List<GameObject> _pedList = new List<GameObject>();
-
-        public bool SimStar { get; private set; } = false;
 
 
         /// <summary>
@@ -27,13 +55,9 @@ namespace Assets.Scripts.AI
         private void Start()
         {
 
-            SimStar = true;
-
             print("Simulation Started");
 
-            print(_ui.MaxCars);
-
-            SpawnAgents(_car, _ui.MaxCars);
+            SpawnAgents(_car, _carSlider);
 
             // ped spawn
         }
@@ -41,7 +65,7 @@ namespace Assets.Scripts.AI
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="objAI"></param>
+        /// <param name="objAI">Game object</param>
         private void SpawnAgents(GameObject objAI, int quantity)
         {
 
@@ -57,8 +81,8 @@ namespace Assets.Scripts.AI
                 {
                     _carList.Add(objAI); 
 
-                    agent.SetParameters(_ui.CarStoppedTime, 
-                    _ui.MaxTimeInAccident, _ui.MaxTimeInCrazy);
+                    agent.SetParameters(_carTimeStoped, 
+                    _maxTimeInAccident, _maxTimeInCrazy);
 
 
                     //print($"Car {i} spawned");
@@ -67,8 +91,8 @@ namespace Assets.Scripts.AI
                 else 
                 { 
                     _pedList.Add(objAI); 
-                    agent.SetParameters(_ui.PedStoppedTime,
-                    _ui.MaxTimeInAccident, _ui.MaxTimeInCrazy);
+                    agent.SetParameters(_pedTimeStopped,
+                    _maxTimeInAccident, _maxTimeInCrazy);
 
                     //print($"Ped {i} spawned");
                 }
@@ -106,9 +130,6 @@ namespace Assets.Scripts.AI
             int i = Random.Range(0, _pedList.Count);
 
             _pedList[i].GetComponent<NavAgentBehaviour>();
-
-
-
 
 
             /*
