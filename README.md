@@ -71,6 +71,31 @@ Um importante referencial para a realização deste projeto é o famoso jogo _Si
 
 A simulação desenvolvida é em 3D e as técnicas de Inteligência Artificial utilizadas foram, respectivamente, _FSM's_ (uma biblioteca essencial para a realização de transições entre estados) e _A* (Unity NavMesh)_, que é essencial para o _Pathfinding_ de agentes como carros e peões.
 
+### Carros
+
+
+### Peões
+
+### Semáforos
+
+Os semáfors são agentes fixos na simulação alternando apenas entre 2 estados, verde e vermelho. Estes estados alternam os estados de 2 colisores. Quando o estado é vermelho, o colisor de carros passa a estar ativo enquanto, o colisor de peões é desativo e assim vice-versa.
+
+![SimCity AIDirecto](./Images/semaforo.png)
+
+TODO: MOSTRAR COMO FUNCIONA
+
+### AI Director
+
+É um _Game Object_ que permite o controlo  ....  da simulação. Aqui é permitido que a simulação seja personalizada com parâmetros ajustáveis, sendo estes:
+
+![SimCity AIDirecto](./Images/aidirector.png)
+
+TODO: MOSTRAR IMAGEM
+
+
+
+### Diagrama Geral do Projeto em _UML_
+
 ### Diagrama _FSM_ de agentes móveis
 
 ![SimCity FSM](./Images/agent.drawio.png)
@@ -78,8 +103,6 @@ A simulação desenvolvida é em 3D e as técnicas de Inteligência Artificial u
 ### Diagrama _FSM_ de sinais luminosos
 
 ![SimCity FSM](./Images/traffic.drawio.png)
-
-### Diagrama Geral do Projeto em _UML_
 
 ```mermaid
 
