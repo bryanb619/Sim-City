@@ -280,6 +280,10 @@ namespace Assets.Scripts.AI
         {   
             // TODO: 
 
+            print(maxStopTime);
+            print(maxAccidentTime);
+            print(maxCrazyTime);
+
             // Set the maximum time the agent can be stopped
             // Set the maximum time the agent can be in an accident
             // Set the maximum time the agent can be crazy
