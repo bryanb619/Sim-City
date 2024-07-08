@@ -29,6 +29,8 @@ namespace Assets.Scripts.AI
         [SerializeField] 
         private GameObject _carColls;
 
+        private Action actions;
+
 
 
 
@@ -104,7 +106,7 @@ namespace Assets.Scripts.AI
         /// </summary>
         private void Update()
         {
-            Action actions = _fsm.Update();
+            actions = _fsm.Update();
             actions?.Invoke();
         }
 

@@ -30,8 +30,11 @@ namespace Assets.Scripts.AI
         private StateMachine _fsm;
 
         private Color _color;
-
+        
+        [SerializeField]
         private MeshRenderer mesh;
+
+        private Action actions;
 
         //----------------------------------------------------------------------
 
@@ -69,6 +72,8 @@ namespace Assets.Scripts.AI
 
             // ------------------------ TRANSITIONS ----------------------------
 
+            // arrive at destination => idle
+            // idle => invisel, desativa navmeshagent
 
             // IDLE => Move
             IdleState.AddTransition(new Transition(
@@ -128,7 +133,7 @@ namespace Assets.Scripts.AI
         {
 
             //----------------- Update FSM -------------------------------------
-            Action actions = _fsm.Update();
+            actions = _fsm.Update();
             actions?.Invoke();
 
             //------------------------------------------------------------------

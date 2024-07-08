@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -56,9 +57,9 @@ namespace Assets.Scripts.AI
         [SerializeField] 
         private int         _maxTimeInCrazy = 30;
 
-        [Range(0, 75)]
+        [Range(0, 100)]
         [SerializeField] 
-        private int         _chaosChance = 5;
+        private float         _chaosChance = 5f;
 
         #endregion
 
@@ -107,22 +108,27 @@ namespace Assets.Scripts.AI
 
                 if (objAI == _car) 
                 {   
+
+                    //StartCoroutine(WaitForSeconds(3f)); 
+
                     // get random point
                     rp = Random.Range(0, _carSpawnPoints.Count);
 
                     // spawn car
                     Instantiate(objAI, _carSpawnPoints[rp].transform.position, 
                     transform.rotation);
-
+                
                     // get NavAgentBehaviour component from spawned car
                     agent = objAI.GetComponent<NavAgentBehaviour>();
 
                     // set parameters
                     agent.SetParameters(_carTimeStoped, 
-                    _maxTimeInAccident, _maxTimeInCrazy);
+                    _maxTimeInAccident, _maxTimeInCrazy,_chaosChance);
 
                     // add car to list
                     _carList.Add(objAI); 
+
+                    
                 }
 
                 else 
@@ -135,21 +141,30 @@ namespace Assets.Scripts.AI
                     Instantiate(objAI, _pedSpawnPoints[rp].transform.position, 
                     transform.rotation);
 
+
                     // get NavAgentBehaviour component from spawned ped
                     agent = objAI.GetComponent<NavAgentBehaviour>();
                     
                     // set parameters
                     agent.SetParameters(_pedTimeStopped,
-                    _maxTimeInAccident, _maxTimeInCrazy);
+                    _maxTimeInAccident, _maxTimeInCrazy, _chaosChance);
 
                     // add ped to list
                     _pedList.Add(objAI); 
 
                     //print($"Ped {i} spawned");
+
+                    //StartCoroutine(WaitForSeconds(1f)); 
                 }
 
             }
 
+        }
+
+
+        private IEnumerator WaitForSeconds(float seconds)
+        {
+            yield return new WaitForSeconds(seconds);
         }
 
         #endregion
