@@ -51,8 +51,6 @@ namespace Assets.Scripts.AI
             // Get reference to the NavMeshAgent component
             agent = GetComponent<NavMeshAgent>();
             initialAgentSpeed = agent.speed;
-
-            mesh = GetComponent<MeshRenderer>();
         }
 
 
@@ -67,7 +65,7 @@ namespace Assets.Scripts.AI
             State CrazyState    = new State("Crazy", Crazy, null, null);
 
             // ------------------- Color ---------------------------------------
-             _color = mesh.material.color;
+            _color = mesh.material.color;
            
 
             // ------------------------ TRANSITIONS ----------------------------
