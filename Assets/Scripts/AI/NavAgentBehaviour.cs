@@ -275,7 +275,7 @@ namespace Assets.Scripts.AI
         }
 
         public void SetParameters(int maxStopTime, int maxAccidentTime, 
-        int maxCrazyTime)
+        int maxCrazyTime, float _chaosChance)
 
         {   
             // TODO: 
