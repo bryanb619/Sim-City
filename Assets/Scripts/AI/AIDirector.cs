@@ -60,8 +60,6 @@ namespace Assets.Scripts.AI
 
 
  
-
-
         private List<GameObject> _carList = new List<GameObject>();
 
         private List<GameObject> _pedList = new List<GameObject>();
@@ -75,32 +73,44 @@ namespace Assets.Scripts.AI
 
             print("Simulation Started");
 
+            // car spawn
             SpawnAgents(_car, _cars);
 
             // ped spawn
+            SpawnAgents(_ped, _peds);
+
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="objAI">Game object</param>
+        /// <param name="objAI"></param>
+        /// <param name="quantity"></param>
         private void SpawnAgents(GameObject objAI, int quantity)
-        {
+        {   
+
+            NavAgentBehaviour agent;
+
+            int rp = 0 ;
 
             // loop
-            for (int i = 0; i < quantity; i++)
+            for (int i = 0; i < quantity + 1; i++)
             {
-                Instantiate(objAI, transform.position, transform.rotation);
-
-                NavAgentBehaviour agent = 
-                objAI.GetComponent<NavAgentBehaviour>();
 
                 if (objAI == _car) 
                 {
-                    _carList.Add(objAI); 
+                    rp = Random.Range(0, _carSpawnPoints.Count);
+
+                    Instantiate(objAI, _carSpawnPoints[rp].transform.position, 
+                    transform.rotation);
+
+                    agent = objAI.GetComponent<NavAgentBehaviour>();
+
 
                     agent.SetParameters(_carTimeStoped, 
                     _maxTimeInAccident, _maxTimeInCrazy);
+
+                    _carList.Add(objAI); 
 
 
                     //print($"Car {i} spawned");
@@ -108,9 +118,19 @@ namespace Assets.Scripts.AI
 
                 else 
                 { 
-                    _pedList.Add(objAI); 
+                    rp = Random.Range(0, _pedSpawnPoints.Count);
+
+
+                    Instantiate(objAI, _pedSpawnPoints[rp].transform.position, 
+                    transform.rotation);
+
+
+                    agent = objAI.GetComponent<NavAgentBehaviour>();
+                    
                     agent.SetParameters(_pedTimeStopped,
                     _maxTimeInAccident, _maxTimeInCrazy);
+
+                    _pedList.Add(objAI); 
 
                     //print($"Ped {i} spawned");
                 }
@@ -126,7 +146,9 @@ namespace Assets.Scripts.AI
         public void SelectCarCrazyMode()
         {
 
-            int i = Random.Range(0, _carList.Count);
+            int i = 0;
+            
+            i = Random.Range(0, _carList.Count);
 
             _carList[i].GetComponent<NavAgentBehaviour>();
 
@@ -145,10 +167,11 @@ namespace Assets.Scripts.AI
         public void SelectPedCrazyMode()
         {
 
-            int i = Random.Range(0, _pedList.Count);
+            int i = 0;
+             
+            i = Random.Range(0, _pedList.Count);
 
             _pedList[i].GetComponent<NavAgentBehaviour>();
-
 
             /*
             int i = Random.Range(0, _agents.Length);
