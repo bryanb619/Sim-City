@@ -55,7 +55,7 @@ namespace Assets.Scripts.AI
         [Header("== Chaos ==")]
         [Range(0, 75)]
         [SerializeField] 
-        private int         _maxTimeInCrazy = 30;
+        private int         _maxTimeInChaos = 30;
 
         [Range(0, 100)]
         [SerializeField] 
@@ -122,8 +122,7 @@ namespace Assets.Scripts.AI
                     agent = objAI.GetComponent<NavAgentBehaviour>();
 
                     // set parameters
-                    //agent.SetParameters(_carTimeStoped, 
-                    //_maxTimeInAccident, _maxTimeInCrazy,_chaosChance);
+                    //agent.SetParameters(_carTimeStoped, _maxTimeInAccident, _maxTimeInChaos,_chaosChance);
 
                     // add car to list
                     _carList.Add(objAI); 
@@ -143,11 +142,10 @@ namespace Assets.Scripts.AI
 
 
                     // get NavAgentBehaviour component from spawned ped
-                    //agent = objAI.GetComponent<NavAgentBehaviour>();
+                    agent = objAI.GetComponent<NavAgentBehaviour>();
                     
                     // set parameters
-                    //agent.SetParameters(_pedTimeStopped,
-                    //_maxTimeInAccident, _maxTimeInCrazy, _chaosChance);
+                    //agent.SetParameters(_pedTimeStopped, _maxTimeInAccident, _maxTimeInChaos, _chaosChance);
 
                     // add ped to list
                     _pedList.Add(objAI); 
@@ -173,7 +171,7 @@ namespace Assets.Scripts.AI
         /// <summary>
         /// 
         /// </summary>
-        public void SelectCarCrazyMode()
+        public void SelectCarChaosMode()
         {
 
             // random car value
@@ -185,11 +183,11 @@ namespace Assets.Scripts.AI
             // get NavAgentBehaviour component from car list index
             _carList[i].GetComponent<NavAgentBehaviour>();
 
-            //TODO: set car to crazy mode
-            //_carList[i].GetComponent<NavAgentBehaviour>().State = AgentState.Crazy;
+            //TODO: set car to chaos mode
+            //_carList[i].GetComponent<NavAgentBehaviour>().State = AgentState.Chaos;
         }
 
-        public void SelectPedCrazyMode()
+        public void SelectPedChaosMode()
         {
 
             int i = 0;
@@ -204,7 +202,7 @@ namespace Assets.Scripts.AI
 
             if(navAgent[i].State == AgentState.Move)
             {
-                navAgent[i].State = AgentState.Crazy;
+                navAgent[i].State = AgentState.Chaos;
             }
             */
         }
