@@ -63,9 +63,15 @@
   
 ## Estudo da Arte
 
-Um importante referencial para a realização deste projeto é o famoso jogo _SimCity_, que possui diversas edições. Este jogo apresenta uma inteligência artificial bastante interessante, incluindo comboios, veículos elétricos, autocarros, alguns outros veículos e peões.
+Nesta seção, será apresentada uma pesquisa sobre simulações relacionadas ao nosso projeto, na qual faremos uma pequena descrição de cada uma e as compararemos com o nosso trabalho desenvolvido.
 
-![SimCity GIF](./Images/traffic-small.gif)
+### **_Traffic3D: An Open-Source Traffic-based Interactive Framework to Train AI Agents_**
+
+Este artigo explora o desenvolvimento de uma simulação com uma frota de veículos autónomos [[2]](https://ieeexplore.ieee.org/abstract/document/8756805)
+
+### **_Unity based Urban Environment Simulation for Autonomous Vehicle Stereo Vision Evaluation_**
+
+### **_Unity 3D Simulator of Autonomous Motorway Traffic Applied to Emergency Corridor Building_**
 
 ## Metodologia
 
@@ -86,10 +92,12 @@ As imagens nesta secção apresentam visualmente o código desenvolvido para efe
 ### Carros
 
 Agentes móveis
+TIPO De movimento
 
 ### Peões
 
 Assim como os carros  
+tipo de movimento
 
 ### Semáforos
 
@@ -185,10 +193,5 @@ Mike, V. a. P. B. (2012, October 1). SimCity: traffic system, public transportat
   
 SimplePoly - Town Pack | 3D Environments | Unity Asset Store. (2024, January 7). Unity Asset Store. <https://assetstore.unity.com/packages/3d/environments/simplepoly-town-pack-62400>
 
-School bus, simple, isometric | 3D Land | Unity Asset Store. (2020, November 16). Unity Asset Store. <https://assetstore.unity.com/packages/3d/vehicles/land/school-bus-simple-isometric-106250>
-
 HD Low Poly Racing Car No.1201 | 3D Land | Unity Asset Store. (2024, March 16). Unity Asset Store. <https://assetstore.unity.com/packages/3d/vehicles/land/hd-low-poly-racing-car-no-1201-118603>
 
-Microsimulation of traffic flow: Onramp. (n.d.). <https://www.traffic-simulation.de/>
-
-Wikipedia contributors. (2024, March 15). Traffic simulation. Wikipedia. <https://en.wikipedia.org/wiki/Traffic_simulation>
