@@ -172,5 +172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal:
+  - {fileID: 921492666294324077}
+  mesh:
   - {fileID: 0}
-  mesh: {fileID: 1709668200758651319}

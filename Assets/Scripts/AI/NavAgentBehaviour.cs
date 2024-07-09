@@ -14,7 +14,7 @@ namespace Assets.Scripts.AI
     {   
         // ---------------- interface ------------------------------------------
 
-        public AgentState State { get; set; }
+        public AgentState State { get; private set; }
         // ---------------------------------------------------------------------
 
         // Current goal of navigation agent
@@ -32,7 +32,7 @@ namespace Assets.Scripts.AI
         private Color _color;
         
         [SerializeField]
-        private MeshRenderer mesh;
+        private MeshRenderer[] mesh;
 
         private Action actions;
 
@@ -65,7 +65,7 @@ namespace Assets.Scripts.AI
             State CrazyState    = new State("Crazy", Crazy, null, null);
 
             // ------------------- Color ---------------------------------------
-            _color = mesh.material.color;
+            _color = mesh[0].material.color;
            
 
             // ------------------------ TRANSITIONS ----------------------------
@@ -182,7 +182,12 @@ namespace Assets.Scripts.AI
         private void Idle()
         {
             SetAgentMovement(true);
-            mesh.enabled = false;
+
+            foreach (MeshRenderer m in mesh)
+            {
+                m.enabled = false;
+            }
+  
             if (agent.GetComponent<BoxCollider>() != null)
                 agent.GetComponent<BoxCollider>().enabled = false;
             else
@@ -193,7 +198,12 @@ namespace Assets.Scripts.AI
         {
             SetAgentMovement(false);
             agent.speed = initialAgentSpeed;
-            mesh.enabled = true;
+
+            foreach (MeshRenderer m in mesh)
+            {
+                m.enabled = true;
+            }
+
             if (agent.GetComponent<BoxCollider>() != null)
                 agent.GetComponent<BoxCollider>().enabled = true;
             else
@@ -229,9 +239,10 @@ namespace Assets.Scripts.AI
 
                 if(timer< time)
                 {
-                    mesh.material.color = Color.yellow;
+                    mesh[0].material.color = Color.yellow;
+
                     yield return new WaitForSeconds(0.2f);
-                    mesh.material.color = _color;
+                    mesh[0].material.color = _color;
                 }
               
             }
@@ -245,7 +256,7 @@ namespace Assets.Scripts.AI
         private void Accident()
         {
             SetAgentMovement(true);
-            mesh.material.color = Color.red;
+            mesh[0].material.color = Color.red;
         
         }
 
@@ -277,19 +288,13 @@ namespace Assets.Scripts.AI
 
         }
 
-        public void SetParameters(int maxStopTime, int maxAccidentTime, 
-        int maxCrazyTime, float _chaosChance)
-
-        {   
-            // TODO: 
-
-            print(maxStopTime);
-            print(maxAccidentTime);
-            print(maxCrazyTime);
-
-            // Set the maximum time the agent can be stopped
-            // Set the maximum time the agent can be in an accident
-            // Set the maximum time the agent can be crazy
+    
+        /// <summary>
+        /// 
+        /// </summary>
+        public void SetChaosAgent()
+        {
+            // Set the agent to be a chaos agent
         }
     }
 
