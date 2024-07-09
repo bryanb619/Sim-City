@@ -46,7 +46,7 @@
 
 ## Introdução
 
- O projeto desenvolvido retrata o tráfego urbano """ . Foi desenvolvido utilizando o motor de jogo [_Unity Engine_ 2022.3.1 _LTS_](https://unity.com/releases/editor/whats-new/2022.3.1#release-notes) e para definir as ações dos agentes, utilizamos as FSM (finite-state machine) e objetivo principal foi demonstrar as técnicas de Inteligência Artificial em uma espécie de _SimCity_ não jogável, com automóveis, peões e sinais de trânsito (sinalização luminosa).
+ O projeto desenvolvido retrata o tráfego urbano """ . Foi desenvolvido utilizando o motor de jogo [_Unity Engine_ 2022.3.1 _LTS_](https://unity.com/releases/editor/whats-new/2022.3.1#release-notes) e para definir as ações dos agentes, utilizamos as FSM (finite-state machine) e objetivo principal foi demonstrar as técnicas de Inteligência Artificial em uma espécie de _Sim City_ não jogável, com automóveis, peões e sinais de trânsito (sinalização luminosa).
 
 - Objetivos desta simulação:
   - Fazer com que os automóveis respeitem as regras de trânsito, como sinais luminosos, passadeiras e outros veículos na via.
@@ -67,9 +67,14 @@ Nesta seção, será apresentada uma pesquisa sobre simulações relacionadas ao
 
 ### **_Traffic3D: An Open-Source Traffic-based Interactive Framework to Train AI Agents_**
 
-Este artigo explora o desenvolvimento de uma simulação com uma frota de veículos autónomos [[2]](https://ieeexplore.ieee.org/abstract/document/8756805)
-
 ### **_Unity based Urban Environment Simulation for Autonomous Vehicle Stereo Vision Evaluation_**
+
+Este estudo explora o desenvolvimento e experimento de uma simulação 3D no _Unity Engine_ para testar veículos  veículos autónomos registarem registarem dados com _stereo cameras_ representados nesta simulação por camâras do próprio _engine_ situadas na frente do veículo. O objetivo deste experimento é demonstrar um veículo autónomo equipado com sensores e a gravação destes dados. A terceira câmara ou a câmara central é bastante interessante porque, faz uso de ...  shader para representar a gravação de dados em profundidade.  _omnipresent stereo cameras_.
+
+### Comparação com o nosso projeto
+
+
+[[2]](https://ieeexplore.ieee.org/abstract/document/8756805)
 
 ### **_Unity 3D Simulator of Autonomous Motorway Traffic Applied to Emergency Corridor Building_**
 
@@ -194,4 +199,3 @@ Mike, V. a. P. B. (2012, October 1). SimCity: traffic system, public transportat
 SimplePoly - Town Pack | 3D Environments | Unity Asset Store. (2024, January 7). Unity Asset Store. <https://assetstore.unity.com/packages/3d/environments/simplepoly-town-pack-62400>
 
 HD Low Poly Racing Car No.1201 | 3D Land | Unity Asset Store. (2024, March 16). Unity Asset Store. <https://assetstore.unity.com/packages/3d/vehicles/land/hd-low-poly-racing-car-no-1201-118603>
-
