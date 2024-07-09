@@ -15,7 +15,7 @@ namespace Assets.Scripts.AI
         // ---------------- interface ------------------------------------------
 
         public AgentState State { get; private set; }
-        // ---------------------------------------------------------------------
+        // -----------------------------Agent-----------------------------------
 
         // Current goal of navigation agent
         [SerializeField] private GameObject[] goal;
@@ -24,6 +24,8 @@ namespace Assets.Scripts.AI
         private NavMeshAgent agent;
         private float initialAgentSpeed;
 
+        private int maxStopTime, maxAccidentTime, maxChaosTime;
+        private float _chaosChance;
 
         // ------------- FSM ---------------------------------------------------
 
@@ -62,7 +64,7 @@ namespace Assets.Scripts.AI
             State IdleState     = new State("Iddle",Idle, null, null);
             State MovingState   = new State("Moving",Move, null, null);
             State AccidentState = new State("Accident",Accident, null, null);
-            State CrazyState    = new State("Crazy", Crazy, null, null);
+            State ChaosState    = new State("Chaos", Chaos, null, null);
 
             // ------------------- Color ---------------------------------------
             _color = mesh[0].material.color;
@@ -86,11 +88,11 @@ namespace Assets.Scripts.AI
                 () => State == AgentState.Idle,
                 () => Idle(), 
                 IdleState));
-            // Move => Crazy
+            // Move => Chaos
             MovingState.AddTransition(new Transition(
-                () => State == AgentState.Crazy,
-                () => Crazy(), 
-                CrazyState));
+                () => State == AgentState.Chaos,
+                () => Chaos(), 
+                ChaosState));
 
             // Move => Accident
             MovingState.AddTransition(new Transition(
@@ -99,18 +101,18 @@ namespace Assets.Scripts.AI
 
             // ---------------------------------------
 
-            // Crazy => Accident
-            CrazyState.AddTransition(new Transition(
+            // Chaos => Accident
+            ChaosState.AddTransition(new Transition(
                 () => State == AgentState.Accident,
                 () => Accident(), AccidentState));
 
-            // Crazy => Move
-            CrazyState.AddTransition(new Transition(
+            // Chaos => Move
+            ChaosState.AddTransition(new Transition(
                 () => State == AgentState.Move,
                 () => Move(), MovingState));
 
-            // Crazy => Idle
-            CrazyState.AddTransition(new Transition(
+            // Chaos => Idle
+            ChaosState.AddTransition(new Transition(
                 () => State == AgentState.Idle,
                 () => Idle(), MovingState));
 
@@ -148,7 +150,7 @@ namespace Assets.Scripts.AI
 
         private void OnTriggerStay(Collider other)
         {
-            if (State != AgentState.Crazy)
+            if (State != AgentState.Chaos)
             {
                 if (other.CompareTag("Vehicle"))
                     agent.speed = Mathf.Lerp(agent.speed, 
@@ -163,7 +165,7 @@ namespace Assets.Scripts.AI
 
         private void OnTriggerExit(Collider other)
         {
-            if (State != AgentState.Crazy)
+            if (State != AgentState.Chaos)
             {
                 if(other.CompareTag("Vehicle") || other.CompareTag("Pedestrian")
                     || other.CompareTag("RedLight"))
@@ -217,8 +219,8 @@ namespace Assets.Scripts.AI
 
 #endregion
 
-#region  Crazy
-        private void Crazy()
+#region  Chaos
+        private void Chaos()
         {
           
             float time = Random.Range(10F, 60F);
@@ -250,7 +252,6 @@ namespace Assets.Scripts.AI
         }
 
 #endregion
-
 
 #region Accident Actions
         private void Accident()
@@ -288,7 +289,6 @@ namespace Assets.Scripts.AI
 
         }
 
-    
         /// <summary>
         /// 
         /// </summary>

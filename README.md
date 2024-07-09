@@ -180,7 +180,7 @@ Possui valores parametrizáveis como:
   - **_Max Time In Accident_**: tempo máximo (segundos) em que agente pode estar em modo acidente.
   
 - Caos
-  - **_Max Time in Crazy_**: tempo máximo (segundos) em que agente pode estar em modo caos
+  - **_Max Time in Chaos_**: tempo máximo (segundos) em que agente pode estar em modo caos
   - **_Chaos Chance_**: probabilidade de um agente começar em modo caos.
   
 ![SimCity AIDirector](./Images/generalAIsetts.png)
