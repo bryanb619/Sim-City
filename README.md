@@ -102,7 +102,7 @@ As imagens nesta secção apresentam visualmente o código desenvolvido para efe
 
 ![SimCity FSM](./Images/agent.drawio.png)
 
-#### Agentes Fixos
+#### Agente Fixo (semáforo)
 
 ![SimCity FSM](./Images/traffic.drawio.png)
 
@@ -116,19 +116,45 @@ TIPO De movimento
 Assim como os carros  
 tipo de movimento
 
-### Semáforos
+### Semáforos (sinais luminosos)
 
-Os semáfors são agentes fixos na simulação alternando apenas entre 2 estados, verde e vermelho. O seu estado inicial é definido no _gameObject_ . Estes estados alternam os estados de 2 colisores. Quando o estado é vermelho, o colisor de carros passa a estar ativo enquanto, o colisor de peões é desativo e assim vice-versa.
+Os semáfors são agentes fixos na simulação alternando apenas entre 2 estados, verde e vermelho. O seu estado inicial é definido no próprio _gameObject_ . Estes estados alternam os estados de 2 colisores. Quando o estado é vermelho, o colisor de carros passa a estar ativo enquanto, o colisor de peões é desativo e assim vice-versa.
 
-Como referido acima, existem 2 tipos de colisores numa interseção. 
+Como referido, existem 2 tipos de colisores numa interseção, sendo demonstrados a título de exemplo na seguinte imagem.
 
-- **_Colider_ Vermelho**  
+- **_Colider_ Vermelho**: colisor para veículos que quando detetado impede a passagem de veículos na mesma faixa.
 
-- **_Colider_ Verde**
+- **_Colider_ Verde**: colisor para peões que quando detetado impede a passagem de um peão na passadeira.
 
-![SimCity AIDirecto](./Images/trafficLights.png)
+![SimCity trafficLight](./Images/trafficLights.png)
 
-TODO: MOSTRAR COMO FUNCIONA
+### _Traffic Light_
+
+Cada semáforo na simulação contém um componente _Traffic Light_, responsável por guardar o _LightState_ (estado de luz atual) e ativar e desativar colisores como referido anteriormente.
+
+É possível editar alguns parâmetros como:
+
+- **_Light Mat_**: guarda os materiais (serve apenas para efeitos visuais da simulação).  
+  
+- **_Start Light State_**: define o estado de luz inicial de cada semáfora.
+  
+- **_Cross Walk Colls_**: guarda os colisores de peões.
+
+- **_Car Colls_**: guarda os colisores de veículos.
+
+![SimCity trafficLightScript](./Images/TrafficLighScript.png)
+
+### _Intersection Brain_
+
+Existe apenas 1 "cérebro" por interseção e este componente é responsável pelo tempo (tempo do temporizador em segundos) para mudar o estado dos sinais.
+
+Possui valores parametrizáveis como:
+
+- **_Light Max Time_**: responsável por definir o tempo (em segundos) de transição do estado dos semáforos.
+  
+- **_Control Points_**: define cada semáforo na atual interseção.
+
+![SimCity Intersection Brain](./Images/IB.png)
 
 ### AI Director
 
