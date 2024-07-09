@@ -33,20 +33,21 @@
   - IAgent interface
   - TrafficLight System implementation:
     - LightState enum
-    - TrafficLight class
-    - ITrafficLight interface
+    - TrafficLight
   - UI
   - AIDirector
 - Scene
   - Posicionamento de sinais de trânsito, transição de cor, _colliders_ e locais de destino
 - Relatório:
+  - Artigos
+  - Imagens e explicação
   - UML
   - Diagramas
 - _Bug fixing_
 
 ## Introdução
 
- O projeto desenvolvido retrata o tráfego urbano """ . Foi desenvolvido utilizando o motor de jogo [_Unity Engine_ 2022.3.1 _LTS_](https://unity.com/releases/editor/whats-new/2022.3.1#release-notes) e para definir as ações dos agentes, utilizamos as FSM (finite-state machine) [[1]](https://nunofachada.github.io/libgameai/api/LibGameAI.FSMs.html) e o objetivo principal foi demonstrar as técnicas de Inteligência Artificial em uma espécie de _Sim City_ não jogável, com automóveis, peões e sinais de trânsito (sinalização luminosa).
+ O projeto desenvolvido retrata um módelo tráfego urbano """ . Foi desenvolvido utilizando o motor de jogo [_Unity Engine_ 2022.3.1 _LTS_](https://unity.com/releases/editor/whats-new/2022.3.1#release-notes) e para definir as ações dos agentes, utilizamos as FSM (finite-state machine) [[1]](https://nunofachada.github.io/libgameai/api/LibGameAI.FSMs.html) e o objetivo principal foi demonstrar as técnicas de Inteligência Artificial em uma espécie de _Sim City_ não jogável, com automóveis, peões e sinais de trânsito (sinalização luminosa).
 
 - Objetivos desta simulação:
   - Fazer com que os automóveis respeitem as regras de trânsito, como sinais luminosos, passadeiras e outros veículos na via.
@@ -67,24 +68,27 @@ Nesta seção, será apresentada uma pesquisa sobre simulações relacionadas ao
 
 ### **_Traffic3D: An Open-Source Traffic-based Interactive Framework to Train AI Agents_**
 
-**Comparação com o nosso projeto**
+**Comparação entre projetos** :
 
 ### **_Unity based Urban Environment Simulation for Autonomous Vehicle Stereo Vision Evaluation_**
 
 Este estudo explora o desenvolvimento e experimento de uma simulação 3D no _Unity Engine_ para testar veículos  veículos autónomos registarem registarem dados com _stereo cameras_ representados nesta simulação por camâras do próprio _engine_ situadas na frente do veículo. O objetivo deste experimento é demonstrar as capacidades de um veículo autónomo equipado com sensores(_omnipresent stereo cameras_). A terceira câmara ou a câmara central é bastante interessante porque, faz uso de um shader chamado _Z-buffer_ para representar a gravação de dados em profundidade.
 
-**Comparação com o nosso projeto**
-
-
+**Comparação entre projetos :**
 [[2]](https://ieeexplore.ieee.org/abstract/document/8756805)
 
 ### **_Unity 3D Simulator of Autonomous Motorway Traffic Applied to Emergency Corridor Building_**
 
-Este trabalha aborda o desenvolvimento de um simulador de trânsito numa auto-estrada com veículos autónomos com o objetivo de aumentar a segurança e permitir com mais sucesso e mais rapidamente a chegada de equipas de emergência.
+Este trabalha aborda o desenvolvimento de um simulador de trânsito numa auto-estrada com veículos autónomos, denomimado "Autonomous Motorway Traffic Applied to Emergency Corridor Building" (AMTECB).  O objetivo de AMTECB é demonstrar a eficácia de agentes autónomos em certos cenários e permitir com mais sucesso e mais rapidamente a chegada de equipas de emergência ao local de acidentes em auto-estradas.
 
-A principal diferença entre este trabalho e outros é facto deste focar-se na construção de uma faixa de emergência em auto-estradas realizada por veículos autónomos e assim Demonstrar a eficácia de veículos autónomos em situações de emergência e intenso trânsito.
+A principal diferença AMTECB e outros é facto deste focar-se na construção de uma faixa de emergência em auto-estradas realizada por veículos autónomos e assim Demonstrar a eficácia de veículos autónomos em situações de emergência e intenso trânsito.
 
-**Comparação com o nosso projeto**
+**Comparação entre projetos** :
+
+- **Abordagem e objetivos**:  
+
+  Ambos os trabalhos procuram melhorar simulações de tráfego, entretanto o nosso projeto implementa uma abordagem que foca em simular comportamentos de tráfego de veículos e peões, suas respectivas interações como deteção de agentes móveis(carros), agentes fixos (sinais luminosos) e finalmente terem uma ação designada em caso de acidentes num cenário urbano. Enquanto AMTECB desenvolveu um sistema focado em segurança rodoviária, mais especificamente em auto-estradas.  
+  Para efetuar a sua abordagem utiliza veículos autónomos capazes de se comunicarem com o objetivo de regular a velocidade dos agentes, criar faixas de emergência, procurando assim garantir ao máximo possível a segurança em estradas para todos.
 
 ## Metodologia
 
@@ -114,9 +118,15 @@ tipo de movimento
 
 ### Semáforos
 
-Os semáfors são agentes fixos na simulação alternando apenas entre 2 estados, verde e vermelho. Estes estados alternam os estados de 2 colisores. Quando o estado é vermelho, o colisor de carros passa a estar ativo enquanto, o colisor de peões é desativo e assim vice-versa.
+Os semáfors são agentes fixos na simulação alternando apenas entre 2 estados, verde e vermelho. O seu estado inicial é definido no _gameObject_ . Estes estados alternam os estados de 2 colisores. Quando o estado é vermelho, o colisor de carros passa a estar ativo enquanto, o colisor de peões é desativo e assim vice-versa.
 
-![SimCity AIDirecto](./Images/semaforo.png)
+Como referido acima, existem 2 tipos de colisores numa interseção. 
+
+- **_Colider_ Vermelho**  
+
+- **_Colider_ Verde**
+
+![SimCity AIDirecto](./Images/trafficLights.png)
 
 TODO: MOSTRAR COMO FUNCIONA
 
