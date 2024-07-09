@@ -81,14 +81,14 @@ Este estudo explora o desenvolvimento e experimento de uma simulação 3D no _Un
 
 Este trabalha aborda o desenvolvimento de um simulador de trânsito numa auto-estrada com veículos autónomos, denomimado "Autonomous Motorway Traffic Applied to Emergency Corridor Building" (AMTECB).  O objetivo de AMTECB é demonstrar a eficácia de agentes autónomos em certos cenários e permitir com mais sucesso e mais rapidamente a chegada de equipas de emergência ao local de acidentes em auto-estradas.
 
-A principal diferença AMTECB e outros é facto deste focar-se na construção de uma faixa de emergência em auto-estradas realizada por veículos autónomos e assim Demonstrar a eficácia de veículos autónomos em situações de emergência e intenso trânsito.
+A principal diferença AMTECB e outros é facto deste focar-se na construção de uma faixa de emergência em auto-estradas realizada por veículos autónomos e assim Demonstrar a eficácia de veículos autónomos em situações de emergência e intenso trânsito. 
 
 **Comparação entre projetos** :
 
 - **Abordagem e objetivos**:  
 
   Ambos os trabalhos procuram melhorar simulações de tráfego, entretanto o nosso projeto implementa uma abordagem que foca em simular comportamentos de tráfego de veículos e peões, suas respectivas interações como deteção de agentes móveis(carros), agentes fixos (sinais luminosos) e finalmente terem uma ação designada em caso de acidentes num cenário urbano. Enquanto AMTECB desenvolveu um sistema focado em segurança rodoviária, mais especificamente em auto-estradas.  
-  Para efetuar a sua abordagem utiliza veículos autónomos capazes de se comunicarem com o objetivo de regular a velocidade dos agentes, criar faixas de emergência, procurando assim garantir ao máximo possível a segurança em estradas para todos.
+  Para efetuar a sua abordagem utiliza veículos autónomos capazes de se comunicarem com o objetivo de regular a velocidade dos agentes, criar faixas de emergência, procurando assim garantir ao máximo possível a segurança em estradas para todos. [[3]](https://www.researchgate.net/profile/Jurij-Kuzmic/publication/341470027_Unity_3D_Simulator_of_Autonomous_Motorway_Traffic_Applied_to_Emergency_Corridor_Building/links/60119d42299bf1b33e2d26f5/Unity-3D-Simulator-of-Autonomous-Motorway-Traffic-Applied-to-Emergency-Corridor-Building.pdf)
 
 ## Metodologia
 
