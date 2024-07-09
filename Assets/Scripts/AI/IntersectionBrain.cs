@@ -10,7 +10,7 @@ namespace Assets.Scripts.AI
     public class IntersectionBrain : MonoBehaviour
     {
         [Header("Max time for each light signal")]
-        [Range(5, 15)]
+        [Range(5, 10)]
         [SerializeField]
         private int lightMaxTime = 5;
 
