@@ -15,17 +15,21 @@ namespace Assets.Scripts.AI
 
         private StateMachine _fsm;
 
+        [Header("Light Materials")]
         [SerializeField]
         private GameObject[] _lightMat;
 
+        [Header("Initial Light State")]
         [SerializeField] 
         private LightState _startLightState;
 
         private LightState _light;
 
+        [Header("Crosswalk Colliders")]
         [SerializeField] 
         private GameObject _crossWalkColls;
 
+        [Header("Vehicle Colliders")]
         [SerializeField] 
         private GameObject _carColls;
 

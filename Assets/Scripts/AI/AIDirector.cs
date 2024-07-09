@@ -122,8 +122,8 @@ namespace Assets.Scripts.AI
                     agent = objAI.GetComponent<NavAgentBehaviour>();
 
                     // set parameters
-                    agent.SetParameters(_carTimeStoped, 
-                    _maxTimeInAccident, _maxTimeInCrazy,_chaosChance);
+                    //agent.SetParameters(_carTimeStoped, 
+                    //_maxTimeInAccident, _maxTimeInCrazy,_chaosChance);
 
                     // add car to list
                     _carList.Add(objAI); 
@@ -143,11 +143,11 @@ namespace Assets.Scripts.AI
 
 
                     // get NavAgentBehaviour component from spawned ped
-                    agent = objAI.GetComponent<NavAgentBehaviour>();
+                    //agent = objAI.GetComponent<NavAgentBehaviour>();
                     
                     // set parameters
-                    agent.SetParameters(_pedTimeStopped,
-                    _maxTimeInAccident, _maxTimeInCrazy, _chaosChance);
+                    //agent.SetParameters(_pedTimeStopped,
+                    //_maxTimeInAccident, _maxTimeInCrazy, _chaosChance);
 
                     // add ped to list
                     _pedList.Add(objAI); 
