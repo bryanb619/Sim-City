@@ -58675,6 +58675,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 95965445159009107, guid: b3403fb1352c6ee4f831a6c2d9ced6dd, type: 3}
+      propertyPath: m_text
+      value: 'Vehicles: '
+      objectReference: {fileID: 0}
+    - target: {fileID: 95965445159009107, guid: b3403fb1352c6ee4f831a6c2d9ced6dd, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95965445159009107, guid: b3403fb1352c6ee4f831a6c2d9ced6dd, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95965445159009107, guid: b3403fb1352c6ee4f831a6c2d9ced6dd, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2466539445452296302, guid: b3403fb1352c6ee4f831a6c2d9ced6dd, type: 3}
       propertyPath: m_fontSize
       value: 18
@@ -58686,6 +58702,10 @@ PrefabInstance:
     - target: {fileID: 2466539445452296302, guid: b3403fb1352c6ee4f831a6c2d9ced6dd, type: 3}
       propertyPath: m_fontStyle
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3029149260582945157, guid: b3403fb1352c6ee4f831a6c2d9ced6dd, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3890264923875167183, guid: b3403fb1352c6ee4f831a6c2d9ced6dd, type: 3}
       propertyPath: m_Name
