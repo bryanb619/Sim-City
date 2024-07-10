@@ -1,4 +1,8 @@
-public enum AgentState 
+namespace Assets.Scripts.AI
 {
-    Move, Idle, Chaos, Accident
+    public enum AgentState 
+    {
+        Move, Idle, Accident
+    }
 }
+
