@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 
@@ -9,7 +10,12 @@ public class UI : MonoBehaviour
     // Reference to the UI GameObject
     [SerializeField] private GameObject      _simUI;
 
-    [SerializeField] private GameObject     _aiDirector;
+    [SerializeField] TMP_Text _carCountText;
+
+    [SerializeField] TMP_Text _pedCountText;
+
+
+    private int _carCount = 0 , _pedCount = 0;
 
 #endregion
 
@@ -37,6 +43,19 @@ public class UI : MonoBehaviour
             }
             
         }
+    }
+
+    public void UpdateCarCount()
+    {
+        _carCount++;
+        _carCountText.text = $"Car count: {_carCount}";
+
+    }
+
+    public void UpdatePedCount()
+    {
+        _pedCount++;
+        _pedCountText.text = $"Ped count: {_pedCount}";
     }
 }
 

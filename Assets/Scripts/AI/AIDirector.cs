@@ -57,7 +57,7 @@ namespace Assets.Scripts.AI
         
         [SerializeField, BoxGroup("Cars")]
         private List<Transform> _carSpawnPoints = new List<Transform>();
-        
+
         
         #endregion
 
@@ -68,6 +68,9 @@ namespace Assets.Scripts.AI
 
         // ped list
         private List<GameObject> _pedList = new List<GameObject>();
+
+
+        [SerializeField] private UI _ui;
 
 
         /// <summary>
@@ -123,9 +126,12 @@ namespace Assets.Scripts.AI
                     agent.SetParameters(_carTimeStopped, _timeInAccident, _timeInChaos,_chaosChance);
 
                     // add car to list
-                    _carList.Add(objAI); 
+                    _carList.Add(objAI);
 
+                    _ui.UpdateCarCount();
                     
+
+
                 }
 
                 else 
@@ -146,7 +152,9 @@ namespace Assets.Scripts.AI
                     agent.SetParameters(_pedTimeStopped, _timeInAccident, _timeInChaos,_chaosChance);
 
                     // add ped to list
-                    _pedList.Add(objAI); 
+                    _pedList.Add(objAI);
+
+                    _ui.UpdatePedCount();
 
                     //print($"Ped {i} spawned");
 
