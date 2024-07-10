@@ -77,9 +77,16 @@ Este artigo analisa o uso de _Traffic3D_, uma poderosa ferramenta [_open source_
 
 **Comparação entre projetos** :
 
-- **Valores paramétrizáveis e componentes da simulação**
+- **Parametrização da Simulação**
   
-  Ambos os projetos permitem a edição de parametros relevantes a simulação, tanto o nosso projeto como este projeto que estamos a analisar permitem popular o cenário da simulação com tráfego multi-modal, isto é tráfego de veiculos e peões, posicionar a posição de instanciação dos agentes móveis (criar agentes num local pré-definido). Entretanto, TIFTAI vai ainda mais longe e permite escolhas nos peões como género, idade, aparência (roupa) e mútiplos   
+  Ambos os projetos permitem a edição de parametros relevantes a simulação, tanto o nosso projeto como este projeto que estamos a analisar permitem popular o cenário da simulação com tráfego multi-modal, isto é tráfego de veiculos e peões, posicionar a posição de instanciação dos agentes móveis (criar agentes num local pré-definido). Entretanto _Traffic3D_ vai ainda mais longe e permite multiplas escolhas (parametrização):
+
+  - Peões: alterações mais a nível estético como género, idade, aparência (roupa do peão). Existem também outras parametrizações como andar ou correr e comportamentos esperar em sinais vermelhos, atravessar nos sinais verdes, cruzar estrada em pontos não designados para atravessia de peões. Este poderoso simulador permite ainda estender os comportamentos e funcionalidades de peões.
+
+  - Veículos: Existem diversos veículos nesta simulação como civil, emergência,     taxi e autocarros. Ainda é fornecida a opção de veículos esolherem a condução pelo lado esquerdo ou direito da estrada, algo que é importante para países como que se conduz no lado esquerdo da estrada, bem como a Inglaterra e outros.
+
+- **componentes da simulação:**
+  
   [[2]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4015243)
 
 ### **_Unity based Urban Environment Simulation for Autonomous Vehicle Stereo Vision Evaluation_**
@@ -91,7 +98,7 @@ Este estudo explora o desenvolvimento e experimento de uma simulação 3D no _Un
 
 ### **_Unity 3D Simulator of Autonomous Motorway Traffic Applied to Emergency Corridor Building_**
 
-Este trabalho aborda o desenvolvimento de um simulador de trânsito numa auto-estrada com veículos autónomos, ...  O objetivo de AMTECB é demonstrar a eficácia de agentes autónomos em certos cenários e permitir com mais sucesso e mais rapidamente a chegada de equipas de emergência ao local de acidentes em auto-estradas.
+Este trabalho aborda o desenvolvimento de um simulador de trânsito numa auto-estrada com veículos autónomos, ...  O objetivo de OUTRO é demonstrar a eficácia de agentes autónomos em certos cenários e permitir com mais sucesso e mais rapidamente a chegada de equipas de emergência ao local de acidentes em auto-estradas.
 
 A principal diferença OUTRO PROJETO e outros é facto deste focar-se na construção de uma faixa de emergência em auto-estradas realizada por veículos autónomos e assim Demonstrar a eficácia de veículos autónomos em situações de emergência e intenso trânsito.
 
