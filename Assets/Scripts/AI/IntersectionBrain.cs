@@ -85,7 +85,7 @@ namespace Assets.Scripts.AI
 
 #if UNITY_EDITOR // DEBUG TIME
 
-                print(time);
+                //print(time);
 #endif
 
                 // wait 1 second
