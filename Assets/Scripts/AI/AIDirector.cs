@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace Assets.Scripts.AI
@@ -12,55 +13,52 @@ namespace Assets.Scripts.AI
 
         #region Parameters
 
-        [Header("== Car ==")]
-        [Range(0, 50)]
-        [SerializeField] 
-        private int        _cars = 25;
+        [SerializeField, BoxGroup("Cars"), Label("Car amount"), 
+        Range(0, 50)]
+        private int             _cars = 25;
 
-        [SerializeField] 
-        private List<Transform> _carSpawnPoints = new List<Transform>();
+        [SerializeField, BoxGroup("Cars"), 
+        MinMaxSlider(0, 75)] 
+        // x = minimum time, y = maximum time
+        private Vector2Int      _carTimeStopped;
 
-        [Range(0, 75)]
-        [SerializeField] 
-        private int        _carTimeStoped = 10;
+        [SerializeField, BoxGroup("Cars")] 
+        private GameObject      _car;
 
-        [SerializeField] 
-        private GameObject _car;
+        [SerializeField, BoxGroup("Pedestrian"), Label("Ped amount"), 
+        Range(0, 75)]
+        private int             _peds = 30;
 
-        [Header("== Ped ==")]
-        [Range(0, 75)]
-        [SerializeField] 
-        private int         _peds = 30;
-
-    
-        [SerializeField] 
-        private List<Transform> _pedSpawnPoints = new List<Transform>();
-
-        [Range(0, 75)]
-
-        [SerializeField] 
-        private int         _pedTimeStopped = 10;
+        [SerializeField, BoxGroup("Pedestrian"), 
+        MinMaxSlider(0, 75)] 
+        // x = minimum time, y = maximum time
+        private Vector2Int      _pedTimeStopped;
                 
-        [SerializeField] 
-        private GameObject _ped;
+        [SerializeField, BoxGroup("Pedestrian")] 
+        private GameObject      _ped;
 
 
+        [SerializeField, BoxGroup("Accident"), 
+        MinMaxSlider(0, 75)] 
+        private Vector2Int      _timeInAccident;
+
+
+        [SerializeField, BoxGroup("Chaos"), 
+        MinMaxSlider(0, 75)]
+        // x = minimum time, y = maximum time
+        private Vector2Int      _timeInChaos;
+
+        [SerializeField, BoxGroup("Chaos"), 
+        Range(0, 100)]
+        private int             _chaosChance = 5;
+
+        [SerializeField, Foldout("Spawn Points")] 
+        private List<Transform> _pedSpawnPoints = new List<Transform>();
         
-        [Header("== Accident ==")]
-        [Range(0, 75)]
-        [SerializeField] 
-        private int         _maxTimeInAccident = 15;
-
-
-        [Header("== Chaos ==")]
-        [Range(0, 75)]
-        [SerializeField] 
-        private int         _maxTimeInChaos = 30;
-
-        [Range(0, 100)]
-        [SerializeField] 
-        private float         _chaosChance = 5f;
-
+        [SerializeField, Foldout("Spawn Points")]
+        private List<Transform> _carSpawnPoints = new List<Transform>();
+        
+        
         #endregion
 
         // list of agents
@@ -122,7 +120,7 @@ namespace Assets.Scripts.AI
                     agent = objAI.GetComponent<NavAgentBehaviour>();
 
                     // set parameters
-                    //agent.SetParameters(_carTimeStoped, _maxTimeInAccident, _maxTimeInChaos,_chaosChance);
+                    agent.SetParameters(_carTimeStopped, _timeInAccident, _timeInChaos,_chaosChance);
 
                     // add car to list
                     _carList.Add(objAI); 
@@ -145,7 +143,7 @@ namespace Assets.Scripts.AI
                     agent = objAI.GetComponent<NavAgentBehaviour>();
                     
                     // set parameters
-                    //agent.SetParameters(_pedTimeStopped, _maxTimeInAccident, _maxTimeInChaos, _chaosChance);
+                    agent.SetParameters(_pedTimeStopped, _timeInAccident, _timeInChaos,_chaosChance);
 
                     // add ped to list
                     _pedList.Add(objAI); 

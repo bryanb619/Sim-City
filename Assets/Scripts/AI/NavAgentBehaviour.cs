@@ -9,7 +9,6 @@ using Random = UnityEngine.Random;
 namespace Assets.Scripts.AI
 {
     // Automatically add the NavMeshAgent to the GameObject
-    [RequireComponent(typeof(NavMeshAgent))]
     public class NavAgentBehaviour : MonoBehaviour, IAgent
     {   
         // ---------------- interface ------------------------------------------
@@ -24,7 +23,7 @@ namespace Assets.Scripts.AI
         private NavMeshAgent agent;
         private float initialAgentSpeed;
 
-        private int maxStopTime, maxAccidentTime, maxChaosTime;
+        private Vector2Int _stopTime, _accidentTime, _chaosTime;
         private float _chaosChance;
 
         // ------------- FSM ---------------------------------------------------
@@ -34,7 +33,9 @@ namespace Assets.Scripts.AI
         private Color _color;
         
         [SerializeField]
-        private MeshRenderer[] mesh;
+        private MeshRenderer[] meshToChangeColor;
+        [SerializeField]
+        private GameObject[] meshToDeactivate;
 
         private Action actions;
 
@@ -48,7 +49,10 @@ namespace Assets.Scripts.AI
             if (CompareTag("Pedestrian"))
                 goal = GameObject.FindGameObjectsWithTag("Dest");
             else
+            {
                 goal = GameObject.FindGameObjectsWithTag("CarDest");
+                //_color = meshToChangeColor[0].material.color;
+            }
 
             // Get reference to the NavMeshAgent component
             agent = GetComponent<NavMeshAgent>();
@@ -66,14 +70,10 @@ namespace Assets.Scripts.AI
             State AccidentState = new State("Accident",Accident, null, null);
             State ChaosState    = new State("Chaos", Chaos, null, null);
 
-            // ------------------- Color ---------------------------------------
-            _color = mesh[0].material.color;
-           
-
             // ------------------------ TRANSITIONS ----------------------------
 
             // arrive at destination => idle
-            // idle => invisel, desativa navmeshagent
+            // idle => invisel, desativa NavMeshagent
 
             // IDLE => Move
             IdleState.AddTransition(new Transition(
@@ -185,9 +185,9 @@ namespace Assets.Scripts.AI
         {
             SetAgentMovement(true);
 
-            foreach (MeshRenderer m in mesh)
+            foreach (GameObject m in meshToDeactivate)
             {
-                m.enabled = false;
+                m.SetActive(false);
             }
   
             if (agent.GetComponent<BoxCollider>() != null)
@@ -201,9 +201,9 @@ namespace Assets.Scripts.AI
             SetAgentMovement(false);
             agent.speed = initialAgentSpeed;
 
-            foreach (MeshRenderer m in mesh)
+            foreach (GameObject m in meshToDeactivate)
             {
-                m.enabled = true;
+                m.SetActive(false);
             }
 
             if (agent.GetComponent<BoxCollider>() != null)
@@ -241,10 +241,13 @@ namespace Assets.Scripts.AI
 
                 if(timer< time)
                 {
-                    mesh[0].material.color = Color.yellow;
+                    foreach (MeshRenderer m in meshToChangeColor)
+                        m.material.color = Color.yellow;
 
                     yield return new WaitForSeconds(0.2f);
-                    mesh[0].material.color = _color;
+                    
+                    foreach (MeshRenderer m in meshToChangeColor)
+                        m.material.color = _color;
                 }
               
             }
@@ -257,7 +260,8 @@ namespace Assets.Scripts.AI
         private void Accident()
         {
             SetAgentMovement(true);
-            mesh[0].material.color = Color.red;
+            foreach (MeshRenderer m in meshToChangeColor)
+                m.material.color = Color.red;
         
         }
 
@@ -287,6 +291,17 @@ namespace Assets.Scripts.AI
                 agent.speed = 3.5f;
             }
 
+        }
+
+        public void SetParameters(Vector2Int timeStoped, 
+                                  Vector2Int timeInAccident, 
+                                  Vector2Int timeInChaos,
+                                  int chaosChance)
+        {
+            _stopTime = timeStoped;
+            _accidentTime = timeInAccident;
+            _chaosTime = timeInChaos;
+            _chaosChance = chaosChance;
         }
 
         /// <summary>
