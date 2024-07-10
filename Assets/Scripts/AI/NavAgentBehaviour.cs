@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 namespace Assets.Scripts.AI
 {
     // Automatically add the NavMeshAgent to the GameObject
-    public class NavAgentBehaviour : MonoBehaviour, IAgent
+    public class NavAgentBehaviour : MonoBehaviour
     {   
         // ---------------- interface ------------------------------------------
 
