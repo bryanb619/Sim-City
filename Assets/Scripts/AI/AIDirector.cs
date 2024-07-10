@@ -13,6 +13,8 @@ namespace Assets.Scripts.AI
 
         #region Parameters
 
+        private GameObject currentAI; 
+
         [SerializeField, BoxGroup("Cars"), Label("Car amount"), 
         Range(0, 50)]
         private int             _cars = 25;
@@ -78,8 +80,6 @@ namespace Assets.Scripts.AI
         /// </summary>
         private void Start()
         {
-            print("Simulation Started");
-
             // car spawn
             SpawnAgents(_car, _cars);
 
@@ -97,18 +97,22 @@ namespace Assets.Scripts.AI
         /// <param name="quantity"></param>
         private void SpawnAgents(GameObject objAI, int quantity)
         {   
-            // ref to nav agent
-            NavAgentBehaviour agent;
+          
+           
 
             // random point value
             int rp = 0;
 
             // loop
             for (int i = 0; i < quantity; i++)
-            {
+            {   
+
 
                 if (objAI == _car) 
                 {   
+
+                    // ref to nav agent
+                    Agent agent;
 
                     //StartCoroutine(WaitForSeconds(3f)); 
 
@@ -116,27 +120,26 @@ namespace Assets.Scripts.AI
                     rp = Random.Range(0, _carSpawnPoints.Count);
 
                     // spawn car
-                    Instantiate(objAI, _carSpawnPoints[rp].transform.position, 
+                    currentAI = Instantiate(objAI,
+                     _carSpawnPoints[rp].transform.position, 
                     transform.rotation);
                 
                     // get NavAgentBehaviour component from spawned car
-                    agent = objAI.GetComponent<NavAgentBehaviour>();
+                    agent = currentAI.GetComponent<Agent>();
+
+                    // add car to list
+                    _carList.Add(currentAI);
+
+                    _ui.UpdateCarCount();
 
                     // set parameters
                     agent.SetParameters(_carTimeStopped, _timeInAccident, _timeInChaos,_chaosChance);
-
-                    // add car to list
-                    _carList.Add(objAI);
-
-                    _ui.UpdateCarCount();
-                    
-
 
                 }
 
                 else 
                 {   
-
+                    NavAgentBehaviour ped;
                     // get random point
                     rp = Random.Range(0, _pedSpawnPoints.Count);
 
@@ -146,10 +149,10 @@ namespace Assets.Scripts.AI
 
 
                     // get NavAgentBehaviour component from spawned ped
-                    agent = objAI.GetComponent<NavAgentBehaviour>();
+                    ped = objAI.GetComponent<NavAgentBehaviour>();
                     
                     // set parameters
-                    agent.SetParameters(_pedTimeStopped, _timeInAccident, _timeInChaos,_chaosChance);
+                    ped.SetParameters(_pedTimeStopped, _timeInAccident, _timeInChaos,_chaosChance);
 
                     // add ped to list
                     _pedList.Add(objAI);
