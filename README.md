@@ -79,13 +79,15 @@ Este artigo analisa o uso de _Traffic3D_, uma poderosa ferramenta [_open source_
 
 - **Parametrização da Simulação**
   
-  Ambos os projetos permitem a edição de parametros relevantes a simulação, tanto o nosso projeto como este projeto que estamos a analisar permitem popular o cenário da simulação com tráfego multi-modal, isto é tráfego de veiculos e peões, posicionar a posição de instanciação dos agentes móveis (criar agentes num local pré-definido). Entretanto _Traffic3D_ vai ainda mais longe e permite multiplas escolhas (parametrização):
+  Ambos os projetos permitem a edição de parametros relevantes a simulação, tanto o nosso projeto como este projeto que estamos a analisar permitem popular o cenário da simulação com tráfego multi-modal, isto é tráfego de veiculos e peões, posicionar a posição de instanciação dos agentes móveis (criar agentes num local pré-definido). Entretanto _Traffic3D_ vai ainda mais longe e permite multiplas escolhas de (parametrização):
 
   - Peões: alterações mais a nível estético como género, idade, aparência (roupa do peão). Existem também outras parametrizações como andar ou correr e comportamentos esperar em sinais vermelhos, atravessar nos sinais verdes, cruzar estrada em pontos não designados para atravessia de peões. Este poderoso simulador permite ainda estender os comportamentos e funcionalidades de peões.
 
   - Veículos: Existem diversos veículos nesta simulação como civil, emergência,     taxi e autocarros. Ainda é fornecida a opção de veículos esolherem a condução pelo lado esquerdo ou direito da estrada, algo que é importante para países como que se conduz no lado esquerdo da estrada, bem como a Inglaterra e outros.
 
-- **componentes da simulação:**
+- **Componentes da simulação :**
+  
+  _Traffic3D_ possui diversas características semelhantes com o _engine_ utilizado no nosso projeto que permitem fazer o cenário da simulação parecer o mais realistico como: iluminação global em tempo real, luzes, sombras, texturas e objetos nativos como veículos, céu e edifícios.
   
   [[2]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4015243)
 
@@ -100,7 +102,7 @@ Este estudo explora o desenvolvimento e experimento de uma simulação 3D no _Un
 
 Este trabalho aborda o desenvolvimento de um simulador de trânsito numa auto-estrada com veículos autónomos, ...  O objetivo de OUTRO é demonstrar a eficácia de agentes autónomos em certos cenários e permitir com mais sucesso e mais rapidamente a chegada de equipas de emergência ao local de acidentes em auto-estradas.
 
-A principal diferença OUTRO PROJETO e outros é facto deste focar-se na construção de uma faixa de emergência em auto-estradas realizada por veículos autónomos e assim Demonstrar a eficácia de veículos autónomos em situações de emergência e intenso trânsito.
+A principal diferença ou inovação entre este projetos e outros é o facto deste focar-se na construção de uma faixa de emergência em auto-estradas realizada por veículos autónomos e assim Demonstrar a eficácia de veículos autónomos em situações de emergência e intenso trânsito.
 
 **Comparação entre projetos** :
 
@@ -256,6 +258,8 @@ Sunny Valley Studio. (2020, August 26). Project setup - City Builder Unity tutor
 Kink3d. (n.d.). GitHub - Kink3d/SimpleTraffic: A simple traffic simulation using Unity’s Nav Mesh Components. GitHub. <https://github.com/Kink3d/SimpleTraffic?tab=readme-ov-file>
 
 Mike, V. a. P. B. (2012, October 1). SimCity: traffic system, public transportation and international airports. Simcitizens. <https://simcitizens.com/simcity-traffic-system-public-transportation-and-international-airports/>
+
+Technologies, U. (n.d.-a). Unity - manual: making an agent patrol between a set of points. <https://docs.unity3d.com/560/Documentation/Manual/nav-AgentPatrol.html>
 
 ### _Assets_ de terceiros
   
