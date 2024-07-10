@@ -16,7 +16,7 @@
     - Melhoria do comportamento do Agent (melhorar isso!)
     - Sistema de Waypoints
     - Deteção de agentes
-    - Deteção de Colisores 
+    - Deteção de Colisores
   - TrafficLight
   - AIDirector
 - Scene:
