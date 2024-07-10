@@ -70,7 +70,6 @@ crashlytics-build.properties
 
 # TextMesh Pro files
 **/[Aa]ssets/TextMesh*Pro*
-Assets/plugins
 
 
 .vsconfig
