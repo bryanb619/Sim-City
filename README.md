@@ -13,7 +13,10 @@
 
 - Código
   - NavAgentBehaviour:
-    - Melhoria do comportamento do Agent
+    - Melhoria do comportamento do Agent (melhorar isso!)
+    - Sistema de Waypoints
+    - Deteção de agentes
+    - Deteção de Colisores 
   - TrafficLight
   - AIDirector
 - Scene:
@@ -30,12 +33,14 @@
 - Código:
   - Implementação de FSM
   - AgentState enum
-  - IAgent interface
+  - AIDirector (Implementação de sistema e transição do estado de luzes)
   - TrafficLight System implementation:
+    - IntersectionBrain
     - LightState enum
     - TrafficLight
   - UI
-  - AIDirector
+    - Contador de Agentes
+
 - Scene
   - Posicionamento de sinais de trânsito, transição de cor, _colliders_ e locais de destino
 - Relatório:
@@ -47,7 +52,7 @@
 
 ## Introdução
 
- O projeto desenvolvido retrata um módelo tráfego urbano """ . Foi desenvolvido utilizando o motor de jogo [_Unity Engine_ 2022.3.1 _LTS_](https://unity.com/releases/editor/whats-new/2022.3.1#release-notes) e para definir as ações dos agentes, utilizamos as FSM (finite-state machine) [[1]](https://nunofachada.github.io/libgameai/api/LibGameAI.FSMs.html) e o objetivo principal foi demonstrar as técnicas de Inteligência Artificial em uma espécie de _Sim City_ não jogável, com automóveis, peões e sinais de trânsito (sinalização luminosa).
+ O projeto desenvolvido retrata um módelo tráfego urbano """ . Foi desenvolvido utilizando o motor de jogo [_Unity Engine_ 2022.3.1 _LTS_](https://unity.com/releases/editor/whats-new/2022.3.1#release-notes) e para definir as ações dos agentes, utilizamos as FSM (finite-state machine) [[1]](https://nunofachada.github.io/libgameai/api/LibGameAI.FSMs.html) e o objetivo principal foi demonstrar as técnicas de Inteligência Artificial em uma espécie de _Sim City_ não jogável, com automóveis, peões e sinais de trânsito como semáforos (sinalização luminosa).
 
 - Objetivos desta simulação:
   - Fazer com que os automóveis respeitem as regras de trânsito, como sinais luminosos, passadeiras e outros veículos na via.
@@ -64,15 +69,18 @@
   
 ## Estudo da Arte
 
-Nesta seção, será apresentada uma pesquisa sobre simulações relacionadas ao nosso projeto, na qual faremos uma pequena descrição de cada uma e as compararemos com o nosso trabalho desenvolvido.
+Nesta seção, será apresentada uma pesquisa sobre simulações relacionadas ao nosso projeto, na qual faremos uma resumida descrição de cada uma e as compararemos com o nosso trabalho desenvolvido ao fazer uma análise de onde há semelhanças como diferenças entre as simulações.
 
 ### **_Traffic3D: An Open-Source Traffic-based Interactive Framework to Train AI Agents_**
 
-Este artigo analisa o uso de _Traffic3D_, uma poderosa ferramenta [_open source_](https://en.wikipedia.org/wiki/Open_source), capaz . O objetivo principal é explorar os problemas de tráfego, bem como o congestionamento em interseções operadas por semáforos (sinais luminosos).
-
-[[2]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4015243)
+Este artigo analisa o uso de _Traffic3D_, uma poderosa ferramenta [_open source_](https://en.wikipedia.org/wiki/Open_source), capaz de testar... e treinar agentes com I.A.  . O objetivo principal é explorar os problemas de tráfego, bem como o congestionamento em interseções operadas por semáforos (sinais luminosos).
 
 **Comparação entre projetos** :
+
+- **Valores paramétrizáveis e componentes da simulação**
+  
+  Ambos os projetos permitem a edição de parametros relevantes a simulação, tanto o nosso projeto como o p ESTE projeto permitem popular o cenário da simulação com tráfego multi modal, isto é tráfego de veiculos e peões, posicionar a posição de instanciação (criar agentes num local pré-definido) dos agentes
+  [[2]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4015243)
 
 ### **_Unity based Urban Environment Simulation for Autonomous Vehicle Stereo Vision Evaluation_**
 
@@ -245,5 +253,7 @@ Mike, V. a. P. B. (2012, October 1). SimCity: traffic system, public transportat
 ### _Assets_ de terceiros
   
 SimplePoly - Town Pack | 3D Environments | Unity Asset Store. (2024, January 7). Unity Asset Store. <https://assetstore.unity.com/packages/3d/environments/simplepoly-town-pack-62400>
+
+O pacote acima disponibiliza um controlo de câmara (_fly over_) sendo utilizado no projeto.
 
 HD Low Poly Racing Car No.1201 | 3D Land | Unity Asset Store. (2024, March 16). Unity Asset Store. <https://assetstore.unity.com/packages/3d/vehicles/land/hd-low-poly-racing-car-no-1201-118603>
