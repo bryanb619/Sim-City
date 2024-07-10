@@ -29,13 +29,16 @@ namespace Assets.Scripts.AI
         // ------------- FSM ---------------------------------------------------
 
         private StateMachine _fsm;
-
-        private Color _color;
         
         [SerializeField]
         private MeshRenderer[] meshToChangeColor;
+        
         [SerializeField]
         private GameObject[] meshToDeactivate;
+
+        [SerializeField]
+        private Material materialForAccident, materialForChaos;
+        private Material originalMaterial;
 
         private Action actions;
 
@@ -51,7 +54,7 @@ namespace Assets.Scripts.AI
             else
             {
                 goal = GameObject.FindGameObjectsWithTag("CarDest");
-                //_color = meshToChangeColor[0].material.color;
+                originalMaterial = meshToChangeColor[0].material;
             }
 
             // Get reference to the NavMeshAgent component
@@ -65,7 +68,7 @@ namespace Assets.Scripts.AI
         {   
 
             // --------------------- STATES ------------------------------------
-            State IdleState     = new State("Iddle",Idle, null, null);
+            State IdleState     = new State("Idle",Idle, null, null);
             State MovingState   = new State("Moving",Move, null, null);
             State AccidentState = new State("Accident",Accident, null, null);
             State ChaosState    = new State("Chaos", Chaos, null, null);
@@ -175,6 +178,17 @@ namespace Assets.Scripts.AI
             }
         }
 
+        private void OnCollisionEnter(Collision other)
+        {
+            if (other.gameObject.CompareTag("Pedestrian") 
+            || other.gameObject.CompareTag("Vehicle"))
+            {
+                State = AgentState.Accident;
+            }
+            
+            
+        }
+
 
 
 
@@ -183,7 +197,7 @@ namespace Assets.Scripts.AI
 #region  Idle & Move
         private void Idle()
         {
-            SetAgentMovement(true);
+            StopAgentMovement(true);
 
             foreach (GameObject m in meshToDeactivate)
             {
@@ -198,7 +212,7 @@ namespace Assets.Scripts.AI
 
         private void Move()
         {
-            SetAgentMovement(false);
+            StopAgentMovement(false);
             agent.speed = initialAgentSpeed;
 
             foreach (GameObject m in meshToDeactivate)
@@ -222,11 +236,9 @@ namespace Assets.Scripts.AI
 #region  Chaos
         private void Chaos()
         {
-          
             float time = Random.Range(10F, 60F);
             agent.speed *= 3;
-            StartCoroutine(HitFlash(time));
-
+            StartCoroutine(HitFlash(Random.Range(_chaosTime.x, _chaosTime.x)));
         }
 
         // receive time of flash 
@@ -239,19 +251,24 @@ namespace Assets.Scripts.AI
                 timer ++;
 
 
-                if(timer< time)
+                if(timer < time)
                 {
                     foreach (MeshRenderer m in meshToChangeColor)
-                        m.material.color = Color.yellow;
+                        m.material = materialForChaos;
 
                     yield return new WaitForSeconds(0.2f);
                     
                     foreach (MeshRenderer m in meshToChangeColor)
-                        m.material.color = _color;
+                        m.material = originalMaterial;
                 }
               
             }
             
+        }
+
+        private IEnumerator TimeWait(float time)
+        {
+            yield return new WaitForSeconds(time);
         }
 
 #endregion
@@ -259,9 +276,14 @@ namespace Assets.Scripts.AI
 #region Accident Actions
         private void Accident()
         {
-            SetAgentMovement(true);
+            StopAgentMovement(true);
             foreach (MeshRenderer m in meshToChangeColor)
-                m.material.color = Color.red;
+                m.material = materialForAccident;
+
+            StartCoroutine(
+                TimeWait(Random.Range(_accidentTime.x, _accidentTime.y)));
+
+            State = AgentState.Move;
         
         }
 
@@ -279,7 +301,7 @@ namespace Assets.Scripts.AI
         }
 
 
-        private void SetAgentMovement(bool stop)
+        private void StopAgentMovement(bool stop)
         {
             if(stop)
             {
@@ -287,8 +309,7 @@ namespace Assets.Scripts.AI
             }
             else
             {   
-                // TODO ADD A default speed
-                agent.speed = 3.5f;
+                agent.speed = initialAgentSpeed;
             }
 
         }

@@ -209,3 +209,5 @@ MonoBehaviour:
   - {fileID: 4612973914379160555}
   meshToDeactivate:
   - {fileID: 13480516486996377}
+  materialForAccident: {fileID: 2100000, guid: 4537a06971fc3714680e6a17c2ae5507, type: 2}
+  materialForChaos: {fileID: 2100000, guid: 4b6e4a7aceaf6cb48b08c8e7ef7be0c4, type: 2}

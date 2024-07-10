@@ -36844,7 +36844,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1361079514}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60e318a6043c1cb4a8ce1c8805bab930, type: 3}
   m_Name: 
@@ -58565,13 +58565,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Citizen
       objectReference: {fileID: 0}
-    - target: {fileID: 921492666294324077, guid: 5e1e529e60ac32943a5c61032f4f7aa3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7540220373319077142, guid: 5e1e529e60ac32943a5c61032f4f7aa3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -70.445206
+      value: -103.62
       objectReference: {fileID: 0}
     - target: {fileID: 7540220373319077142, guid: 5e1e529e60ac32943a5c61032f4f7aa3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -58579,7 +58575,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7540220373319077142, guid: 5e1e529e60ac32943a5c61032f4f7aa3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 131.5302
+      value: 135.92
       objectReference: {fileID: 0}
     - target: {fileID: 7540220373319077142, guid: 5e1e529e60ac32943a5c61032f4f7aa3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -58608,10 +58604,6 @@ PrefabInstance:
     - target: {fileID: 7540220373319077142, guid: 5e1e529e60ac32943a5c61032f4f7aa3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8291854732262993574, guid: 5e1e529e60ac32943a5c61032f4f7aa3, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -58967,11 +58959,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6277726909453620389, guid: fb052d98d6d689f479446a00aba02b8a, type: 3}
       propertyPath: _cars
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6277726909453620389, guid: fb052d98d6d689f479446a00aba02b8a, type: 3}
       propertyPath: _peds
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6277726909453620389, guid: fb052d98d6d689f479446a00aba02b8a, type: 3}
       propertyPath: _chaosChance
@@ -58995,11 +58987,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6277726909453620389, guid: fb052d98d6d689f479446a00aba02b8a, type: 3}
       propertyPath: _carTimeStopped.x
-      value: 10
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6277726909453620389, guid: fb052d98d6d689f479446a00aba02b8a, type: 3}
       propertyPath: _carTimeStopped.y
-      value: 25
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 6277726909453620389, guid: fb052d98d6d689f479446a00aba02b8a, type: 3}
       propertyPath: _pedTimeStopped.x

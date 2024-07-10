@@ -159,6 +159,8 @@ MonoBehaviour:
   - {fileID: 7547564795348848473}
   - {fileID: 7546195964083346813}
   - {fileID: 7547950110238416815}
+  materialForAccident: {fileID: 2100000, guid: 4537a06971fc3714680e6a17c2ae5507, type: 2}
+  materialForChaos: {fileID: 2100000, guid: 4b6e4a7aceaf6cb48b08c8e7ef7be0c4, type: 2}
 --- !u!1001 &7546584868025351451
 PrefabInstance:
   m_ObjectHideFlags: 0
