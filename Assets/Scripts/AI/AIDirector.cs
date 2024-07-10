@@ -52,10 +52,10 @@ namespace Assets.Scripts.AI
         Range(0, 100)]
         private int             _chaosChance = 5;
 
-        [SerializeField, Foldout("Spawn Points")] 
+        [SerializeField, BoxGroup("Pedestrian")] 
         private List<Transform> _pedSpawnPoints = new List<Transform>();
         
-        [SerializeField, Foldout("Spawn Points")]
+        [SerializeField, BoxGroup("Cars")]
         private List<Transform> _carSpawnPoints = new List<Transform>();
         
         
@@ -101,7 +101,7 @@ namespace Assets.Scripts.AI
             int rp = 0;
 
             // loop
-            for (int i = 0; i < quantity + 1; i++)
+            for (int i = 0; i < quantity; i++)
             {
 
                 if (objAI == _car) 
