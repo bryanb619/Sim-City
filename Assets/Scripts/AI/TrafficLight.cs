@@ -57,27 +57,28 @@ namespace Assets.Scripts.AI
         
             // -------------------- States -------------------------------------
 
-            State redState = new State("Red",
-                RedLight, null,
-                () => Debug.Log("left red Light"));
+            State redState = new State(
+                "Red",
+                RedLight, null, null);
 
 
-            State greenState = new State("Green",
+            State greenState = new State(
+                "Green",
                 GreenLight, null,
-                () => Debug.Log("left green Light"));
+                null);
 
 
             // -------------------- Transitions --------------------------------
 
             redState.AddTransition(new Transition(
                 () => _light == LightState.green,
-                () => Debug.Log("enter green Light"),
+                null,
                  greenState));
 
 
             greenState.AddTransition(new Transition(
                 () => _light == LightState.red,
-                () => Debug.Log("enter red Light"),
+                null,
                 redState));
 
 
