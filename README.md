@@ -68,6 +68,10 @@ Nesta seção, será apresentada uma pesquisa sobre simulações relacionadas ao
 
 ### **_Traffic3D: An Open-Source Traffic-based Interactive Framework to Train AI Agents_**
 
+Este artigo analisa o uso de _Traffic3D_, uma poderosa ferramenta [_open source_](https://en.wikipedia.org/wiki/Open_source), capaz . O objetivo principal é explorar os problemas de tráfego, bem como o congestionamento em interseções operadas por semáforos (sinais luminosos).
+
+[[2]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4015243)
+
 **Comparação entre projetos** :
 
 ### **_Unity based Urban Environment Simulation for Autonomous Vehicle Stereo Vision Evaluation_**
@@ -79,9 +83,9 @@ Este estudo explora o desenvolvimento e experimento de uma simulação 3D no _Un
 
 ### **_Unity 3D Simulator of Autonomous Motorway Traffic Applied to Emergency Corridor Building_**
 
-Este trabalha aborda o desenvolvimento de um simulador de trânsito numa auto-estrada com veículos autónomos, denomimado "Autonomous Motorway Traffic Applied to Emergency Corridor Building" (AMTECB).  O objetivo de AMTECB é demonstrar a eficácia de agentes autónomos em certos cenários e permitir com mais sucesso e mais rapidamente a chegada de equipas de emergência ao local de acidentes em auto-estradas.
+Este trabalho aborda o desenvolvimento de um simulador de trânsito numa auto-estrada com veículos autónomos, denomimado "Autonomous Motorway Traffic Applied to Emergency Corridor Building" (AMTECB).  O objetivo de AMTECB é demonstrar a eficácia de agentes autónomos em certos cenários e permitir com mais sucesso e mais rapidamente a chegada de equipas de emergência ao local de acidentes em auto-estradas.
 
-A principal diferença AMTECB e outros é facto deste focar-se na construção de uma faixa de emergência em auto-estradas realizada por veículos autónomos e assim Demonstrar a eficácia de veículos autónomos em situações de emergência e intenso trânsito. 
+A principal diferença AMTECB e outros é facto deste focar-se na construção de uma faixa de emergência em auto-estradas realizada por veículos autónomos e assim Demonstrar a eficácia de veículos autónomos em situações de emergência e intenso trânsito.
 
 **Comparação entre projetos** :
 
