@@ -16,7 +16,7 @@
     - Melhoria do comportamento do Agent (melhorar isso!)
     - Sistema de Waypoints
     - Deteção de agentes
-    - Deteção de Colisores
+    - Deteção de Colisões
   - TrafficLight
   - AIDirector
 - Scene:
@@ -52,7 +52,7 @@
 
 ## Introdução
 
- O projeto desenvolvido retrata um módelo tráfego urbano """ . Foi desenvolvido utilizando o motor de jogo [_Unity Engine_ 2022.3.1 _LTS_](https://unity.com/releases/editor/whats-new/2022.3.1#release-notes) e para definir as ações dos agentes, utilizamos as FSM (finite-state machine) [[1]](https://nunofachada.github.io/libgameai/api/LibGameAI.FSMs.html) e o objetivo principal foi demonstrar as técnicas de Inteligência Artificial em uma espécie de _Sim City_ não jogável, com automóveis, peões e sinais de trânsito como semáforos (sinalização luminosa).
+ O projeto desenvolvido retrata um modelo tráfego urbano """ . Foi desenvolvido utilizando o motor de jogo [_Unity Engine_ 2022.3.1 _LTS_](https://unity.com/releases/editor/whats-new/2022.3.1#release-notes) e para definir as ações dos agentes, utilizamos as FSM (finite-state machine) [[1]](https://nunofachada.github.io/libgameai/api/LibGameAI.FSMs.html) e o objetivo principal foi demonstrar as técnicas de Inteligência Artificial em uma espécie de _Sim City_ não jogável, com automóveis, peões e sinais de trânsito como semáforos (sinalização luminosa).
 
 - Objetivos desta simulação:
   - Fazer com que os automóveis respeitem as regras de trânsito, como sinais luminosos, passadeiras e outros veículos na via.
@@ -69,7 +69,7 @@
   
 ## Estudo da Arte
 
-Nesta seção, será apresentada uma pesquisa sobre simulações relacionadas ao nosso projeto, na qual faremos uma resumida descrição de cada uma e as compararemos com o nosso trabalho desenvolvido ao fazer uma análise de onde há semelhanças como diferenças entre as simulações.
+Nesta secção, será apresentada uma pesquisa sobre simulações relacionadas ao nosso projeto, na qual faremos uma resumida descrição de cada uma e as compararemos com o nosso trabalho desenvolvido ao fazer uma análise de onde há semelhanças como diferenças entre as simulações.
 
 ### **_Traffic3D: An Open-Source Traffic-based Interactive Framework to Train AI Agents_**
 
@@ -79,21 +79,21 @@ Este artigo analisa o uso de _Traffic3D_, uma poderosa ferramenta [_open source_
 
 - **Parametrização da Simulação**
   
-  Ambos os projetos permitem a edição de parametros relevantes a simulação, tanto o nosso projeto como este projeto que estamos a analisar permitem popular o cenário da simulação com tráfego multi-modal, isto é tráfego de veiculos e peões, posicionar a posição de instanciação dos agentes móveis (criar agentes num local pré-definido). Entretanto _Traffic3D_ vai ainda mais longe e permite multiplas escolhas de (parametrização):
+  Ambos os projetos permitem a edição de parâmetros relevantes a simulação, tanto o nosso projeto como este projeto que estamos a analisar permitem popular o cenário da simulação com tráfego multi-modal, isto é tráfego de veículos e peões, posicionar a posição de instanciação dos agentes móveis (criar agentes num local pré-definido). Entretanto _Traffic3D_ vai ainda mais longe e permite múltiplas escolhas de (parametrização):
 
-  - Peões: alterações mais a nível estético como género, idade, aparência (roupa do peão). Existem também outras parametrizações como andar ou correr e comportamentos esperar em sinais vermelhos, atravessar nos sinais verdes, cruzar estrada em pontos não designados para atravessia de peões. Este poderoso simulador permite ainda estender os comportamentos e funcionalidades de peões.
+  - Peões: alterações mais a nível estético como género, idade, aparência (roupa do peão). Existem também outras parametrizações como andar ou correr e comportamentos como esperar em sinais vermelhos, atravessar nos sinais verdes, atravessar a estrada em pontos não designados para peões. Este poderoso simulador permite ainda estender os comportamentos e funcionalidades de peões.
 
-  - Veículos: Existem diversos veículos nesta simulação como civil, emergência,     taxi e autocarros. Ainda é fornecida a opção de veículos esolherem a condução pelo lado esquerdo ou direito da estrada, algo que é importante para países como que se conduz no lado esquerdo da estrada, bem como a Inglaterra e outros.
+  - Veículos: Existem diversos veículos nesta simulação como civil, emergência,     taxi e autocarros. Ainda é fornecida a opção de veículos escolherem a condução pelo lado esquerdo ou direito da estrada, algo que é importante para países como que se conduz no lado esquerdo da estrada, bem como a Inglaterra e outros.
 
 - **Componentes da simulação :**
   
-  _Traffic3D_ possui diversas características semelhantes com o _engine_ utilizado no nosso projeto que permitem fazer o cenário da simulação parecer o mais realistico como: iluminação global em tempo real, luzes, sombras, texturas e objetos nativos como veículos, céu e edifícios.
+  _Traffic3D_ possui diversas características semelhantes com o _engine_ utilizado no nosso projeto que permitem fazer o cenário da simulação parecer o mais realístico como: iluminação global em tempo real, luzes, sombras, texturas e objetos nativos como veículos, céu e edifícios.
   
   [[2]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4015243)
 
 ### **_Unity based Urban Environment Simulation for Autonomous Vehicle Stereo Vision Evaluation_**
 
-Este estudo explora o desenvolvimento e experimento de uma simulação 3D no _Unity Engine_ para testar veículos  veículos autónomos registarem registarem dados com _stereo cameras_ representados nesta simulação por camâras do próprio _engine_ situadas na frente do veículo. O objetivo deste experimento é demonstrar as capacidades de um veículo autónomo equipado com sensores(_omnipresent stereo cameras_). A terceira câmara ou a câmara central é bastante interessante porque, faz uso de um shader chamado _Z-buffer_ para representar a gravação de dados em profundidade.
+Este estudo explora o desenvolvimento e experimento de uma simulação 3D no _Unity Engine_ para testar veículos  veículos autónomos registarem registarem dados com _stereo cameras_ representados nesta simulação por câmaras do próprio _engine_ situadas na frente do veículo. O objetivo deste experimento é demonstrar as capacidades de um veículo autónomo equipado com sensores(_omnipresent stereo cameras_). A terceira câmara ou a câmara central é bastante interessante porque, faz uso de um shader chamado _Z-buffer_ para representar a gravação de dados em profundidade.
 
 **Comparação entre projetos :**
 [[2]](https://ieeexplore.ieee.org/abstract/document/8756805)
@@ -108,12 +108,12 @@ A principal diferença ou inovação entre este projetos e outros é o facto des
 
 - **Abordagem e objetivos**:  
 
-  Ambos os trabalhos procuram melhorar simulações de tráfego, entretanto o nosso projeto implementa uma abordagem que foca em simular comportamentos de tráfego de veículos e peões, suas respectivas interações como deteção de agentes móveis(carros), agentes fixos (sinais luminosos) e finalmente terem uma ação designada em caso de acidentes num cenário urbano. Enquanto OUTRO PROJETO desenvolveu um sistema focado em segurança rodoviária, mais especificamente em auto-estradas.  
+  Ambos os trabalhos procuram melhorar simulações de tráfego, entretanto o nosso projeto implementa uma abordagem que foca em simular comportamentos de tráfego de veículos e peões, suas respetivas interações como deteção de agentes móveis(carros), agentes fixos (sinais luminosos) e finalmente terem uma ação designada em caso de acidentes num cenário urbano. Enquanto OUTRO PROJETO desenvolveu um sistema focado em segurança rodoviária, mais especificamente em auto-estradas.  
   Para efetuar a sua abordagem utiliza veículos autónomos capazes de se comunicarem com o objetivo de regular a velocidade dos agentes, criar faixas de emergência, procurando assim garantir ao máximo possível a segurança em estradas para todos. [[3]](https://www.researchgate.net/profile/Jurij-Kuzmic/publication/341470027_Unity_3D_Simulator_of_Autonomous_Motorway_Traffic_Applied_to_Emergency_Corridor_Building/links/60119d42299bf1b33e2d26f5/Unity-3D-Simulator-of-Autonomous-Motorway-Traffic-Applied-to-Emergency-Corridor-Building.pdf)
 
 ## Metodologia
 
-A simulação desenvolvida é em 3D e as técnicas de Inteligência Artificial utilizadas foram, respectivamente, _FSM's_ (uma biblioteca essencial para a realização de transições entre estados) e _A* (Unity NavMesh)_, que é essencial para o _Pathfinding_ de agentes como carros e peões.
+A simulação desenvolvida é em 3D e as técnicas de Inteligência Artificial utilizadas foram, respetivamente, _FSM's_ (uma biblioteca essencial para a realização de transições entre estados) e _A* (Unity NavMesh)_, que é essencial para o _Pathfinding_ de agentes como carros e peões.
 
 ### Diagramas _FSM_
 
@@ -139,29 +139,29 @@ tipo de movimento
 
 ### Semáforos (sinais luminosos)
 
-Os semáfors são agentes fixos na simulação alternando apenas entre 2 estados, verde e vermelho. O seu estado inicial é definido no próprio _gameObject_ . Estes estados alternam os estados de 2 colisores. Quando o estado é vermelho, o colisor de carros passa a estar ativo enquanto, o colisor de peões é desativo e assim vice-versa.
+Os semáforos são agentes fixos na simulação alternando apenas entre 2 estados, verde e vermelho. O seu estado inicial é definido no próprio _gameObject_ . Estes estados alternam os estados de 2 _colliders_. Quando o estado é vermelho, o _collider_ de carros passa a estar ativo enquanto, o _collider_ de peões é desativo e assim vice-versa.
 
-Como referido, existem 2 tipos de colisores numa interseção, sendo demonstrados a título de exemplo na seguinte imagem.
+Como referido, existem 2 tipos de _colliders_ numa interseção, sendo demonstrados a título de exemplo na seguinte imagem.
 
-- **_Colider_ Vermelho**: colisor para veículos que quando detetado impede a passagem de veículos na mesma faixa.
+- **_Collider_ Vermelho**: _collider_ para veículos que quando detetado impede a passagem de veículos na mesma faixa.
 
-- **_Colider_ Verde**: colisor para peões que quando detetado impede a passagem de um peão na passadeira.
+- **_Collider_ Verde**: _collider_ para peões que quando detetado impede a passagem de um peão na passadeira.
 
 ![SimCity trafficLight](./Images/trafficLights.png)
 
 ### _Traffic Light_
 
-Cada semáforo na simulação contém um componente _Traffic Light_, responsável por guardar o _LightState_ (estado de luz atual) e ativar e desativar colisores como referido anteriormente.
+Cada semáforo na simulação contém um componente _Traffic Light_, responsável por guardar o _LightState_ (estado de luz atual) e ativar e desativar _colliders_ como referido anteriormente.
 
 É possível editar alguns parâmetros como:
 
 - **_Light Mat_**: guarda os materiais (serve apenas para efeitos visuais da simulação).  
   
-- **_Start Light State_**: define o estado de luz inicial de cada semáfora.
+- **_Start Light State_**: define o estado de luz inicial de cada semáforo.
   
-- **_Cross Walk Colls_**: guarda os colisores de peões.
+- **_Cross Walk Colls_**: guarda os _colliders_ de peões.
 
-- **_Car Colls_**: guarda os colisores de veículos.
+- **_Car Colls_**: guarda os _colliders_ de veículos.
 
 ![SimCity trafficLightScript](./Images/TrafficLighScript.png)
 
@@ -184,7 +184,7 @@ Possui valores parametrizáveis como:
 - Carros
   - **_Cars_**: número de veículos a serem instanciados no início da simulação.
   - **_Car Spawn points_**: Lista de posições onde carros serão instanciados no início da simulação.
-  - **_Car Time Stoped_**: tempo máximo (segundos) para veículo estar estacionário no seu destino
+  - **_Car Time Stopped_**: tempo máximo (segundos) para veículo estar estacionário no seu destino
   - **_Cars_**: _prefab_ de veículo a ser instanciado
 
 ![SimCity AIDirector](./Images/carAI.png)
@@ -192,7 +192,7 @@ Possui valores parametrizáveis como:
 - Peões
   - **_Peds_**: número de pões a serem instanciados no início da simulação.
   - **_Ped Spawn points_**:Lista de posições onde peões serão instanciados no início da simulação.
-  - **_Ped Time Stoped_**: tempo máximo (segundos) para peão estar parado no seu destino
+  - **_Ped Time Stopped_**: tempo máximo (segundos) para peão estar parado no seu destino
   - **_Ped_**: _prefab_ de peão a ser instanciado.
 
 ![SimCity AIDirector](./Images/pedAI.png)
@@ -235,9 +235,9 @@ Para concluir, o projeto desenvolvido consistiu em implementar uma simulação d
 - Uso com sucesso do NavMesh Link para cruzamentos
 - Transições do estado dos agentes
 - Alterações de estados os agentes a meio do programa
-- Multiplos locais como destino
+- Múltiplos locais como destino
 - Escolha ao calhas dos locais para destino
-- Desaparecimento visual do agente, porem este mantem-se na cena
+- Desaparecimento visual do agente, porem este mantém-se na cena
 
 ## Referências
 
@@ -249,7 +249,7 @@ O uso de IAs generativas foi usado e neste tópico explicaremos como:
 
 A realização deste projeto consistiu essencialmente em pesquisa própria, conhecimento adquirido por meio de trabalhos e ensino fornecido por professores em diversas unidades curriculares lecionadas na [licenciatura de Videojogos](https://www.ulusofona.pt/lisboa/licenciaturas/videojogos).
 
-### Código, tutoriais, planeamento utlizados e pesquisa
+### Código, tutoriais, planeamento utilizados e pesquisa
 
 Technologies, U. (n.d.). Unity - Scripting API: Random.Range. <https://docs.unity3d.com/ScriptReference/Random.Range.html>
   
