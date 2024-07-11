@@ -46,6 +46,8 @@ namespace Assets.Scripts.AI
 
         private Rigidbody _rb;
 
+        private bool canMove = true;
+
         //----------------------------------------------------------------------
 
         // The root of the decision tree
@@ -207,9 +209,11 @@ namespace Assets.Scripts.AI
 
                         if (coll)
                         {
-                            StopAgentMovement(true);
-
-                            print("Pedestrian in front of car");
+                            canMove = false;
+                        }
+                        else 
+                        {
+                            canMove = true;
                         }
 
                     }
@@ -220,7 +224,7 @@ namespace Assets.Scripts.AI
                 {
                     if (other.CompareTag("RedLight"))
                     {
-                        StopAgentMovement(true);
+                        //StopAgentMovement(true);
                     }
                 }
 
@@ -238,17 +242,6 @@ namespace Assets.Scripts.AI
                         || other.CompareTag("RedLight"))
                     {
                         agent.speed = initialAgentSpeed;
-                    }
-
-                    if (other.CompareTag("PedTrigger"))
-                    {
-                        bool coll = other.GetComponent<CarTrigger>().HasPed;
-
-                        if (!coll)
-                        {
-                            StopAgentMovement(false);
-                        }
-
                     }
                 }
 
@@ -323,8 +316,6 @@ namespace Assets.Scripts.AI
 
 
         }
-
-
         #endregion
 
 
@@ -332,23 +323,23 @@ namespace Assets.Scripts.AI
 
         private void Move()
         {
+            if(canMove)
+            {   
+
+                UpdateDestination(randPos);
 
 
-            if (agent.isOnOffMeshLink && agent.speed == initialAgentSpeed)
-            {
-                agent.speed *= 0.7f;
+                if (agent.isOnOffMeshLink && agent.speed == initialAgentSpeed)
+                {
+                    agent.speed *= 0.7f;
+                }
+
+                if (!agent.pathPending && agent.remainingDistance < 1f)
+                {
+                    // TODO: Check if agent in destination
+                    NavState = AgentState.Idle;
+                }
             }
-
-
-            UpdateDestination(randPos);
-
-
-            if (!agent.pathPending && agent.remainingDistance < 1f)
-            {
-                // TODO: Check if agent in destination
-                NavState = AgentState.Idle;
-            }
-
         }
 
         #endregion
@@ -449,7 +440,7 @@ namespace Assets.Scripts.AI
                 agent.speed = 0;
             }
             else
-            {
+            {   
                 agent.speed = initialAgentSpeed;
 
             }
@@ -514,6 +505,14 @@ namespace Assets.Scripts.AI
             Chaotic = false;
             
         }
+
+        public void IncreaseChaosChance(int value)
+        {
+            if(_chaosChance < 100)
+                _chaosChance += value;
+        }
+
+
     }
 
 }

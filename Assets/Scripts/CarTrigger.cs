@@ -25,8 +25,7 @@ public class CarTrigger: MonoBehaviour
         if (other.CompareTag("Pedestrian"))
         {
 
-            if(displayMesh)
-                _meshRenderer.enabled = true;
+            if(displayMesh) _meshRenderer.enabled = true;
 
             HasPed = true;
         }
@@ -36,8 +35,7 @@ public class CarTrigger: MonoBehaviour
     {
         if (other.CompareTag("Pedestrian"))
         {   
-            if(displayMesh)
-                _meshRenderer.enabled = false;
+            if(displayMesh)  _meshRenderer.enabled = false;
                 
             HasPed = false;
         }

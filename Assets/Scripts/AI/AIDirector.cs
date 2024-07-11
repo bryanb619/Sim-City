@@ -191,17 +191,27 @@ namespace Assets.Scripts.AI
         public void SelectCarChaosMode()
         {
 
-            // random car value
+            // var to hold random value
             int i = 0;
 
-            // get random value
+            // get random value within car list
             i = Random.Range(0, _carList.Count);
 
             // get NavAgentBehaviour component from car list index
-            _carList[i].GetComponent<NavAgentBehaviour>();
+            Agent agent = _carList[i].GetComponent<Agent>();
 
-            //TODO: set car to chaos mode
-            //_carList[i].GetComponent<NavAgentBehaviour>().State = AgentState.Chaos;
+            while (agent.Chaotic)
+            {
+                i = Random.Range(0, _carList.Count);
+
+                agent = _carList[i].GetComponent<Agent>();
+
+                print("Car is already in chaos mode");
+            }
+
+            agent.SetChaosAgent();
+
+            print($"Car {i} is in chaos mode");
         }
 
         public void SelectPedChaosMode()
