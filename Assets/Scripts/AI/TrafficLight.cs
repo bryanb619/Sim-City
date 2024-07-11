@@ -33,11 +33,6 @@ namespace Assets.Scripts.AI
         [SerializeField] 
         private GameObject _carColls;
 
-        private Action actions;
-
-
-
-
         /// <summary>
         /// Start is called before the first frame update.
         /// Initiates all available signal states. 
@@ -111,7 +106,7 @@ namespace Assets.Scripts.AI
         /// </summary>
         private void Update()
         {
-            actions = _fsm.Update();
+            Action actions = _fsm.Update();
             actions?.Invoke();
         }
 
