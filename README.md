@@ -143,12 +143,17 @@ As imagens nesta secção apresentam visualmente o código desenvolvido para efe
 ### Carros
 
 Agentes móveis
-TIPO De movimento
+
+O carro é integrado por componentes como [_NavMeshAgent_](https://docs.unity3d.com/560/Documentation/Manual/class-NavMeshAgent.html), [_Rigidbody_](https://docs.unity3d.com/560/Documentation/Manual/class-Rigidbody.html) e [Box colliders](https://docs.unity3d.com/560/Documentation/Manual/class-BoxCollider.html) para garantir o seu funcionamento respectivamente a nível de _pathfinding_, colisões e deteção de outros componetes ou objetos na simulação.
+
+![SimCity car](./Images/car.png)
 
 ### Peões
 
 Assim como os carros  
 tipo de movimento
+
+![SimCity car](./Images/ped.png)
 
 ### Semáforos (sinais luminosos)
 
@@ -189,6 +194,11 @@ Possui valores parametrizáveis como:
 - **_Control Points_**: define cada semáforo na atual interseção.
 
 ![SimCity Intersection Brain](./Images/IB.png)
+
+Exemplo de uma interseção com 4 conexões, isto é um componente _Intersection Brain_ com 4 compentes
+_Traffic Light_.
+
+![Sim city Intersection Prefab](./Images/intersection.png)
 
 ### Passadeiras
 
