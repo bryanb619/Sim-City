@@ -136,8 +136,6 @@ namespace Assets.Scripts.AI
                 () => Debug.Log("Transition Move"),
                 MovingState));
 
-
-
             // ---------------------------------------
 
             _fsm = new StateMachine(MovingState);
@@ -163,13 +161,20 @@ namespace Assets.Scripts.AI
             //if (other.CompareTag("CarDest"))
             //  Invoke("SetIdle", 0.1f);
 
-            // Debug.Log("penetrated");
-            if (this.tag == "Vehicle" 
-            && other.CompareTag("Pedestrian") || other.CompareTag("RedLight"))
-                {
-                    agent.speed = Mathf.Lerp(agent.speed, 0, Time.deltaTime * 50);
-                }
+        
 
+            /*
+            if (tag == "Vehicle" && other.CompareTag("Pedestrian")
+            || other.CompareTag("RedLight"))
+            {
+                agent.speed = Mathf.Lerp(agent.speed, 0, Time.deltaTime * 50);
+            }
+
+            if (tag == "Vehicle" && other.CompareTag("PedTrigger"))
+            {
+                agent.speed = Mathf.Lerp(agent.speed, 0, Time.deltaTime * 50);
+            }
+            */
         }
 
         private void SetIdle()
@@ -181,16 +186,45 @@ namespace Assets.Scripts.AI
         {
             if (!Chaotic)
             {
-                if (other.CompareTag("Vehicle"))
-                    agent.speed = Mathf.Lerp(agent.speed,
-                    other.GetComponent<NavMeshAgent>().speed,
-                    Time.deltaTime);
-
-                else if (other.CompareTag("Pedestrian") || 
-                other.CompareTag("RedLight"))
+                if (IsCar())
                 {
-                    agent.speed = Mathf.Lerp(agent.speed, 0, Time.deltaTime * 50);
+
+                    if (other.CompareTag("Vehicle"))
+                    {
+                        agent.speed = Mathf.Lerp(agent.speed,
+                        other.GetComponent<NavMeshAgent>().speed,
+                        Time.deltaTime);
+                    }
+
+                    else if (other.CompareTag("Pedestrian") 
+                    || other.CompareTag("RedLight"))
+                    {
+                        agent.speed = Mathf.Lerp(agent.speed, 0, Time.deltaTime * 50);
+                    }
+
+                    else if(other.CompareTag("PedTrigger"))
+                    {
+                       bool coll =  other.GetComponent<CarTrigger>().HasPed;
+
+                        if (coll)
+                        {
+                           StopAgentMovement(true);
+
+                            print("Pedestrian in front of car");
+                        }
+
+                    }
                 }
+
+                // 
+                else
+                {
+                    if(other.CompareTag("RedLight"))
+                    {
+                        StopAgentMovement(true);
+                    }
+                }
+
             }
         }
 
@@ -198,23 +232,69 @@ namespace Assets.Scripts.AI
         {
             if (!Chaotic)
             {
-                if (other.CompareTag("Vehicle") || other.CompareTag("Pedestrian")
-                    || other.CompareTag("RedLight"))
+                if(IsCar())
+                {   
+                
+                    if (other.CompareTag("Vehicle") || other.CompareTag("Pedestrian")
+                        || other.CompareTag("RedLight"))
+                    {
+                        agent.speed = initialAgentSpeed;
+                    }
+
+                    if (other.CompareTag("PedTrigger"))
+                    {
+                        bool coll =  other.GetComponent<CarTrigger>().HasPed;
+
+                        if (!coll)
+                        {
+                            StopAgentMovement(false);
+                        }
+                        
+                    }
+                }
+
+                else
                 {
-                    agent.speed = initialAgentSpeed;
+                    if (other.CompareTag("PedTrigger"))
+                    {
+                        StopAgentMovement(false);
+                    }
+
                 }
             }
+
         }
 
         private void OnCollisionEnter(Collision other)
         {
-            if (other.gameObject.CompareTag("Pedestrian")
-            || other.gameObject.CompareTag("Vehicle"))
+
+            if(IsCar())
             {
-                NavState = AgentState.Accident;
+                if (other.gameObject.CompareTag("Vehicle"))
+                {
+                    NavState = AgentState.Accident;
+                }
+
+                else if (other.gameObject.CompareTag("Pedestrian"))
+                {
+                    NavState = AgentState.Accident;
+                }
             }
 
+            else
+            {
+                if (other.gameObject.CompareTag("Vehicle"))
+                {
+                    NavState = AgentState.Accident;
+                }
+            }
 
+    
+        }
+
+        private bool IsCar()
+        {
+            return tag == "Vehicle";
         }
 
 
@@ -232,18 +312,24 @@ namespace Assets.Scripts.AI
 
             StopAgentMovement(true);
 
+            agent.speed = initialAgentSpeed;
+
             int randTime = Random.Range(_stopTime.x, _stopTime.y);
 
             StartCoroutine(TimeWait(randTime, AgentState.Move));
 
+            StopAgentMovement(false);
+
             randPos = Random.Range(0, goal.Length);
+
+            
         }
 
 
-#endregion
+        #endregion
 
 
-#region Move
+        #region Move
 
         private void Move()
         {
@@ -251,11 +337,11 @@ namespace Assets.Scripts.AI
             StopAgentMovement(false);
 
 
-            if(agent.isOnOffMeshLink && agent.speed == initialAgentSpeed)
+            if (agent.isOnOffMeshLink && agent.speed == initialAgentSpeed)
             {
                 agent.speed *= 0.7f;
             }
-           
+
 
             UpdateDestination(randPos);
 
@@ -330,7 +416,7 @@ namespace Assets.Scripts.AI
 
             // set accident material
             foreach (MeshRenderer m in meshToChangeColor)
-              m.material = materialForAccident;
+                m.material = materialForAccident;
 
             // wait random time
             StartCoroutine(
@@ -339,7 +425,7 @@ namespace Assets.Scripts.AI
 
             // reset to normal material 
             foreach (MeshRenderer m in meshToChangeColor)
-              m.material = originalMaterial;
+                m.material = originalMaterial;
 
         }
 
@@ -376,11 +462,11 @@ namespace Assets.Scripts.AI
 
         private void ResetRBVelocities()
         {
-            if(!_rb.isKinematic)
-            {   
+            if (!_rb.isKinematic)
+            {
                 _rb.velocity = Vector3.zero;
                 _rb.angularVelocity = Vector3.zero;
-            }            
+            }
         }
 
         public void SetParameters(Vector2Int timeStopped,
