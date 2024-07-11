@@ -13,54 +13,54 @@ namespace Assets.Scripts.AI
 
         #region Parameters
 
-        private GameObject currentAI; 
+        private GameObject currentAI;
 
-        [SerializeField, BoxGroup("Cars"), Label("Car amount"), 
+        [SerializeField, BoxGroup("Cars"), Label("Car amount"),
         Range(0, 50)]
-        private int             _cars = 25;
+        private int _cars = 25;
 
-        [SerializeField, BoxGroup("Cars"), 
-        MinMaxSlider(0, 75)] 
-        // x = minimum time, y = maximum time
-        private Vector2Int      _carTimeStopped;
-
-        [SerializeField, BoxGroup("Cars")] 
-        private GameObject      _car;
-
-        [SerializeField, BoxGroup("Pedestrian"), Label("Ped amount"), 
-        Range(0, 100)]
-        private int             _peds = 30;
-
-        [SerializeField, BoxGroup("Pedestrian"), 
-        MinMaxSlider(0, 75)] 
-        // x = minimum time, y = maximum time
-        private Vector2Int      _pedTimeStopped;
-                
-        [SerializeField, BoxGroup("Pedestrian")] 
-        private GameObject      _ped;
-
-
-        [SerializeField, BoxGroup("Accident"), 
-        MinMaxSlider(0, 75)] 
-        private Vector2Int      _timeInAccident;
-
-
-        [SerializeField, BoxGroup("Chaos"), 
+        [SerializeField, BoxGroup("Cars"),
         MinMaxSlider(0, 75)]
         // x = minimum time, y = maximum time
-        private Vector2Int      _timeInChaos;
+        private Vector2Int _carTimeStopped;
 
-        [SerializeField, BoxGroup("Chaos"), 
+        [SerializeField, BoxGroup("Cars")]
+        private GameObject _car;
+
+        [SerializeField, BoxGroup("Pedestrian"), Label("Ped amount"),
         Range(0, 100)]
-        private int             _chaosChance = 5;
+        private int _peds = 30;
 
-        [SerializeField, BoxGroup("Pedestrian")] 
+        [SerializeField, BoxGroup("Pedestrian"),
+        MinMaxSlider(0, 75)]
+        // x = minimum time, y = maximum time
+        private Vector2Int _pedTimeStopped;
+
+        [SerializeField, BoxGroup("Pedestrian")]
+        private GameObject _ped;
+
+
+        [SerializeField, BoxGroup("Accident"),
+        MinMaxSlider(0, 75)]
+        private Vector2Int _timeInAccident;
+
+
+        [SerializeField, BoxGroup("Chaos"),
+        MinMaxSlider(0, 75)]
+        // x = minimum time, y = maximum time
+        private Vector2Int _timeInChaos;
+
+        [SerializeField, BoxGroup("Chaos"),
+        Range(0, 100)]
+        private int _chaosChance = 5;
+
+        [SerializeField, BoxGroup("Pedestrian")]
         private List<Transform> _pedSpawnPoints = new List<Transform>();
-        
+
         [SerializeField, BoxGroup("Cars")]
         private List<Transform> _carSpawnPoints = new List<Transform>();
 
-        
+
         #endregion
 
         // list of agents
@@ -89,7 +89,7 @@ namespace Assets.Scripts.AI
             // ped spawn
             SpawnAgents(_ped, _peds);
 
-            if (doubleTimeScale) Time.timeScale = 2f; 
+            if (doubleTimeScale) Time.timeScale = 2f;
         }
 
 
@@ -101,21 +101,21 @@ namespace Assets.Scripts.AI
         /// <param name="objAI"></param>
         /// <param name="quantity"></param>
         private void SpawnAgents(GameObject objAI, int quantity)
-        {   
-          
+        {
+
             // random point value
             int rp = 0;
 
             // loop
             for (int i = 0; i < quantity; i++)
-            {   
+            {
 
-               
+
 
                 Agent agent;
 
-                if (objAI == _car) 
-                {   
+                if (objAI == _car)
+                {
 
 
                     // get random point
@@ -123,9 +123,9 @@ namespace Assets.Scripts.AI
 
                     // spawn car
                     currentAI = Instantiate(objAI,
-                     _carSpawnPoints[rp].transform.position, 
+                     _carSpawnPoints[rp].transform.position,
                     transform.rotation);
-                
+
                     // get NavAgentBehaviour component from spawned car
                     agent = currentAI.GetComponent<Agent>();
 
@@ -135,27 +135,27 @@ namespace Assets.Scripts.AI
                     _ui.UpdateCarCount();
 
                     // set parameters
-                    agent.SetParameters(_carTimeStopped, _timeInAccident, _timeInChaos,_chaosChance);
+                    agent.SetParameters(_carTimeStopped, _timeInAccident, _timeInChaos, _chaosChance);
 
-                    
+
                 }
 
-                else 
-                {   
+                else
+                {
 
                     // get random point
                     rp = Random.Range(0, _pedSpawnPoints.Count);
 
                     // spawn ped
-                    currentAI = Instantiate(objAI, _pedSpawnPoints[rp].transform.position, 
+                    currentAI = Instantiate(objAI, _pedSpawnPoints[rp].transform.position,
                     transform.rotation);
 
 
                     // get NavAgentBehaviour component from spawned ped
                     agent = currentAI.GetComponent<Agent>();
-                    
+
                     // set parameters
-                    agent.SetParameters(_pedTimeStopped, _timeInAccident, _timeInChaos,_chaosChance);
+                    agent.SetParameters(_pedTimeStopped, _timeInAccident, _timeInChaos, _chaosChance);
 
                     // add ped to list
                     _pedList.Add(objAI);
@@ -171,7 +171,7 @@ namespace Assets.Scripts.AI
 
         private IEnumerator WaitForSeconds(float seconds)
         {
-            
+
             yield return new WaitForSecondsRealtime(seconds);
 
             print(seconds);
@@ -188,7 +188,7 @@ namespace Assets.Scripts.AI
 
             // random car value
             int i = 0;
-            
+
             // get random value
             i = Random.Range(0, _carList.Count);
 
@@ -203,7 +203,7 @@ namespace Assets.Scripts.AI
         {
 
             int i = 0;
-             
+
             i = Random.Range(0, _pedList.Count);
 
             _pedList[i].GetComponent<NavAgentBehaviour>();
