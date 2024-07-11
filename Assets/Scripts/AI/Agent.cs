@@ -333,8 +333,6 @@ namespace Assets.Scripts.AI
         private void Move()
         {
 
-            StopAgentMovement(false);
-
 
             if (agent.isOnOffMeshLink && agent.speed == initialAgentSpeed)
             {
@@ -468,6 +466,7 @@ namespace Assets.Scripts.AI
             }
         }
 
+        #region Param Setter
         public void SetParameters(Vector2Int timeStopped,
                                   Vector2Int timeInAccident,
                                   Vector2Int timeInChaos,
@@ -480,6 +479,7 @@ namespace Assets.Scripts.AI
             _chaosTime = timeInChaos;
             _chaosChance = chaosChance;
         }
+        #endregion
 
         /// <summary>
         /// 
@@ -489,21 +489,30 @@ namespace Assets.Scripts.AI
             // Set the agent to be a chaos agent
 
             if (!Chaotic)
-            {
+            {   
+                StartCoroutine(ChaosTimer()); 
 
-                //
-                Chaotic = true;
-
-                // timer function that enables chaos movement
-
-                // 
-                Chaotic = false;
-
-
-
+                // e piscar???
             }
 
+        }
 
+
+        private IEnumerator ChaosTimer()
+        {   
+
+            // chaos features
+            Chaotic = true;
+            agent.speed = initialAgentSpeed * 1.5f;
+
+
+            yield return new WaitForSeconds(Random.Range(_chaosTime.x, 
+            _chaosTime.y));
+
+            // reset chaos features
+            agent.speed = initialAgentSpeed;
+            Chaotic = false;
+            
         }
     }
 
