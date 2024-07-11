@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4195942782668643137}
   - component: {fileID: 6765042270041429126}
   - component: {fileID: 4612973914379160555}
+  - component: {fileID: 2071342611889900936}
   m_Layer: 0
   m_Name: model
   m_TagString: Untagged
@@ -83,6 +84,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &2071342611889900936
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13480516486996377}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1.9999999
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &921492666294324077
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,10 +116,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7540220373319077142}
-  - component: {fileID: 2461798048922733674}
   - component: {fileID: 2205253322532224451}
   - component: {fileID: 8291854732262993574}
-  - component: {fileID: 1855013612399650586}
+  - component: {fileID: 4791699507537379326}
   m_Layer: 0
   m_Name: Citizen
   m_TagString: Pedestrian
@@ -119,29 +142,6 @@ Transform:
   - {fileID: 4195942782668643137}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &2461798048922733674
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 921492666294324077}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &2205253322532224451
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -167,7 +167,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 36
   m_CollisionDetection: 0
 --- !u!195 &8291854732262993574
 NavMeshAgent:
@@ -181,7 +181,7 @@ NavMeshAgent:
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
-  avoidancePriority: 99
+  avoidancePriority: 45
   m_AngularSpeed: 120
   m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
@@ -191,7 +191,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 1
   m_ObstacleAvoidanceType: 2
---- !u!114 &1855013612399650586
+--- !u!114 &4791699507537379326
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,15 +200,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 921492666294324077}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44f78ebcb10fc694886fb20019496074, type: 3}
+  m_Script: {fileID: 11500000, guid: dc531ad64ed66554a8e5a5dc6529ab22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goal:
-  - {fileID: 921492666294324077}
-  _car: {fileID: 0}
+  goal: []
+  _model: {fileID: 13480516486996377}
   meshToChangeColor:
   - {fileID: 4612973914379160555}
-  meshToDeactivate:
-  - {fileID: 13480516486996377}
   materialForAccident: {fileID: 2100000, guid: 4537a06971fc3714680e6a17c2ae5507, type: 2}
   materialForChaos: {fileID: 2100000, guid: 4b6e4a7aceaf6cb48b08c8e7ef7be0c4, type: 2}
