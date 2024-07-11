@@ -152,18 +152,17 @@ As imagens nesta secção apresentam visualmente o código desenvolvido para efe
 
 Os agentes móveis alternam entre 3 estados, sendo eles respectivamente:
 
-- **_Idle_**: neste estado o agente fica invísivel, a aguardar até ao momento em que deve sair deste estado.
-- **_Move_**: este estado é responsável por fazer o agente prosseguir até o seu destino e fazer checagem se chegou. Caso tenha chegado, volta ao estado anterior (_Iddle_)
-- **_Acident_**:
-
+- **_Idle_**: neste estado, o agente fica invisível, aguardando até o momento em que deve sair deste estado.
+- **_Move_**: este estado é responsável por fazer o agente prosseguir até o seu destino e fazer checagem se chegou. Caso tenha chegado, volta ao estado anterior (_Idle_).
+- **_Acidente_**: O estado final desta máquina de estados define as ações a serem tomadas em caso de acidente, sendo estas mudar a cor do agente envolvido para vermelho e parar por completo o seu movimento. O agente regressa ao estado anterior (_Move_) ao fim de um determinado tempo.
 
 ![SimCity FSM](./Images/agentDrawio.png)
 
 #### Agente Fixo (semáforo)
 
-Os agentes fixos apenas alternam entre 2 estados, sendo eles: vermelho e verde. Estes estados definem qual agente pode prosseguir com o seu destino atual.
+s agentes fixos alternam apenas entre dois estados: vermelho e verde. Estes estados definem qual agente pode prosseguir com seu destino atual
 
-O estado inicial de um semáforo pode ser tanto verde como vermelho, mas para demonstrar um possível ponto de origem, definimos o estado _Green_ como inicial a mero título de exemplo.
+O estado inicial de um semáforo pode ser tanto verde quanto vermelho, mas, para demonstrar um possível ponto de origem, definimos o estado _Verde_ como inicial a título de exemplo.
 
 ![SimCity FSM](./Images/traffic.png)
 
@@ -238,7 +237,7 @@ Um sistema a parte dos componentes _Traffic Light_ e _Intersection Brain_ é um 
 
 ### AI Director
 
-É um _Game Object_ que permite o controlo  ....  da simulação. Aqui é permitido que a simulação seja personalizada com parâmetros ajustáveis, sendo estes:
+É um _Game Object_ que permite o controlo sobre certos aspectos da simulação. Aqui é permitido que a simulação seja personalizada com parâmetros ajustáveis, sendo estes respectivamente:
 
 - Carros
   - **_Cars_**: número de veículos a serem instanciados no início da simulação.
