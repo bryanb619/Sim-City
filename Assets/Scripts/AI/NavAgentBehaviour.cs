@@ -6,11 +6,14 @@ using LibGameAI.FSMs;
 using Random = UnityEngine.Random;
 
 
+
 namespace Assets.Scripts.AI
 {
     // Automatically add the NavMeshAgent to the GameObject
     public class NavAgentBehaviour : MonoBehaviour
     {   
+
+        /*
         // ---------------- interface ------------------------------------------
 
         public AgentState State { get; private set; }
@@ -332,6 +335,8 @@ namespace Assets.Scripts.AI
         {
             // Set the agent to be a chaos agent
         }
+        */
     }
+    
 
 }
