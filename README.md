@@ -150,11 +150,22 @@ As imagens nesta secção apresentam visualmente o código desenvolvido para efe
 
 ### Diagramas _FSM_
 
+Os agentes móveis alternam entre 3 estados, sendo eles respectivamente:
+
+- **_Idle_**: neste estado o agente fica invísivel, a aguardar até ao momento em que deve sair deste estado.
+- **_Move_**: este estado é responsável por fazer o agente prosseguir até o seu destino e fazer checagem se chegou. Caso tenha chegado, volta ao estado anterior (_Iddle_)
+- **_Acident_**:
+
+
 ![SimCity FSM](./Images/agentDrawio.png)
 
 #### Agente Fixo (semáforo)
 
-![SimCity FSM](./Images/traffic.drawio.png)
+Os agentes fixos apenas alternam entre 2 estados, sendo eles: vermelho e verde. Estes estados definem qual agente pode prosseguir com o seu destino atual.
+
+O estado inicial de um semáforo pode ser tanto verde como vermelho, mas para demonstrar um possível ponto de origem, definimos o estado _Green_ como inicial a mero título de exemplo.
+
+![SimCity FSM](./Images/traffic.png)
 
 ### Carros
 
