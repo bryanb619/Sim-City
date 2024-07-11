@@ -117,6 +117,19 @@ A simulação desenvolvida é em 3D e as técnicas de Inteligência Artificial u
 
 ### Diagramas _FSM_
 
+### Controlos da simulação
+
+Os seguintes comandos são representados por teclas (teclado):
+
+- Mover para frente: **W**
+- Mover para esquerda: **A**
+- Mover para trás: **S**
+- Mover para direita: **D**
+
+O seguinte comando é realizado através de um rato
+
+- Rodar câmara: rato
+
 #### Agentes Móveis
 
 As imagens nesta secção apresentam visualmente o código desenvolvido para efetuar as transições e estados tanto de agentes móveis (carros e peões) como também agentes fixos (sinais luminosos de transito)
@@ -176,6 +189,12 @@ Possui valores parametrizáveis como:
 - **_Control Points_**: define cada semáforo na atual interseção.
 
 ![SimCity Intersection Brain](./Images/IB.png)
+
+### Passadeiras
+
+Um sistema a parte dos componentes _Traffic Light_ e _Intersection Brain_ é um colisor responsável por detetar se há um peão na passadeira ou não. Isto é importante para os veículos poderem parar em zonas onde não existem semáforos.
+
+![SimCity crossWalk](./Images/croswalk.png)
 
 ### AI Director
 
