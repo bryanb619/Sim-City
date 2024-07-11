@@ -69,7 +69,7 @@
   - Estado descontrolo
   - Abrandar a para evitar colisões
   
-## Estudo da Arte
+## Estado da Arte
 
 Nesta secção, será apresentada uma pesquisa sobre simulações relacionadas ao nosso projeto, na qual faremos uma resumida descrição de cada uma e as compararemos com o nosso trabalho desenvolvido ao fazer uma análise de onde há semelhanças como diferenças entre as simulações.
 
@@ -81,7 +81,7 @@ Este artigo analisa o uso de _Traffic3D_, uma poderosa ferramenta [_open source_
 
 - **Parametrização da Simulação**
   
-  Ambos os projetos permitem a edição de parâmetros relevantes a simulação, tanto o nosso projeto como este projeto que estamos a analisar permitem popular o cenário da simulação com tráfego multi-modal, isto é tráfego de veículos e peões, posicionar a posição de instanciação dos agentes móveis (criar agentes num local pré-definido). Entretanto _Traffic3D_ vai ainda mais longe e permite múltiplas escolhas de (parametrização):
+  Ambos os projetos permitem a edição de parâmetros relevantes a simulação, tanto o nosso projeto como este projeto que estamos a analisar permitem popular o cenário da simulação com tráfego multi-modal, isto é tráfego de veículos e peões, posicionar a posição de instanciação dos agentes móveis (criar agentes num local pré-definido). Entretanto _Traffic3D_ vai ainda mais longe e permite múltiplas escolhas de parametrização:
 
   - Peões: alterações mais a nível estético como género, idade, aparência (roupa do peão). Existem também outras parametrizações como andar ou correr e comportamentos como esperar em sinais vermelhos, atravessar nos sinais verdes, atravessar a estrada em pontos não designados para peões. Este poderoso simulador permite ainda estender os comportamentos e funcionalidades de peões.
 
@@ -89,9 +89,9 @@ Este artigo analisa o uso de _Traffic3D_, uma poderosa ferramenta [_open source_
 
 - **Componentes da simulação :**
   
-  _Traffic3D_ possui diversas características semelhantes com o _engine_ utilizado no nosso projeto que permitem fazer o cenário da simulação parecer o mais realístico como: iluminação global em tempo real, luzes, sombras, texturas e objetos nativos como veículos, céu e edifícios.
-  
-  [[2]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4015243)
+  _Traffic3D_ possui diversas características semelhantes com o _engine_ utilizado no nosso projeto que permitem fazer o cenário da simulação parecer o mais realístico como: iluminação global em tempo real, luzes, sombras, texturas e objetos nativos como veículos, céu e edifícios. Portanto é possível inferir que ambas as simulações tem componentes visuais bastante semelhantes.
+
+  Alguns componentes que são importantes e estão presentes no artigo apresentado são capacidades do _Traffic3D_ como geração procidemental, capaz de importar e gerar com mais fidelidade, cenários realistas. Isto por sua vez torna essa ferramenta mais versátil e reduz o tempo de investigadores. [[2]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4015243)
 
 ### **_Unity based Urban Environment Simulation for Autonomous Vehicle Stereo Vision Evaluation_**
 
