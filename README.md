@@ -225,7 +225,7 @@ Possui valores parametrizáveis como:
 ![SimCity Intersection Brain](./Images/IB.png)
 
 Exemplo de uma interseção com 4 conexões, isto é um componente _Intersection Brain_ com 4 compentes
-_Traffic Light_.
+_Traffic Light_ e os seus respectivos colisores.
 
 ![Sim city Intersection Prefab](./Images/intersection.png)
 
