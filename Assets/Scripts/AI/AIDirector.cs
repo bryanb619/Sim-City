@@ -77,6 +77,8 @@ namespace Assets.Scripts.AI
 
         [SerializeField] private bool doubleTimeScale;
 
+        private bool coroutineStarted = false;
+
 
         /// <summary>
         /// Start is called before the first frame update
@@ -110,13 +112,16 @@ namespace Assets.Scripts.AI
             for (int i = 0; i < quantity; i++)
             {
 
-
-
                 Agent agent;
+
+                if(!coroutineStarted)
+                {   
+                    Invoke("WaitTime",2f);
+                }
 
                 if (objAI == _car)
                 {
-
+                    
 
                     // get random point
                     rp = Random.Range(0, _carSpawnPoints.Count);
@@ -168,13 +173,13 @@ namespace Assets.Scripts.AI
 
         }
 
-
-        private IEnumerator WaitForSeconds(float seconds)
+        private IEnumerator WaitTime(float seconds)
         {
+            coroutineStarted = true;
 
             yield return new WaitForSecondsRealtime(seconds);
 
-            print(seconds);
+            coroutineStarted = false;
         }
 
         #endregion
