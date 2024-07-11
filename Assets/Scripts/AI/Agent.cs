@@ -23,7 +23,7 @@ namespace Assets.Scripts.AI
         private NavMeshAgent agent;
 
         [SerializeField]
-        private GameObject _car;
+        private GameObject _model;
 
         private float initialAgentSpeed;
 
@@ -40,8 +40,6 @@ namespace Assets.Scripts.AI
         [SerializeField]
         private MeshRenderer[] meshToChangeColor;
 
-        [SerializeField]
-        private GameObject[] meshToDeactivate;
 
         [SerializeField]
         private Material materialForAccident, materialForChaos;
@@ -74,12 +72,14 @@ namespace Assets.Scripts.AI
         // Start is called before the first frame update
         private void Start()
         {
-
-            StartFSM();
+            originalMaterial = meshToChangeColor[0].material;
 
             _rb = GetComponent<Rigidbody>();
 
             randPos = Random.Range(0, goal.Length);
+
+
+            StartFSM();
         }
 
 
@@ -88,8 +88,7 @@ namespace Assets.Scripts.AI
             // --------------------- STATES ------------------------------------
 
             State IdleState = new State(
-                "Idle",
-                Idle,
+                "Idle", Idle,
                 null,
                 null);
 
@@ -114,14 +113,14 @@ namespace Assets.Scripts.AI
             // IDLE => Move
             IdleState.AddTransition(new Transition(
                 () => NavState == AgentState.Move,
-                () => Debug.Log("Transition Idle"),
+                null,
                 MovingState));
 
 
             // Move => Idle
             MovingState.AddTransition(new Transition(
                 () => NavState == AgentState.Idle,
-                () => Debug.Log("Transition Move"),
+                null,
                 IdleState));
 
 
@@ -165,7 +164,11 @@ namespace Assets.Scripts.AI
             //  Invoke("SetIdle", 0.1f);
 
             // Debug.Log("penetrated");
-
+            if (this.tag == "Vehicle" 
+            && other.CompareTag("Pedestrian") || other.CompareTag("RedLight"))
+                {
+                    agent.speed = Mathf.Lerp(agent.speed, 0, Time.deltaTime * 50);
+                }
 
         }
 
@@ -221,36 +224,21 @@ namespace Assets.Scripts.AI
         private void Idle()
         {
 
-            ResetRB();
-
-            if (_car.activeSelf) _car.SetActive(false);
-
-            StopAgentMovement(true);
+            ResetRBVelocities();
 
             agent.ResetPath();
 
+            if (_model.activeSelf) _model.SetActive(false);
+
+            StopAgentMovement(true);
 
             int randTime = Random.Range(_stopTime.x, _stopTime.y);
 
             StartCoroutine(TimeWait(randTime, AgentState.Move));
 
-
-
             randPos = Random.Range(0, goal.Length);
-
-
-            // TODO: UPDATE TIME
-
-            //foreach (GameObject m in meshToDeactivate)
-            //{
-            //  m.SetActive(false);
-            //}
-
-            //if (agent.GetComponent<BoxCollider>() != null)
-            //   agent.GetComponent<BoxCollider>().enabled = false;
-            //else
-            //    agent.GetComponent<CapsuleCollider>().enabled = false;
         }
+
 
 #endregion
 
@@ -263,14 +251,18 @@ namespace Assets.Scripts.AI
             StopAgentMovement(false);
 
 
-
-            if (!_car.activeSelf) _car.SetActive(true);
+            if(agent.isOnOffMeshLink && agent.speed == initialAgentSpeed)
+            {
+                agent.speed *= 0.7f;
+            }
+           
 
             UpdateDestination(randPos);
 
 
             if (!agent.pathPending && agent.remainingDistance < 1f)
             {
+                // TODO: Check if agent in destination
                 NavState = AgentState.Idle;
             }
 
@@ -318,6 +310,9 @@ namespace Assets.Scripts.AI
 
             yield return new WaitForSecondsRealtime(time);
 
+            if (!_model.activeSelf && NavState == AgentState.Idle)
+                _model.SetActive(true);
+
             NavState = state;
         }
 
@@ -327,25 +322,36 @@ namespace Assets.Scripts.AI
         private void Accident()
         {
 
-            ResetRB();
+            // reset dynamic movement
+            ResetRBVelocities();
 
+            // stop nav mesh
             StopAgentMovement(true);
-            //foreach (MeshRenderer m in meshToChangeColor)
-            //  m.material = materialForAccident;
 
+            // set accident material
+            foreach (MeshRenderer m in meshToChangeColor)
+              m.material = materialForAccident;
+
+            // wait random time
             StartCoroutine(
                 TimeWait(Random.Range(_accidentTime.x, _accidentTime.y),
                  AgentState.Move));
 
-        }
+            // reset to normal material 
+            foreach (MeshRenderer m in meshToChangeColor)
+              m.material = originalMaterial;
 
+        }
 
         #endregion
 
         // ---------------------------------------------------------------------
 
 
-        // Update destination
+        /// <summary>
+        /// Update destination
+        /// </summary>
+        /// <param name="pos"></param>
         private void UpdateDestination(int pos)
         {
             // Set destination to current goal position
@@ -368,10 +374,13 @@ namespace Assets.Scripts.AI
         }
 
 
-        private void ResetRB()
+        private void ResetRBVelocities()
         {
-            _rb.velocity = Vector3.zero;
-            _rb.angularVelocity = Vector3.zero;
+            if(!_rb.isKinematic)
+            {   
+                _rb.velocity = Vector3.zero;
+                _rb.angularVelocity = Vector3.zero;
+            }            
         }
 
         public void SetParameters(Vector2Int timeStopped,
