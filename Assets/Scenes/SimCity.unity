@@ -58402,10 +58402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1361079519}
   - component: {fileID: 1361079518}
-  - component: {fileID: 1361079516}
-  - component: {fileID: 1361079515}
   - component: {fileID: 1361079520}
-  - component: {fileID: 1361079521}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -58413,22 +58410,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1361079515
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1361079514}
-  m_Enabled: 1
---- !u!124 &1361079516
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1361079514}
-  m_Enabled: 1
 --- !u!20 &1361079518
 Camera:
   m_ObjectHideFlags: 0
@@ -58488,13 +58469,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1361079514}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12143491, y: -0.5396353, z: 0.079015404, w: 0.82933944}
-  m_LocalPosition: {x: 67, y: 20, z: -24.25}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 47.75, y: 20, z: 22.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 16.661, y: -66.103, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1361079520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58509,33 +58490,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraSensitivity: 90
   climbSpeed: 4
-  normalMoveSpeed: 10
+  normalMoveSpeed: 16
   slowMoveFactor: 0.25
   fastMoveFactor: 3
---- !u!114 &1361079521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1361079514}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60e318a6043c1cb4a8ce1c8805bab930, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resolution: 1
-  screenBlendMode: 0
-  sunTransform: {fileID: 0}
-  radialBlurIterations: 2
-  sunColor: {r: 1, g: 0.88009787, b: 0.20144898, a: 1}
-  sunThreshold: {r: 0.87, g: 0.74, b: 0.65, a: 1}
-  sunShaftBlurRadius: 2.5
-  sunShaftIntensity: 1
-  maxRadius: 0.75
-  useDepthTexture: 1
-  sunShaftsShader: {fileID: 4800000, guid: d3b1c8c1036784176946f5cfbfb7fe4c, type: 3}
-  simpleClearShader: {fileID: 4800000, guid: f688f89ed5eb847c5b19c934a0f1e772, type: 3}
 --- !u!1001 &1364402881
 PrefabInstance:
   m_ObjectHideFlags: 0
