@@ -75,9 +75,11 @@ Nesta secção, será apresentada uma pesquisa sobre simulações relacionadas a
 
 ### **_Traffic3D: An Open-Source Traffic-based Interactive Framework to Train AI Agents_**
 
-Este artigo analisa o uso de _Traffic3D_, uma poderosa ferramenta [_open source_](https://en.wikipedia.org/wiki/Open_source), capaz de testar... ...  e treinar agentes com I.A.  . O objetivo principal é explorar os problemas de tráfego, bem como o congestionamento em interseções operadas por semáforos (sinais luminosos).
+Este artigo analisa, demonstra e explica o uso e as possibildiades com _Traffic3D_ , uma poderosa ferramenta capaz de testar, treinar agentes e exportar os dados para o mundo real. Este simulador visa aprimorar a autencidade de simuladores de tráfego, melhorar congestionamentos e como referido anteriormente treinar agentes. Este simulador é também uma ferramenta [_open source_](https://en.wikipedia.org/wiki/Open_source) capaz de ser mais facilmente adaptada as necessidades do utilizador.
 
-**Comparação entre projetos** :
+O objetivo deste artigo é demonstar as capacidades de _Traffic3D_  bem como salientar a sua aplicação no mundo real. O simulador pode ser utilizado pare diversos fins a nível de tráfego promovendo um nível elevado de realismo.
+
+**Comparação entre projetos**:
 
 - **Parametrização da Simulação**
   
@@ -85,13 +87,14 @@ Este artigo analisa o uso de _Traffic3D_, uma poderosa ferramenta [_open source_
 
   - Peões: alterações mais a nível estético como género, idade, aparência (roupa do peão). Existem também outras parametrizações como andar ou correr e comportamentos como esperar em sinais vermelhos, atravessar nos sinais verdes, atravessar a estrada em pontos não designados para peões. Este poderoso simulador permite ainda estender os comportamentos e funcionalidades de peões.
 
-  - Veículos: Existem diversos veículos nesta simulação como civil, emergência,     taxi e autocarros. Ainda é fornecida a opção de veículos escolherem a condução pelo lado esquerdo ou direito da estrada, algo que é importante para países como que se conduz no lado esquerdo da estrada, bem como a Inglaterra e outros.
+  - Veículos: Existem diversos veículos nesta simulação como civil, emergência, taxi e autocarros. Ainda é fornecida a opção de veículos escolherem a condução pelo lado esquerdo ou direito da estrada, algo que é importante para países como que se conduz no lado esquerdo da estrada, bem como a Inglaterra e outros.
 
-- **Componentes da simulação :**
+- **Componentes da simulação**:
   
   _Traffic3D_ possui diversas características semelhantes com o _engine_ utilizado no nosso projeto que permitem fazer o cenário da simulação parecer o mais realístico como: iluminação global em tempo real, luzes, sombras, texturas e objetos nativos como veículos, céu e edifícios. Portanto é possível inferir que ambas as simulações tem componentes visuais bastante semelhantes.
 
-  Alguns componentes que são importantes e estão presentes no artigo apresentado são capacidades do _Traffic3D_ como geração procidemental, capaz de importar e gerar com mais fidelidade, cenários realistas. Isto por sua vez torna essa ferramenta mais versátil e reduz o tempo de investigadores. [[2]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4015243)
+  Alguns componentes que são importantes e estão presentes no artigo apresentado são capacidades do _Traffic3D_ como geração procidemental, capaz de importar e gerar com mais fidelidade, cenários realistas. Isto por sua vez torna essa ferramenta mais versátil e reduz o tempo de investigadores. Outro componente importante que difere esta simulação da nossa é _Traffic3D_ permitir um sistema compreensivo e rigoro para treinamento de agentes autónomos lidar com uma variedade de cenários, algo que não é feito na nossa simulação, porque não existe aprendizado por parte dos agentes nem a implementação de condições metereológicas como neve, chuva e etc.
+  Como referido acima, este artigo aborda como os agentes móveis podem ser treinados e explicamos como não existe treinamento nos nossos agentes, entretanto o artigo aborda como é possível realizar outro tipo de treinamento, sendo este realizado em agentes fixos como semáforos. A simulação implementou ainda um sistema que aplica _deep reinforncement learning_ com o objetivo de otimizar semáforos no mundo real, evitando assim congestionamentos com o treinamento obtido dentro da simulação. [[2]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4015243)
 
 ### **_Unity based Urban Environment Simulation for Autonomous Vehicle Stereo Vision Evaluation_**
 
