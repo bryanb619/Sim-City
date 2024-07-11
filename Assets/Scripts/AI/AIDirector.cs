@@ -28,7 +28,7 @@ namespace Assets.Scripts.AI
         private GameObject      _car;
 
         [SerializeField, BoxGroup("Pedestrian"), Label("Ped amount"), 
-        Range(0, 75)]
+        Range(0, 100)]
         private int             _peds = 30;
 
         [SerializeField, BoxGroup("Pedestrian"), 
@@ -75,6 +75,9 @@ namespace Assets.Scripts.AI
         [SerializeField] private UI _ui;
 
 
+        [SerializeField] private bool doubleTimeScale;
+
+
         /// <summary>
         /// Start is called before the first frame update
         /// </summary>
@@ -85,6 +88,8 @@ namespace Assets.Scripts.AI
 
             // ped spawn
             SpawnAgents(_ped, _peds);
+
+            if (doubleTimeScale) Time.timeScale = 2f; 
         }
 
 
@@ -103,16 +108,19 @@ namespace Assets.Scripts.AI
             // random point value
             int rp = 0;
 
+            
+
             // loop
             for (int i = 0; i < quantity; i++)
             {   
 
+                Agent agent;
 
                 if (objAI == _car) 
                 {   
 
                     // ref to nav agent
-                    Agent agent;
+                   
 
                     //StartCoroutine(WaitForSeconds(3f)); 
 
@@ -139,20 +147,19 @@ namespace Assets.Scripts.AI
 
                 else 
                 {   
-                    NavAgentBehaviour ped;
                     // get random point
                     rp = Random.Range(0, _pedSpawnPoints.Count);
 
                     // spawn ped
-                    Instantiate(objAI, _pedSpawnPoints[rp].transform.position, 
+                    currentAI = Instantiate(objAI, _pedSpawnPoints[rp].transform.position, 
                     transform.rotation);
 
 
                     // get NavAgentBehaviour component from spawned ped
-                    ped = objAI.GetComponent<NavAgentBehaviour>();
+                    agent = currentAI.GetComponent<Agent>();
                     
                     // set parameters
-                    ped.SetParameters(_pedTimeStopped, _timeInAccident, _timeInChaos,_chaosChance);
+                    agent.SetParameters(_pedTimeStopped, _timeInAccident, _timeInChaos,_chaosChance);
 
                     // add ped to list
                     _pedList.Add(objAI);
