@@ -115,8 +115,6 @@ A principal diferença ou inovação entre este projetos e outros é o facto des
 
 A simulação desenvolvida é em 3D e as técnicas de Inteligência Artificial utilizadas foram, respetivamente, _FSM's_ (uma biblioteca essencial para a realização de transições entre estados) e _A* (Unity NavMesh)_, que é essencial para o _Pathfinding_ de agentes como carros e peões.
 
-### Diagramas _FSM_
-
 ### Controlos da simulação
 
 Os seguintes comandos são representados por teclas (teclado):
@@ -130,11 +128,29 @@ O seguinte comando é realizado através de um rato
 
 - Rodar câmara: rato
 
+### Elementos visuais
+
+Na simulação existem também elementos visuais (_UI_) como informação e ações.
+
+- **Informação**
+  
+  Para informar o número de agentes ativos, existe portando, um contador no canto superior direito com o número total de peões e carros ativos na simulação.
+
+  ![SimCity counter](./Images/Agents.png)
+
+- **Ação**
+  
+  No campo das ações existem 2 ações possíveis, sendo estas respecitvamente aumentar a probabilidade de um carro em modo caos, como também aumentar essa probabilidade no peão.
+
+  ![S](./Images/Buttons.png)
+  
 #### Agentes Móveis
 
 As imagens nesta secção apresentam visualmente o código desenvolvido para efetuar as transições e estados tanto de agentes móveis (carros e peões) como também agentes fixos (sinais luminosos de transito)
 
-![SimCity FSM](./Images/agent.drawio.png)
+### Diagramas _FSM_
+
+![SimCity FSM](./Images/agentDrawio.png)
 
 #### Agente Fixo (semáforo)
 
@@ -238,7 +254,9 @@ Um sistema a parte dos componentes _Traffic Light_ e _Intersection Brain_ é um 
   
 ![SimCity AIDirector](./Images/generalAIsetts.png)
 
-### Diagrama Geral do Projeto em _UML_
+### Diagrama UML
+
+O seguinte diagrama contém apenas os algoritmos mais significativos e desenvolvidos pelo [autores](#autoria) deste projeto
 
 ```mermaid
 
