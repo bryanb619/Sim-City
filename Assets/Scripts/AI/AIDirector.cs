@@ -103,26 +103,20 @@ namespace Assets.Scripts.AI
         private void SpawnAgents(GameObject objAI, int quantity)
         {   
           
-           
-
             // random point value
             int rp = 0;
-
-            
 
             // loop
             for (int i = 0; i < quantity; i++)
             {   
+
+               
 
                 Agent agent;
 
                 if (objAI == _car) 
                 {   
 
-                    // ref to nav agent
-                   
-
-                    //StartCoroutine(WaitForSeconds(3f)); 
 
                     // get random point
                     rp = Random.Range(0, _carSpawnPoints.Count);
@@ -143,10 +137,12 @@ namespace Assets.Scripts.AI
                     // set parameters
                     agent.SetParameters(_carTimeStopped, _timeInAccident, _timeInChaos,_chaosChance);
 
+                    
                 }
 
                 else 
                 {   
+
                     // get random point
                     rp = Random.Range(0, _pedSpawnPoints.Count);
 
@@ -165,10 +161,7 @@ namespace Assets.Scripts.AI
                     _pedList.Add(objAI);
 
                     _ui.UpdatePedCount();
-
                     //print($"Ped {i} spawned");
-
-                    //StartCoroutine(WaitForSeconds(1f)); 
                 }
 
             }
@@ -178,7 +171,10 @@ namespace Assets.Scripts.AI
 
         private IEnumerator WaitForSeconds(float seconds)
         {
-            yield return new WaitForSeconds(seconds);
+            
+            yield return new WaitForSecondsRealtime(seconds);
+
+            print(seconds);
         }
 
         #endregion
