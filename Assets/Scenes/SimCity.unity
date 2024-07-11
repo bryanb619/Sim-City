@@ -94878,11 +94878,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6277726909453620389, guid: fb052d98d6d689f479446a00aba02b8a, type: 3}
       propertyPath: _timeInChaos.x
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6277726909453620389, guid: fb052d98d6d689f479446a00aba02b8a, type: 3}
       propertyPath: _timeInChaos.y
-      value: 38
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 6277726909453620389, guid: fb052d98d6d689f479446a00aba02b8a, type: 3}
       propertyPath: doubleTimeScale
@@ -95081,6 +95081,18 @@ PrefabInstance:
     - target: {fileID: 5991524531538758086, guid: 3167da95726e8aa43bc78455ec9a8414, type: 3}
       propertyPath: m_Name
       value: SideWalk Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612465872973808184, guid: 3167da95726e8aa43bc78455ec9a8414, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -28.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612465872973808184, guid: 3167da95726e8aa43bc78455ec9a8414, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612465872973808184, guid: 3167da95726e8aa43bc78455ec9a8414, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 126.46
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
