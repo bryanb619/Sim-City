@@ -45,9 +45,11 @@
   - Posicionamento de sinais de trânsito, transição de cor, _colliders_ e locais de destino
 - Relatório:
   - Artigos
-  - Imagens e explicação
+  - Estado da Arte
+  - Metodologia
+    - Imagens e explicação
   - UML
-  - Diagramas
+  - Diagramas _FSM_
 - _Bug fixing_
 
 ## Introdução
@@ -142,13 +144,15 @@ Na simulação existem também elementos visuais (_UI_) como informação e aç�
   
   No campo das ações existem 2 ações possíveis, sendo estas respecitvamente aumentar a probabilidade de um carro em modo caos, como também aumentar essa probabilidade no peão.
 
-  ![S](./Images/Buttons.png)
-  
-#### Agentes Móveis
+  Para utilizar estas ações, o utlizador deverá clicar com o botão: **rato esquerdo** no botão desejado para ativar a sua respectiva funcionalidade.
 
-As imagens nesta secção apresentam visualmente o código desenvolvido para efetuar as transições e estados tanto de agentes móveis (carros e peões) como também agentes fixos (sinais luminosos de transito)
+  ![S](./Images/Buttons.png)
 
 ### Diagramas _FSM_
+
+#### Agentes móveis
+
+As imagens nesta secção apresentam visualmente o código desenvolvido para efetuar as transições e estados tanto de agentes móveis (carros e peões) como também agentes fixos (sinais luminosos de transito)
 
 Os agentes móveis alternam entre 3 estados, sendo eles respectivamente:
 
@@ -165,7 +169,7 @@ s agentes fixos alternam apenas entre dois estados: vermelho e verde. Estes esta
 O estado inicial de um semáforo pode ser tanto verde quanto vermelho, mas, para demonstrar um possível ponto de origem, definimos o estado _Verde_ como inicial a título de exemplo.
 
 ![SimCity FSM](./Images/traffic.png)
-
+  
 ### Carros
 
 Agentes móveis
