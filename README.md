@@ -146,12 +146,15 @@ Agentes móveis
 
 O carro é integrado por componentes como [_NavMeshAgent_](https://docs.unity3d.com/560/Documentation/Manual/class-NavMeshAgent.html), [_Rigidbody_](https://docs.unity3d.com/560/Documentation/Manual/class-Rigidbody.html) e [Box colliders](https://docs.unity3d.com/560/Documentation/Manual/class-BoxCollider.html) para garantir o seu funcionamento respectivamente a nível de _pathfinding_, colisões e deteção de outros componetes ou objetos na simulação.
 
+O carro possui movimento dinâmico.
+
 ![SimCity car](./Images/car.png)
 
 ### Peões
 
-Assim como os carros  
-tipo de movimento
+Assim como os carros, os peões possuem os mesmos componentes descritos na secção: [Carros](#carros) com exatamente os mesmos objetivos.
+
+A principal diferença entre peões e carros é que peões utilizam o movimento cinemático.
 
 ![SimCity car](./Images/ped.png)
 
@@ -242,14 +245,17 @@ Um sistema a parte dos componentes _Traffic Light_ e _Intersection Brain_ é um 
 classDiagram
 
     LightState             <--  TrafficLight
-    NavAgentBehaviour      --*  AIDirector           
-    UI                     <..  AIDirector
+    TrafficLight           --*  IntersectionBrain 
 
-    class ITrafficLight
-    <<interface>> ITrafficLight
+    AgentState             <-- Agent
 
+    Agent                  <.. AIDirector
+                 
     class LightState
     <<enumeration>> LightState 
+
+    class AgentState
+    <<enumeration>> AgentState 
 ```
 
 ## Resultados e discussão
