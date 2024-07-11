@@ -9,6 +9,7 @@ TagManager:
   - Pedestrian
   - Vehicle
   - RedLight
+  - PedTrigger
   layers:
   - Default
   - TransparentFX
