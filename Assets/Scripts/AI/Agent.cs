@@ -40,7 +40,6 @@ namespace Assets.Scripts.AI
         [SerializeField]
         private MeshRenderer[] meshToChangeColor;
 
-
         [SerializeField]
         private Material materialForAccident, materialForChaos;
         private Material originalMaterial;
@@ -161,7 +160,7 @@ namespace Assets.Scripts.AI
             //if (other.CompareTag("CarDest"))
             //  Invoke("SetIdle", 0.1f);
 
-        
+
 
             /*
             if (tag == "Vehicle" && other.CompareTag("Pedestrian")
@@ -196,19 +195,19 @@ namespace Assets.Scripts.AI
                         Time.deltaTime);
                     }
 
-                    else if (other.CompareTag("Pedestrian") 
+                    else if (other.CompareTag("Pedestrian")
                     || other.CompareTag("RedLight"))
                     {
                         agent.speed = Mathf.Lerp(agent.speed, 0, Time.deltaTime * 50);
                     }
 
-                    else if(other.CompareTag("PedTrigger"))
+                    else if (other.CompareTag("PedTrigger"))
                     {
-                       bool coll =  other.GetComponent<CarTrigger>().HasPed;
+                        bool coll = other.GetComponent<CarTrigger>().HasPed;
 
                         if (coll)
                         {
-                           StopAgentMovement(true);
+                            StopAgentMovement(true);
 
                             print("Pedestrian in front of car");
                         }
@@ -219,7 +218,7 @@ namespace Assets.Scripts.AI
                 // 
                 else
                 {
-                    if(other.CompareTag("RedLight"))
+                    if (other.CompareTag("RedLight"))
                     {
                         StopAgentMovement(true);
                     }
@@ -232,9 +231,9 @@ namespace Assets.Scripts.AI
         {
             if (!Chaotic)
             {
-                if(IsCar())
-                {   
-                
+                if (IsCar())
+                {
+
                     if (other.CompareTag("Vehicle") || other.CompareTag("Pedestrian")
                         || other.CompareTag("RedLight"))
                     {
@@ -243,13 +242,13 @@ namespace Assets.Scripts.AI
 
                     if (other.CompareTag("PedTrigger"))
                     {
-                        bool coll =  other.GetComponent<CarTrigger>().HasPed;
+                        bool coll = other.GetComponent<CarTrigger>().HasPed;
 
                         if (!coll)
                         {
                             StopAgentMovement(false);
                         }
-                        
+
                     }
                 }
 
@@ -268,7 +267,7 @@ namespace Assets.Scripts.AI
         private void OnCollisionEnter(Collision other)
         {
 
-            if(IsCar())
+            if (IsCar())
             {
                 if (other.gameObject.CompareTag("Vehicle"))
                 {
@@ -289,7 +288,7 @@ namespace Assets.Scripts.AI
                 }
             }
 
-    
+
         }
 
         private bool IsCar()
@@ -322,7 +321,7 @@ namespace Assets.Scripts.AI
 
             randPos = Random.Range(0, goal.Length);
 
-            
+
         }
 
 
