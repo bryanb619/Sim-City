@@ -8,11 +8,18 @@ public class PlaceCounter : MonoBehaviour
     [SerializeField] 
     private TMP_Text _text;
 
+    private Camera _mainCam; 
 
-    private void OnTriggerEnter(Collider other)
+
+    private void Start()
     {
+        _mainCam = Camera.main;
+    }
 
-        
+
+    private void Update()
+    {
+        transform.LookAt(_mainCam.transform);
     }
 
 
@@ -34,5 +41,12 @@ public class PlaceCounter : MonoBehaviour
     {
         count--; 
         _text.text = $"Agent(s): {count}";
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+
     }
 }
