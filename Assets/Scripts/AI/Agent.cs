@@ -147,6 +147,7 @@ namespace Assets.Scripts.AI
         // Run the decision tree and execute the returned action
         private void Update()
         {
+            initialAgentSpeed = agent.speed;
 
             // Update FSM 
             Action actions = _fsm.Update();
@@ -190,6 +191,8 @@ namespace Assets.Scripts.AI
                 if (IsCar())
                 {
 
+                    Debug.Log("Detecting: " + other.tag);
+                    
                     if (other.CompareTag("Vehicle"))
                     {
                         agent.speed = Mathf.Lerp(agent.speed,
@@ -200,7 +203,7 @@ namespace Assets.Scripts.AI
                     else if (other.CompareTag("Pedestrian")
                     || other.CompareTag("RedLight"))
                     {
-                        agent.speed = Mathf.Lerp(agent.speed, 0, Time.deltaTime * 50);
+                        agent.speed = Mathf.Lerp(agent.speed, 0, Time.deltaTime * 20);
                     }
 
                     else if (other.CompareTag("PedTrigger"))
@@ -237,11 +240,12 @@ namespace Assets.Scripts.AI
             {
                 if (IsCar())
                 {
-
                     if (other.CompareTag("Vehicle") || other.CompareTag("Pedestrian")
                         || other.CompareTag("RedLight"))
                     {
-                        agent.speed = initialAgentSpeed;
+                        agent.speed = Mathf.Lerp(agent.speed, 
+                                                 initialAgentSpeed, 
+                                                 Time.deltaTime * 20);
                     }
                 }
 

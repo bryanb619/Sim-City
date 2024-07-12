@@ -77,24 +77,19 @@ namespace Assets.Scripts.AI
 
         [SerializeField] private bool doubleTimeScale;
 
-        private bool coroutineStarted = false;
-
-
         /// <summary>
         /// Start is called before the first frame update
         /// </summary>
         private void Start()
         {
             // car spawn
-            SpawnAgents(_car, _cars);
+            StartCoroutine(SpawnAgents(_car, _cars));
 
             // ped spawn
-            SpawnAgents(_ped, _peds);
+            StartCoroutine(SpawnAgents(_ped, _peds));
 
             if (doubleTimeScale) Time.timeScale = 2f;
         }
-
-
         #region Car & Ped Spawn
 
         /// <summary>
@@ -102,33 +97,21 @@ namespace Assets.Scripts.AI
         /// </summary>
         /// <param name="objAI"></param>
         /// <param name="quantity"></param>
-        private void SpawnAgents(GameObject objAI, int quantity)
+        private IEnumerator SpawnAgents(GameObject objAI, int quantity)
         {
+            int rp;
+            Agent agent;
 
-            // random point value
-            int rp = 0;
-
-            // loop
-            for (int i = 0; i < quantity; i++)
+            if (objAI == _car)
             {
-
-                Agent agent;
-
-                if(!coroutineStarted)
-                {   
-                    Invoke("WaitTime",2f);
-                }
-
-                if (objAI == _car)
+                for(int i = 0; i < quantity; i++)
                 {
-                    
-
                     // get random point
                     rp = Random.Range(0, _carSpawnPoints.Count);
 
                     // spawn car
                     currentAI = Instantiate(objAI,
-                     _carSpawnPoints[rp].transform.position,
+                    _carSpawnPoints[rp].transform.position,
                     transform.rotation);
 
                     // get NavAgentBehaviour component from spawned car
@@ -142,12 +125,13 @@ namespace Assets.Scripts.AI
                     // set parameters
                     agent.SetParameters(_carTimeStopped, _timeInAccident, _timeInChaos, _chaosChance);
 
-
+                    yield return new WaitForSeconds(0.7f);
                 }
-
-                else
+            }
+            else if (objAI == _ped)
+            {
+                for(int i = 0; i < quantity; i++)
                 {
-
                     // get random point
                     rp = Random.Range(0, _pedSpawnPoints.Count);
 
@@ -167,19 +151,16 @@ namespace Assets.Scripts.AI
 
                     _ui.UpdatePedCount();
                     //print($"Ped {i} spawned");
-                }
 
+                    yield return new WaitForSeconds(0.7f);
+                }
             }
 
         }
 
         private IEnumerator WaitTime(float seconds)
         {
-            coroutineStarted = true;
-
-            yield return new WaitForSecondsRealtime(seconds);
-
-            coroutineStarted = false;
+            yield return new WaitForSeconds(seconds);
         }
 
         #endregion
