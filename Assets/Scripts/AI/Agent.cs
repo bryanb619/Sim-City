@@ -9,9 +9,9 @@ namespace Assets.Scripts.AI
 {
     public class Agent : MonoBehaviour
     {
-        // ---------------- interface ------------------------------------------
-
+    
         public AgentState NavState { get; private set; } = AgentState.Move;
+
         // -----------------------------Agent-----------------------------------
 
         // Current goal of navigation agent
@@ -33,6 +33,11 @@ namespace Assets.Scripts.AI
 
         private float _chaosChance;
 
+
+        private Rigidbody _rb;
+
+        private bool canMove = true;
+
         // ------------- FSM ---------------------------------------------------
 
         private StateMachine _fsm;
@@ -44,13 +49,11 @@ namespace Assets.Scripts.AI
         private Material materialForAccident, materialForChaos;
         private Material originalMaterial;
 
-        private Rigidbody _rb;
 
-        private bool canMove = true;
 
         //----------------------------------------------------------------------
 
-        // The root of the decision tree
+        
 
         // 
         private void Awake()
@@ -88,6 +91,7 @@ namespace Assets.Scripts.AI
         {
             // --------------------- STATES ------------------------------------
 
+            // The root of the decision tree
             State IdleState = new State(
                 "Idle", Idle,
                 null,
@@ -202,7 +206,8 @@ namespace Assets.Scripts.AI
                     else if (other.CompareTag("Pedestrian")
                     || other.CompareTag("RedLight"))
                     {
-                        agent.speed = Mathf.Lerp(agent.speed, 0, Time.deltaTime * 20);
+                        agent.speed = Mathf.Lerp(agent.speed, 0,
+                         Time.deltaTime * 20);
                     }
 
                     else if (other.CompareTag("PedTrigger"))
@@ -239,7 +244,8 @@ namespace Assets.Scripts.AI
             {
                 if (IsCar())
                 {
-                    if (other.CompareTag("Vehicle") || other.CompareTag("Pedestrian")
+                    if (other.CompareTag("Vehicle") 
+                        || other.CompareTag("Pedestrian")
                         || other.CompareTag("RedLight"))
                     {
                         agent.speed = Mathf.Lerp(agent.speed, 
@@ -461,7 +467,7 @@ namespace Assets.Scripts.AI
             _chaosTime = timeInChaos;
             _chaosChance = chaosChance;
         }
-        
+
         /// <summary>
         /// 
         /// </summary>
