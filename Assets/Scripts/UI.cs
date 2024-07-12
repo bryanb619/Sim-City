@@ -5,7 +5,7 @@ using UnityEngine;
 public class UI : MonoBehaviour
 {
 
-#region Variables
+
 
     // Reference to the UI GameObject
     [SerializeField] private GameObject      _simUI;
@@ -17,7 +17,10 @@ public class UI : MonoBehaviour
 
     private int _carCount = 0 , _pedCount = 0;
 
-#endregion
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+    }
 
     /// <summary>
     /// Update is called once per frame
