@@ -69,7 +69,7 @@ namespace Assets.Scripts.AI
             initialAgentSpeed = agent.speed;
         }
 
-        #region Start methods
+
         // Start is called before the first frame update
         private void Start()
         {
@@ -143,7 +143,6 @@ namespace Assets.Scripts.AI
 
         }
 
-        #endregion
         // Run the decision tree and execute the returned action
         private void Update()
         {
@@ -296,7 +295,6 @@ namespace Assets.Scripts.AI
 
         // ----------------------- ACTIONS -------------------------------------
 
-        #region  Idle
         private void Idle()
         {
 
@@ -320,10 +318,7 @@ namespace Assets.Scripts.AI
 
 
         }
-        #endregion
 
-
-        #region Move
 
         private void Move()
         {
@@ -346,9 +341,7 @@ namespace Assets.Scripts.AI
             }
         }
 
-        #endregion
 
-        #region  Chaos
         private void Chaos()
         {
             float time = Random.Range(10F, 60F);
@@ -394,9 +387,6 @@ namespace Assets.Scripts.AI
             NavState = state;
         }
 
-        #endregion
-
-        #region Accident
         private void Accident()
         {
 
@@ -420,8 +410,6 @@ namespace Assets.Scripts.AI
                 m.material = originalMaterial;
 
         }
-
-        #endregion
 
         // ---------------------------------------------------------------------
 
@@ -461,7 +449,6 @@ namespace Assets.Scripts.AI
             }
         }
 
-        #region Param Setter
         public void SetParameters(Vector2Int timeStopped,
                                   Vector2Int timeInAccident,
                                   Vector2Int timeInChaos,
@@ -474,8 +461,7 @@ namespace Assets.Scripts.AI
             _chaosTime = timeInChaos;
             _chaosChance = chaosChance;
         }
-        #endregion
-
+        
         /// <summary>
         /// 
         /// </summary>
