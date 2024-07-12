@@ -5,7 +5,7 @@
 ### Elementos do grupo
 
 - Diogo Freire  22104684
-- Steven Hall   2200173
+- Steven Hall   22001753
   
 ### Report
 
@@ -172,7 +172,7 @@ Os agentes móveis alternam entre 3 estados, sendo eles respectivamente:
 
 s agentes fixos alternam apenas entre dois estados: vermelho e verde. Estes estados definem qual agente pode prosseguir com seu destino atual
 
-O estado inicial de um semáforo pode ser tanto verde quanto vermelho, mas, para demonstrar um possível ponto de origem, definimos o estado _Verde_ como inicial a título de exemplo.
+O estado inicial de um semáforo pode ser tanto verde quanto vermelho, mas, para demonstrar um possível ponto de origem, definimos o estado _Green_ como inicial a título de exemplo.
 
 ![SimCity FSM](./Images/traffic.png)
   
