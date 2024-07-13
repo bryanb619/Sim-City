@@ -51,8 +51,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.57740176, z: 2.7679071}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.4657426, y: 0.57740176, z: 2.7679071}
+  m_Center: {x: 0.23287135, y: 0, z: -0.00000005552085}
 --- !u!1 &5436836182280403281
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,8 +130,10 @@ MonoBehaviour:
   _model: {fileID: 7547497268967739501}
   meshToChangeColor:
   - {fileID: 7561043744695437983}
+  - {fileID: 7559345892345208569}
   materialForAccident: {fileID: 2100000, guid: 4537a06971fc3714680e6a17c2ae5507, type: 2}
   materialForChaos: {fileID: 2100000, guid: 4b6e4a7aceaf6cb48b08c8e7ef7be0c4, type: 2}
+  originalMaterial: {fileID: 2100000, guid: a4e6922f48c28e645b166a6e87c82b19, type: 2}
 --- !u!54 &5275619058453255553
 Rigidbody:
   m_ObjectHideFlags: 0

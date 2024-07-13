@@ -15,6 +15,7 @@ public class CarTrigger: MonoBehaviour
     /// </summary>
     private void Start()
     {
+        HasPed = false;
         _meshRenderer = GetComponent<MeshRenderer>();
         _meshRenderer.enabled = false;
 

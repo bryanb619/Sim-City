@@ -51,8 +51,8 @@ namespace Assets.Scripts.AI
 
 
         /// <summary>
-        /// Coroutine updates time, checks and changes the singal states while 
-        /// also reseting the time
+        /// Coroutine updates time, checks and changes the single states while 
+        /// also resetting the time
         /// </summary>
         /// <returns>
         ///  waits for seconds

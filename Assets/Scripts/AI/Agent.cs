@@ -27,7 +27,7 @@ namespace Assets.Scripts.AI
 
         private float initialAgentSpeed;
 
-        private Vector2Int _stopTime, _accidentTime, _chaosTime;
+        private int _stopTime, _accidentTime, _chaosTime;
 
         public bool Chaotic { get; private set; }
 
@@ -46,9 +46,7 @@ namespace Assets.Scripts.AI
         private MeshRenderer[] meshToChangeColor;
 
         [SerializeField]
-        private Material materialForAccident, materialForChaos;
-        private Material originalMaterial;
-
+        private Material materialForAccident, materialForChaos, originalMaterial;
 
 
         //----------------------------------------------------------------------
@@ -63,7 +61,6 @@ namespace Assets.Scripts.AI
             else
             {
                 goal = GameObject.FindGameObjectsWithTag("CarDest");
-                originalMaterial = meshToChangeColor[0].material;
             }
 
             // Get reference to the NavMeshAgent component
@@ -76,8 +73,6 @@ namespace Assets.Scripts.AI
         // Start is called before the first frame update
         private void Start()
         {
-            originalMaterial = meshToChangeColor[0].material;
-
             _rb = GetComponent<Rigidbody>();
 
             randPos = Random.Range(0, goal.Length);
@@ -113,7 +108,7 @@ namespace Assets.Scripts.AI
             // ------------------------ TRANSITIONS ----------------------------
 
             // arrive at destination => idle
-            // idle => invisel, desativa NavMeshagent
+            // idle => invisível, desativa NavMeshAgent
 
             // IDLE => Move
             IdleState.AddTransition(new Transition(
@@ -150,36 +145,9 @@ namespace Assets.Scripts.AI
         // Run the decision tree and execute the returned action
         private void Update()
         {
-            initialAgentSpeed = agent.speed;
-
             // Update FSM 
             Action actions = _fsm.Update();
             actions?.Invoke();
-
-        }
-
-
-
-        // Method called when agent collides with something
-        private void OnTriggerEnter(Collider other)
-        {
-            //if (other.CompareTag("CarDest"))
-            //  Invoke("SetIdle", 0.1f);
-
-
-
-            /*
-            if (tag == "Vehicle" && other.CompareTag("Pedestrian")
-            || other.CompareTag("RedLight"))
-            {
-                agent.speed = Mathf.Lerp(agent.speed, 0, Time.deltaTime * 50);
-            }
-
-            if (tag == "Vehicle" && other.CompareTag("PedTrigger"))
-            {
-                agent.speed = Mathf.Lerp(agent.speed, 0, Time.deltaTime * 50);
-            }
-            */
         }
 
         private void SetIdle()
@@ -200,41 +168,32 @@ namespace Assets.Scripts.AI
                     {
                         agent.speed = Mathf.Lerp(agent.speed,
                         other.GetComponent<NavMeshAgent>().speed,
-                        Time.deltaTime);
+                        Time.deltaTime * 20);
                     }
 
                     else if (other.CompareTag("Pedestrian")
                     || other.CompareTag("RedLight"))
                     {
-                        agent.speed = Mathf.Lerp(agent.speed, 0,
-                         Time.deltaTime * 20);
+                        StopAgentMovement(true);
                     }
 
                     else if (other.CompareTag("PedTrigger"))
                     {
                         bool coll = other.GetComponent<CarTrigger>().HasPed;
-
+                        
                         if (coll)
                         {
                             canMove = false;
+                            StopAgentMovement(true);
                         }
                         else 
                         {
                             canMove = true;
+                            StopAgentMovement(false);
                         }
 
                     }
                 }
-
-                // 
-                else
-                {
-                    if (other.CompareTag("RedLight"))
-                    {
-                        //StopAgentMovement(true);
-                    }
-                }
-
             }
         }
 
@@ -248,9 +207,7 @@ namespace Assets.Scripts.AI
                         || other.CompareTag("Pedestrian")
                         || other.CompareTag("RedLight"))
                     {
-                        agent.speed = Mathf.Lerp(agent.speed, 
-                                                 initialAgentSpeed, 
-                                                 Time.deltaTime * 20);
+                        StopAgentMovement(false);
                     }
                 }
 
@@ -314,7 +271,7 @@ namespace Assets.Scripts.AI
 
             agent.speed = initialAgentSpeed;
 
-            int randTime = Random.Range(_stopTime.x, _stopTime.y);
+            int randTime = Random.Range(0, _stopTime + 1);
 
             StartCoroutine(TimeWait(randTime, AgentState.Move));
 
@@ -330,13 +287,15 @@ namespace Assets.Scripts.AI
         {
             if(canMove)
             {   
-
                 UpdateDestination(randPos);
-
 
                 if (agent.isOnOffMeshLink && agent.speed == initialAgentSpeed)
                 {
                     agent.speed *= 0.7f;
+                }
+                else
+                {
+                    agent.speed = initialAgentSpeed;
                 }
 
                 if (!agent.pathPending && agent.remainingDistance < 1f)
@@ -350,36 +309,32 @@ namespace Assets.Scripts.AI
 
         private void Chaos()
         {
-            float time = Random.Range(10F, 60F);
+            float time = Random.Range(0, _chaosTime + 1);
             agent.speed *= 3;
-            StartCoroutine(HitFlash(Random.Range(_chaosTime.x, _chaosTime.x)));
-
-
+            StartCoroutine(HitFlash(time, materialForChaos.color));
         }
 
         // receive time of flash 
-        private IEnumerator HitFlash(float time)
+        private IEnumerator HitFlash(float time, Color color)
         {
-            int timer = 0;
-
-            while (true)
+            time *= 2;
+            for (int i = 0; i < time; i++)
             {
-                timer++;
-
-
-                if (timer < time)
+                Debug.Log("Hit Flash i: " + i);
+                foreach (MeshRenderer m in meshToChangeColor)
                 {
-                    foreach (MeshRenderer m in meshToChangeColor)
-                        m.material = materialForChaos;
-
-                    yield return new WaitForSeconds(0.2f);
-
-                    foreach (MeshRenderer m in meshToChangeColor)
-                        m.material = originalMaterial;
+                    if (m.material.color == originalMaterial.color)
+                        m.material.color = color;
+                    
+                    else if (m.material.color == color)
+                        m.material.color = originalMaterial.color;
                 }
-
+                yield return new WaitForSeconds(0.5f);
             }
 
+            foreach (MeshRenderer m in meshToChangeColor)
+                if (m.material.color == color)
+                    m.material.color = originalMaterial.color;
         }
 
         private IEnumerator TimeWait(int time, AgentState state)
@@ -408,7 +363,7 @@ namespace Assets.Scripts.AI
 
             // wait random time
             StartCoroutine(
-                TimeWait(Random.Range(_accidentTime.x, _accidentTime.y),
+                TimeWait(Random.Range(0, _accidentTime),
                  AgentState.Move));
 
             // reset to normal material 
@@ -435,12 +390,13 @@ namespace Assets.Scripts.AI
         {
             if (stop)
             {
-                agent.speed = 0;
+                agent.speed = Mathf.Lerp(agent.speed, 0,
+                                        Time.deltaTime * 20);
             }
             else
             {   
-                agent.speed = initialAgentSpeed;
-
+                agent.speed = Mathf.Lerp(agent.speed, initialAgentSpeed,
+                                        Time.deltaTime * 20);
             }
 
         }
@@ -455,13 +411,11 @@ namespace Assets.Scripts.AI
             }
         }
 
-        public void SetParameters(Vector2Int timeStopped,
-                                  Vector2Int timeInAccident,
-                                  Vector2Int timeInChaos,
+        public void SetParameters(int timeStopped,
+                                  int timeInAccident,
+                                  int timeInChaos,
                                   int chaosChance)
         {
-
-
             _stopTime = timeStopped;
             _accidentTime = timeInAccident;
             _chaosTime = timeInChaos;
@@ -478,8 +432,6 @@ namespace Assets.Scripts.AI
             if (!Chaotic)
             {   
                 StartCoroutine(ChaosTimer()); 
-
-                // e piscar???
             }
 
         }
@@ -493,8 +445,7 @@ namespace Assets.Scripts.AI
             agent.speed = initialAgentSpeed * 1.5f;
 
 
-            yield return new WaitForSeconds(Random.Range(_chaosTime.x, 
-            _chaosTime.y));
+            yield return new WaitForSeconds(Random.Range(0,_chaosTime));
 
             // reset chaos features
             agent.speed = initialAgentSpeed;

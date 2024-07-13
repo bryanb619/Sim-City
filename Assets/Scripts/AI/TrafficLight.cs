@@ -45,12 +45,10 @@ namespace Assets.Scripts.AI
             StartFSM();
         }
 
-
-    #region  FSM Initialization
         private void StartFSM()
         {
         
-            // -------------------- States -------------------------------------
+            // -------------------- States -------------------------------------F
 
             State redState = new State(
                 "Red",
@@ -97,8 +95,6 @@ namespace Assets.Scripts.AI
             SwitchMatLight();
 
         }
-#endregion
-
 
         /// <summary>
         /// Update is called once per frame
@@ -109,9 +105,6 @@ namespace Assets.Scripts.AI
             Action actions = _fsm.Update();
             actions?.Invoke();
         }
-
-
-#region Light State Control
 
         /// <summary>
         /// 
@@ -135,10 +128,7 @@ namespace Assets.Scripts.AI
             }
 
         }
-#endregion
 
-
-#region  Action Methods
         /// <summary>
         /// 
         /// </summary>
@@ -159,12 +149,8 @@ namespace Assets.Scripts.AI
 
             _carColls.SetActive(true);
             _crossWalkColls.SetActive(false);
-        }
 
-#endregion
-    
-
-#region Visual Light change
+        }    
 
         /// <summary>
         /// 0 = Green
@@ -194,10 +180,7 @@ namespace Assets.Scripts.AI
 
                 default: { break; }
             }
-
         }
-
-#endregion
     }
 }
 
