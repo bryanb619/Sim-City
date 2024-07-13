@@ -11,18 +11,15 @@ namespace Assets.Scripts.AI
     public class AIDirector : MonoBehaviour
     {
 
-        #region Parameters
-
         private GameObject currentAI;
 
         [SerializeField, BoxGroup("Cars"), Label("Car amount"),
         Range(0, 50)]
         private int _cars = 25;
 
-        [SerializeField, BoxGroup("Cars"),
-        MinMaxSlider(0, 75)]
+        [SerializeField, BoxGroup("Cars")]
         // x = minimum time, y = maximum time
-        private Vector2Int _carTimeStopped;
+        private int _maxCarTimeStopped;
 
         [SerializeField, BoxGroup("Cars")]
         private GameObject _car;
@@ -31,24 +28,20 @@ namespace Assets.Scripts.AI
         Range(0, 100)]
         private int _peds = 30;
 
-        [SerializeField, BoxGroup("Pedestrian"),
-        MinMaxSlider(0, 75)]
-        // x = minimum time, y = maximum time
-        private Vector2Int _pedTimeStopped;
+        [SerializeField, BoxGroup("Pedestrian")]
+        private int _maxPedTimeStopped;
 
         [SerializeField, BoxGroup("Pedestrian")]
         private GameObject _ped;
 
 
-        [SerializeField, BoxGroup("Accident"),
-        MinMaxSlider(0, 75)]
-        private Vector2Int _timeInAccident;
+        [SerializeField, BoxGroup("Accident")]
+        private int _maxTimeInAccident;
 
 
-        [SerializeField, BoxGroup("Chaos"),
-        MinMaxSlider(0, 75)]
+        [SerializeField, BoxGroup("Chaos")]
         // x = minimum time, y = maximum time
-        private Vector2Int _timeInChaos;
+        private int _maxTimeInChaos;
 
         [SerializeField, BoxGroup("Chaos"),
         Range(0, 100)]
@@ -60,8 +53,6 @@ namespace Assets.Scripts.AI
         [SerializeField, BoxGroup("Cars")]
         private List<Transform> _carSpawnPoints = new List<Transform>();
 
-
-        #endregion
 
         // list of agents
 
@@ -90,7 +81,6 @@ namespace Assets.Scripts.AI
 
             if (doubleTimeScale) Time.timeScale = 2f;
         }
-        #region Car & Ped Spawn
 
         /// <summary>
         /// 
@@ -123,7 +113,7 @@ namespace Assets.Scripts.AI
                     _ui.UpdateCarCount();
 
                     // set parameters
-                    agent.SetParameters(_carTimeStopped, _timeInAccident, _timeInChaos, _chaosChance);
+                    agent.SetParameters(_maxCarTimeStopped, _maxTimeInAccident, _maxTimeInChaos, _chaosChance);
 
                     yield return new WaitForSeconds(0.7f);
                 }
@@ -144,7 +134,7 @@ namespace Assets.Scripts.AI
                     agent = currentAI.GetComponent<Agent>();
 
                     // set parameters
-                    agent.SetParameters(_pedTimeStopped, _timeInAccident, _timeInChaos, _chaosChance);
+                    agent.SetParameters(_maxPedTimeStopped, _maxTimeInAccident, _maxTimeInChaos, _chaosChance);
 
                     // add ped to list
                     _pedList.Add(objAI);
@@ -162,9 +152,6 @@ namespace Assets.Scripts.AI
         {
             yield return new WaitForSeconds(seconds);
         }
-
-        #endregion
-
 
         /// <summary>
         /// 
