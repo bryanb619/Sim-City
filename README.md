@@ -12,13 +12,13 @@
 #### Diogo Freire
 
 - Código
-  - NavAgentBehaviour:
-    - Melhoria do comportamento do Agent (melhorar isso!)
-    - Sistema de Waypoints
+  - _Agent_:
+    - Melhoria do comportamento do agente
+    - Sistema de _Waypoints_
     - Deteção de agentes
     - Deteção de Colisões
   - TrafficLight
-  - AIDirector
+  - _AIDirector_
 - Scene:
   - _NavMesh Bake_
   - _NavMesh Link_
@@ -31,43 +31,60 @@
 #### Steven Hall
 
 - Código:
+  - Agent organization
   - Implementação de FSM
   - AgentState enum
-  - AIDirector (Implementação de sistema e transição do estado de luzes)
+  - _AIDirector_
   - TrafficLight System implementation:
-    - IntersectionBrain
-    - LightState enum
-    - TrafficLight
-  - UI
-    - Contador de Agentes
+    - _IntersectionBrain_
+    - _LightState enum_
+    - _TrafficLight_
+    - _AIDirector_
+    - _CarTrigger_
+  - UI:
+    - Contador de Agentes (canto superio direito)
+  - _Bug fixing_
+  
+- XML:
+  - _IntersectionBrain_
+  - _TrafficLight_
+  - _LightState enum_
+  - _UI_
+  - _CarTrigger_
+  - _CellType_
+  - _PlacePopulation_
 
 - Scene
-  - Posicionamento de sinais de trânsito, transição de cor, _colliders_ e locais de destino
+  - Posicionamento de sinais de trânsito, transição de cor, _colliders_ e locais de destino.
+
 - Relatório:
   - Artigos
   - Estado da Arte
   - Metodologia
     - Imagens e explicação
-  - UML
+  - _UML_
   - Diagramas _FSM_
-- _Bug fixing_
 
 ## Introdução
 
  O projeto desenvolvido retrata um modelo tráfego urbano """ . Foi desenvolvido utilizando o motor de jogo [_Unity Engine_ 2022.3.1 _LTS_](https://unity.com/releases/editor/whats-new/2022.3.1#release-notes) e para definir as ações dos agentes, utilizamos as FSM (finite-state machine) [[1]](https://nunofachada.github.io/libgameai/api/LibGameAI.FSMs.html) e o objetivo principal foi demonstrar as técnicas de Inteligência Artificial em uma espécie de _Sim City_ não jogável, com automóveis, peões e sinais de trânsito como semáforos (sinalização luminosa).
 
+Para a construção do ambiente, foi utilizado um _asset pack_ de uma cidade pré-feita que inclui semáforos, estradas, locais como supermercados, hotéis, cafés e mais. A cidade é constituída por diversos destinos acessíveis pelos agentes através de _Pathfinding A*_ gerado pelo _Unity NavMesh_. Utilizamos este componente para gerar um _bake_ na cidade, isto é, uma rede tanto para os veículos como para os pedestres, que define o caminho que os agentes podem utilizar para chegar ao seu destino.
+
+A pesquisa para este projeto incluiu uma análise e estudo de trabalhos no campo da simulação de tráfego, mas com cenários, propostas, abordagens e problemas diferentes. O principal foco, além de serem simulações no campo de tráfego, é compreender as limitações de nossa simulação e identificar o que outros trabalhos conseguem fazer melhor. Além disso, visa entender o uso de técnicas de inteligência artificial, comportamentos de agentes e a melhor gestão de tráfego. A principal plataforma de pesquisa foi o _Google Scholar_, sendo as demais fontes essenciais para a construção do código e cenário da simulação desenvolvida.
+
 - Objetivos desta simulação:
   - Fazer com que os automóveis respeitem as regras de trânsito, como sinais luminosos, passadeiras e outros veículos na via.
-  - Permitir que os pedestres utilizem passeios e passadeiras quando o sinal luminoso permitir.
+  - Permitir que os peões utilizem passeios e as passadeiras quando o sinal luminoso permitir.
   - Simular acidentes entre agentes.
-  - Implementar um modo de descontrole que escolhe um agente aleatório e aumenta o seu nível de "insanidade".
+  - Implementar um modo de descontrole (caos) que escolhe um agente aleatório e aumenta o seu nível de "insanidade".
   
 - Objetivos alcançados:
-  - Implementação de sinais luminosos utilizando máquina de estados (_FSM_).
-  - Transição entre estado de agentes (automóveis e peões).
+  - Implementação de sinais luminosos que transicionam entre verde e vermelho utilizando uma máquina de estado ([_FSM_](#agentes-móveis)).
+  - Transição entre estado de agentes (automóveis e peões) que implementa uma máquina de estados([_FSM_](#agente-fixo-semáforo)).
   - Obedecer regras de trânsito
-  - Estado descontrolo
-  - Abrandar a para evitar colisões
+  - Estado descontrolo (caos)
+  - Abrandar para evitar colisões
   
 ## Estado da Arte
 
@@ -87,7 +104,7 @@ O objetivo deste artigo é demonstrar as capacidades de _Traffic3D_, bem como sa
 
   - Peões: alterações principalmente a nível estético, como gênero, idade e aparência (roupas dos pedestres). Há também outras parametrizações, como andar ou correr, e comportamentos, como esperar em sinais vermelhos, atravessar nos sinais verdes e atravessar a rua em locais não designados para peões. Este poderoso simulador permite ainda estender os comportamentos e funcionalidades dos peões.
 
-  - Veículos: Existem diversos tipos de veículos nesta simulação, incluindo civis, de emergência, táxis e autocarros. Também é oferecida a opção para os veículos escolherem a condução pelo lado esquerdo ou direito da estrada, o que é relevante para países que conduzem pelo lado esquerdo, como a Inglaterra, entre outros.
+  - Veículos: Existem diversos tipos de veículos nesta simulação, incluindo civis, de emergência, táxis e autocarros. Também é oferecida a opção para os veículos escolherem a condução pelo lado esquerdo ou direito da estrada, o que é relevante para países que conduzem pelo lado esquerdo, como a Inglaterra, entre outros. Estas parametrizações não estou disponíveis na nossa simulação ou são mais simples como no caso de apenas termos um tipo de carro e um peão.
 
 - **Componentes da simulação**:
   
@@ -108,7 +125,7 @@ Este estudo explora o desenvolvimento e experimento de uma simulação 3D no _Un
 
 ### **_Unity 3D Simulator of Autonomous Motorway Traffic Applied to Emergency Corridor Building_**
 
-Este trabalho aborda o desenvolvimento de um simulador de trânsito numa auto-estrada com veículos autónomos, ...  O objetivo de OUTRO é demonstrar a eficácia de agentes autónomos em certos cenários e permitir com mais sucesso e mais rapidamente a chegada de equipas de emergência ao local de acidentes em auto-estradas.
+Este trabalho aborda o desenvolvimento de um simulador de tráfego numa auto-estrada com veículos autónomos, ...  O objetivo é de demonstrar a eficácia de agentes autónomos em certos cenários e permitir com mais sucesso e mais rapidamente a chegada de equipas de emergência ao local de acidentes em auto-estradas e a formação automática de um corredor de emergência.
 
 A principal diferença ou inovação entre este projetos e outros é o facto deste focar-se na construção de uma faixa de emergência em auto-estradas realizada por veículos autónomos e assim Demonstrar a eficácia de veículos autónomos em situações de emergência e intenso trânsito.
 
@@ -116,8 +133,10 @@ A principal diferença ou inovação entre este projetos e outros é o facto des
 
 - **Abordagem e objetivos**:  
 
-  Ambos os trabalhos procuram melhorar simulações de tráfego, entretanto o nosso projeto implementa uma abordagem que foca em simular comportamentos de tráfego de veículos e peões, suas respetivas interações como deteção de agentes móveis(carros), agentes fixos (sinais luminosos) e finalmente terem uma ação designada em caso de acidentes num cenário urbano. Enquanto OUTRO PROJETO desenvolveu um sistema focado em segurança rodoviária, mais especificamente em auto-estradas.  
-  Para efetuar a sua abordagem utiliza veículos autónomos capazes de se comunicarem com o objetivo de regular a velocidade dos agentes, criar faixas de emergência, procurando assim garantir ao máximo possível a segurança em estradas para todos. [[3]](https://www.researchgate.net/profile/Jurij-Kuzmic/publication/341470027_Unity_3D_Simulator_of_Autonomous_Motorway_Traffic_Applied_to_Emergency_Corridor_Building/links/60119d42299bf1b33e2d26f5/Unity-3D-Simulator-of-Autonomous-Motorway-Traffic-Applied-to-Emergency-Corridor-Building.pdf)
+  Ambos as simulações procuram melhorar simulações de tráfego, segurança rodoaviária e são implementadas em _Unity 3D_. Entretanto o nosso projeto implementa uma abordagem que foca em simular comportamentos de tráfego de veículos e peões, suas respetivas interações como deteção de agentes móveis(carros e peões), agentes fixos (sinais luminosos) e finalmente terem uma ação designada em caso de acidentes num cenário urbano. Enquanto este trabalho desenvolveu um sistema focado em segurança rodoviária mas, mais especificamente em auto-estradas e com veículos puramente autónomo e otimizar a segurança de todoos e como consequência da formação de um corredor emergência, os serviços de emergencia podem chegar mais rapidamente ao local do acidente.  
+  Para efetuar a sua abordagem utiliza veículos autónomos capazes de se comunicarem com o objetivo de regular a velocidade dos agentes, criar faixas de emergência, procurando assim garantir ao máximo possível a segurança em auto-estradas para todos. [[3]](https://www.researchgate.net/profile/Jurij-Kuzmic/publication/341470027_Unity_3D_Simulator_of_Autonomous_Motorway_Traffic_Applied_to_Emergency_Corridor_Building/links/60119d42299bf1b33e2d26f5/Unity-3D-Simulator-of-Autonomous-Motorway-Traffic-Applied-to-Emergency-Corridor-Building.pdf)
+
+- **Comunicação entre veículo**
 
 ## Metodologia
 
@@ -134,7 +153,7 @@ Os seguintes comandos são representados por teclas (teclado):
 
 O seguinte comando é realizado através de um rato
 
-- Rodar câmara: rato
+- Rodar câmara: mover rato
 
 ### Elementos visuais
 
@@ -244,6 +263,18 @@ _Traffic Light_ e os seus respectivos colisores.
 Um sistema a parte dos componentes _Traffic Light_ e _Intersection Brain_ é um colisor responsável por detetar se há um peão na passadeira ou não. Isto é importante para os veículos poderem parar em zonas onde não existem semáforos.
 
 ![SimCity crossWalk](./Images/croswalk.png)
+
+### _Bake_
+
+O exemplo a seguir demonstra um _bake_ realizado em uma interseção da cidade, permitindo que os agentes utilizem _Pathfinding_ para alcançar seus destinos.
+
+Zona azul: representa a zona em que peões podem se deslocar.
+
+Zona roxa: demonstra a zona onde os veículos podem transitar.
+
+Zona _Off-Mesh Link_: mostra uma zona de conexão para veículos.
+
+![Sim City intersection bake Example](./Images/bake.png)
 
 ### AI Director
 
