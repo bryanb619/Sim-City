@@ -422,11 +422,18 @@ namespace Assets.Scripts.AI
             _chaosChance = chaosChance;
         }
 
-
+        /// <summary>
+        /// Method checks if agent is moving state and is also not in chaos mode.
+        /// </summary>
+        /// <returns>
+        /// Reuturns the bool value of the check descripted above.
+        /// true: means this agent is a candidate to be set in chaos mode.
+        /// false: means this agent is not viable to set in chaos mode
+        /// </returns>
         public bool CanBeChaos() => NavState == AgentState.Move && !Chaotic;
         
         /// <summary>
-        /// 
+        /// Method sets agent to chaos mode.
         /// </summary>
         public void SetChaosAgent()
         {
