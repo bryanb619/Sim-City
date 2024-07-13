@@ -422,17 +422,16 @@ namespace Assets.Scripts.AI
             _chaosChance = chaosChance;
         }
 
+
+        public bool CanBeChaos() => NavState == AgentState.Move && !Chaotic;
+        
         /// <summary>
         /// 
         /// </summary>
         public void SetChaosAgent()
         {
             // Set the agent to be a chaos agent
-
-            if (!Chaotic)
-            {   
-                StartCoroutine(ChaosTimer()); 
-            }
+            StartCoroutine(ChaosTimer()); 
 
         }
 
