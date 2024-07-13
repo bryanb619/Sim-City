@@ -156,30 +156,63 @@ namespace Assets.Scripts.AI
         /// <summary>
         /// 
         /// </summary>
-        public void SelectCarChaosMode()
+        public void SelectChaosMode(bool isVehicle)
         {
+            Agent agent;
 
-            // var to hold random value
-            int i = 0;
+            int r, attempts = 0;
 
-            // get random value within car list
-            i = Random.Range(0, _carList.Count);
+            bool foundAgent = false;
 
-            // get NavAgentBehaviour component from car list index
-            Agent agent = _carList[i].GetComponent<Agent>();
+            string unit = "";
 
-            while (agent.Chaotic)
+            List<GameObject> units; 
+
+
+            do
             {
-                i = Random.Range(0, _carList.Count);
+                
+                if (isVehicle)
+                {
+                    unit = "Car";
+                    units = _carList;
 
-                agent = _carList[i].GetComponent<Agent>();
+                }
 
-                print("Car is already in chaos mode");
+                else 
+                {
+                    unit = "Ped";
+                    units = _pedList;
+                }
+
+
+                r = Random.Range(0, units.Count);
+
+
+                agent = units[r].GetComponent<Agent>();
+
+
+
+                if (agent.CanBeChaos())
+                {
+                    foundAgent = true;
+                    break;
+                }
+
+                attempts++;
+            
             }
 
-            agent.SetChaosAgent();
+            while (attempts < units.Count);
 
-            print($"Car {i} is in chaos mode");
+            if (foundAgent) 
+            { 
+                agent.SetChaosAgent();
+                print($"{unit} {r}: Chaos mode");
+            }
+
+            else Debug.Log($"No {unit} available to be chaos");
+            
         }
 
         public void SelectPedChaosMode()
