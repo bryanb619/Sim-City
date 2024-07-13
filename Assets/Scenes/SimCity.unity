@@ -41783,6 +41783,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1451226839}
     m_Modifications:
+    - target: {fileID: 2142777044859140872, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.28235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2142777044859140872, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.28235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2142777044859140872, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.28235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2142777044859140872, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4282927176
+      objectReference: {fileID: 0}
     - target: {fileID: 2245744408661998754, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
       propertyPath: m_Name
       value: Canvas Counter
@@ -43773,6 +43789,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1740216607}
     m_Modifications:
+    - target: {fileID: 2142777044859140872, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.28235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2142777044859140872, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.28235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2142777044859140872, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.28235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2142777044859140872, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4282927176
+      objectReference: {fileID: 0}
     - target: {fileID: 2245744408661998754, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
       propertyPath: m_Name
       value: Canvas Counter
@@ -74678,6 +74710,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 498102, guid: 4000718aa726f174bb2a1e64ee9190cb, type: 3}
   m_PrefabInstance: {fileID: 1672286054}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1673242783 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2245744408661998754, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
+  m_PrefabInstance: {fileID: 1797567934}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1675667658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79626,6 +79663,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 152038699}
     m_Modifications:
+    - target: {fileID: 2142777044859140872, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
+      propertyPath: m_text
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2142777044859140872, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.28235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2142777044859140872, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.28235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2142777044859140872, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.28235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2142777044859140872, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4282927176
+      objectReference: {fileID: 0}
     - target: {fileID: 2245744408661998754, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
       propertyPath: m_Name
       value: Canvas Counter
@@ -79680,19 +79737,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8727773971369687703, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.99958193
       objectReference: {fileID: 0}
     - target: {fileID: 8727773971369687703, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.02245701
       objectReference: {fileID: 0}
     - target: {fileID: 8727773971369687703, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.014055103
       objectReference: {fileID: 0}
     - target: {fileID: 8727773971369687703, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.011584629
       objectReference: {fileID: 0}
     - target: {fileID: 8727773971369687703, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -79704,26 +79761,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8727773971369687703, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 2.554
       objectReference: {fileID: 0}
     - target: {fileID: 8727773971369687703, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -1.642
       objectReference: {fileID: 0}
     - target: {fileID: 8727773971369687703, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -1.365
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2245744408661998754, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1797567939}
   m_SourcePrefab: {fileID: 100100000, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
 --- !u!224 &1797567935 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8727773971369687703, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
   m_PrefabInstance: {fileID: 1797567934}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1797567939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673242783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ee6a69c4a73e9740afb731138d85c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: 0
 --- !u!1 &1800396688
 GameObject:
   m_ObjectHideFlags: 0
@@ -88655,6 +88728,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 488210156}
     m_Modifications:
+    - target: {fileID: 2142777044859140872, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.2830189
+      objectReference: {fileID: 0}
+    - target: {fileID: 2142777044859140872, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.2830189
+      objectReference: {fileID: 0}
+    - target: {fileID: 2142777044859140872, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.2830189
+      objectReference: {fileID: 0}
+    - target: {fileID: 2142777044859140872, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4282927176
+      objectReference: {fileID: 0}
     - target: {fileID: 2245744408661998754, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
       propertyPath: m_Name
       value: Canvas Counter
@@ -93633,6 +93722,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 626463366}
     m_Modifications:
+    - target: {fileID: 2142777044859140872, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.28235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2142777044859140872, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.28235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2142777044859140872, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.28235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2142777044859140872, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4282927176
+      objectReference: {fileID: 0}
     - target: {fileID: 2245744408661998754, guid: b07fe671c3f9b424b97bab02c0deac08, type: 3}
       propertyPath: m_Name
       value: Canvas Counter
@@ -96676,17 +96781,37 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1128436804467974440, guid: b3403fb1352c6ee4f831a6c2d9ced6dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128436804467974440, guid: b3403fb1352c6ee4f831a6c2d9ced6dd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2250489843426320927}
+    - target: {fileID: 1128436804467974440, guid: b3403fb1352c6ee4f831a6c2d9ced6dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectChaosMode
+      objectReference: {fileID: 0}
     - target: {fileID: 3890264923875167183, guid: b3403fb1352c6ee4f831a6c2d9ced6dd, type: 3}
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 5281807907750657808, guid: b3403fb1352c6ee4f831a6c2d9ced6dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5281807907750657808, guid: b3403fb1352c6ee4f831a6c2d9ced6dd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2250489843426320927}
+    - target: {fileID: 5281807907750657808, guid: b3403fb1352c6ee4f831a6c2d9ced6dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectChaosMode
+      objectReference: {fileID: 0}
+    - target: {fileID: 5281807907750657808, guid: b3403fb1352c6ee4f831a6c2d9ced6dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8454287293366866781, guid: b3403fb1352c6ee4f831a6c2d9ced6dd, type: 3}
       propertyPath: m_Pivot.x
       value: 0
