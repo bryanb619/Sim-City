@@ -98,11 +98,7 @@ namespace Assets.Scripts.AI
                 Move,
                 null);
 
-            State AccidentState = new State(
-                "Accident",
-                () => Debug.Log("Enter Accident"),
-                  Accident,
-                () => Debug.Log("Left Accident"));
+            State AccidentState = new State("Accident", Accident, null, null);
 
 
             // ------------------------ TRANSITIONS ----------------------------
@@ -127,13 +123,13 @@ namespace Assets.Scripts.AI
             // Move => Accident
             MovingState.AddTransition(new Transition(
                 () => NavState == AgentState.Accident,
-                () => Debug.Log("Transition Accident"),
+                () => StopAgentMovement(true),
                 AccidentState));
 
-            // Move => Accident
+            // Accident => Move
             AccidentState.AddTransition(new Transition(
                 () => NavState == AgentState.Move,
-                () => Debug.Log("Transition Move"),
+                () => StopAgentMovement(false),
                 MovingState));
 
             // ---------------------------------------
@@ -226,7 +222,8 @@ namespace Assets.Scripts.AI
 
             if (IsCar())
             {
-                if (other.gameObject.CompareTag("Vehicle"))
+                if (other.gameObject.CompareTag("Vehicle") && 
+                    NavState != AgentState.Accident)
                 {
                     NavState = AgentState.Accident;
                 }
@@ -325,17 +322,24 @@ namespace Assets.Scripts.AI
 
         private IEnumerator TimeWait(int time, AgentState state)
         {
+            if (state == AgentState.Accident)
+            {
+                StartCoroutine(HitFlash(time, materialForChaos.color));
+            }
+            else
+            {
+                yield return new WaitForSecondsRealtime(time);
 
-            yield return new WaitForSecondsRealtime(time);
-
-            if (!_model.activeSelf && NavState == AgentState.Idle)
-                _model.SetActive(true);
+                if (!_model.activeSelf && NavState == AgentState.Idle)
+                    _model.SetActive(true);
+            }
 
             NavState = state;
         }
 
         private void Accident()
         {
+            Debug.Log("Accident Movement");
 
             // reset dynamic movement
             ResetRBVelocities();
@@ -343,19 +347,14 @@ namespace Assets.Scripts.AI
             // stop nav mesh
             StopAgentMovement(true);
 
-            // set accident material
-            foreach (MeshRenderer m in meshToChangeColor)
-                m.material = materialForAccident;
+            int time = Random.Range(0, _accidentTime);
 
+
+            StartCoroutine(HitFlash(time, materialForAccident.color));
             // wait random time
             StartCoroutine(
                 TimeWait(Random.Range(0, _accidentTime),
                  AgentState.Move));
-
-            // reset to normal material 
-            foreach (MeshRenderer m in meshToChangeColor)
-                m.material = originalMaterial;
-
         }
 
         // ---------------------------------------------------------------------
