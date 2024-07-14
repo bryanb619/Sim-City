@@ -20,8 +20,7 @@ public class PlacePopulation : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        _text = transform.GetChild(0).
-                transform.GetChild(0).gameObject.GetComponent<TMP_Text>();
+        _text = transform.GetComponentInChildren<TMP_Text>();
                 
         _mainCam = Camera.main;
     }
