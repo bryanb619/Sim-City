@@ -84,7 +84,6 @@ A pesquisa para este projeto incluiu uma análise e estudo de trabalhos no campo
   - Transição entre estado de agentes (automóveis e peões) que implementa uma máquina de estados([_FSM_](#agente-fixo-semáforo)).
   - Obedecer regras de trânsito
   - Estado descontrolo (caos)
-  - Abrandar para evitar colisões
   
 ## Estado da Arte
 
@@ -133,10 +132,18 @@ A principal diferença ou inovação entre este projetos e outros é o facto des
 
 - **Abordagem e objetivos**:  
 
-  Ambos as simulações procuram melhorar simulações de tráfego, segurança rodoaviária e são implementadas em _Unity 3D_. Entretanto o nosso projeto implementa uma abordagem que foca em simular comportamentos de tráfego de veículos e peões, suas respetivas interações como deteção de agentes móveis(carros e peões), agentes fixos (sinais luminosos) e finalmente terem uma ação designada em caso de acidentes num cenário urbano. Enquanto este trabalho desenvolveu um sistema focado em segurança rodoviária mas, mais especificamente em auto-estradas e com veículos puramente autónomo e otimizar a segurança de todoos e como consequência da formação de um corredor emergência, os serviços de emergencia podem chegar mais rapidamente ao local do acidente.  
-  Para efetuar a sua abordagem utiliza veículos autónomos capazes de se comunicarem com o objetivo de regular a velocidade dos agentes, criar faixas de emergência, procurando assim garantir ao máximo possível a segurança em auto-estradas para todos. [[3]](https://www.researchgate.net/profile/Jurij-Kuzmic/publication/341470027_Unity_3D_Simulator_of_Autonomous_Motorway_Traffic_Applied_to_Emergency_Corridor_Building/links/60119d42299bf1b33e2d26f5/Unity-3D-Simulator-of-Autonomous-Motorway-Traffic-Applied-to-Emergency-Corridor-Building.pdf)
+  Ambos as simulações procuram melhorar simulações de tráfego, segurança rodoaviária e são implementadas em _Unity 3D_. Entretanto o nosso projeto implementa uma abordagem que foca em simular comportamentos de tráfego de veículos e peões, suas respetivas interações como deteção de agentes móveis(carros e peões), agentes fixos (sinais luminosos) e finalmente terem uma ação designada em caso de acidentes num cenário urbano. Enquanto este trabalho desenvolveu um sistema focado em segurança rodoviária mas, mais especificamente em auto-estradas e com veículos puramente autónomos com o fim de otimizar a segurança de todoos e como consequência disto, a formação de um corredor emergência. Devido a isto os serviços de emergencia podem chegar mais rapidamente ao local do acidente.  
+  
+  Para efetuar a sua abordagem utiliza veículos autónomos capazes de se comunicarem com o objetivo de regular a velocidade dos agentes, criar faixas de emergência, procurando assim garantir ao máximo possível a segurança em auto-estradas para todos.
 
-- **Comunicação entre veículo**
+- **Comunicação entres veículos**
+  
+  Apesar de nossa a simulação os agentes representarem veículos controlados por pessoas, na prática são veículos autónomos que utilizam I.A. para realizar as suas devidas ações pré-programadas assim como os veículos autónomos analisados neste artigo. Entretanto, estes possuem um sistema mais complexo capaz de realizar uma faixa de emergência como descrito acima. No nosso projeto os veículos utilizam um sistema de coumunicação com outros veículos a sua frente com o objetivo de abrandar a sua velocidade ao igualar a sua própria velocidade ao veículo que está a sua frente. Este sistema utiliza 2 _Box Colliders_ colocados a frente do veículo que detetam se há um veículo a frente, havendo assim uma comunicação entre veículo da frente com o de trás. Esta comunicação também acaba por ser semelhante a vida real, pois se estamos a conduzir e verifica-se um veículo a abrandar (acionar luzes de travão), procedemos a abrandar a nossa velocidade.
+
+  A comunicação entre agentes neste trabalho é capaz de enviar uma menssagem a todos os veículos na sua zona e assim, cada veículo irá tentar tomar a ação correta de acordo com a situação. Uma possível situação é receber a informação que existe um acidente numa faixa em sentido oposta numa auto-estrada e assim não fará sentido abrandar, parar e formar um corredor de emergência, pois este veículo não se qualifica para tomar tais decisões devido ao facto de com a informação presente no momento, não haver um perigo no seu sentido da auto-estrada. [[3]](https://www.researchgate.net/profile/Jurij-Kuzmic/publication/341470027_Unity_3D_Simulator_of_Autonomous_Motorway_Traffic_Applied_to_Emergency_Corridor_Building/links/60119d42299bf1b33e2d26f5/Unity-3D-Simulator-of-Autonomous-Motorway-Traffic-Applied-to-Emergency-Corridor-Building.pdf)
+  
+
+   IMPORTANTE PARA ENTENDER QUE CARROS TEM DE SE COMUNICAR E ISSO O MESMO NO MUNDO REAL 
 
 ## Metodologia
 
