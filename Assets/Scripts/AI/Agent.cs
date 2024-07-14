@@ -347,6 +347,8 @@ namespace Assets.Scripts.AI
             // stop nav mesh
             StopAgentMovement(true);
 
+            agent.ResetPath();
+
             int time = Random.Range(0, _accidentTime);
 
 
