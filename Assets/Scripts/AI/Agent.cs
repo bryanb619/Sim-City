@@ -160,10 +160,7 @@ namespace Assets.Scripts.AI
             if (!Chaotic)
             {
                 if (IsCar())
-                {
-
-                    Debug.Log("Detecting: " + other.tag);
-                    
+                {                    
                     if (other.CompareTag("Vehicle"))
                     {
                         agent.speed = Mathf.Lerp(agent.speed,
@@ -310,7 +307,6 @@ namespace Assets.Scripts.AI
             time *= 2;
             for (int i = 0; i < time; i++)
             {
-                Debug.Log("Hit Flash i: " + i);
                 foreach (MeshRenderer m in meshToChangeColor)
                 {
                     if (m.material.color == originalMaterial.color)
@@ -380,13 +376,11 @@ namespace Assets.Scripts.AI
         {
             if (stop)
             {
-                Debug.Log("Entered StopAgentMovement true");
                 agent.speed = Mathf.Lerp(agent.speed, 0,
                                         Time.deltaTime * 50);
             }
             else
             {   
-                Debug.Log("Entered StopAgentMovement false");
                 agent.speed = Mathf.Lerp(agent.speed, initialAgentSpeed,
                                         Time.deltaTime * 30);
             }
@@ -431,13 +425,11 @@ namespace Assets.Scripts.AI
         {
             // Set the agent to be a chaos agent
             StartCoroutine(ChaosTimer()); 
-
         }
 
 
         private IEnumerator ChaosTimer()
         {   
-
             // chaos features
             Chaotic = true;
             agent.speed = initialAgentSpeed * 1.5f;
