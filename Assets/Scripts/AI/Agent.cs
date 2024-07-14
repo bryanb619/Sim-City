@@ -10,7 +10,7 @@ namespace Assets.Scripts.AI
     public class Agent : MonoBehaviour
     {
     
-        public AgentState NavState { get; private set; } = AgentState.Move;
+        public AgentState NavState { get; private set; } = AgentState.Idle;
 
         // -----------------------------Agent-----------------------------------
 
@@ -171,12 +171,6 @@ namespace Assets.Scripts.AI
                         Time.deltaTime * 20);
                     }
 
-                    else if (other.CompareTag("Pedestrian")
-                    || other.CompareTag("RedLight"))
-                    {
-                        StopAgentMovement(true);
-                    }
-
                     else if (other.CompareTag("PedTrigger"))
                     {
                         bool coll = other.GetComponent<CarTrigger>().HasPed;
@@ -193,6 +187,13 @@ namespace Assets.Scripts.AI
                         }
 
                     }
+
+                    else if (other.CompareTag("Pedestrian")
+                    || other.CompareTag("RedLight"))
+                    {
+                        StopAgentMovement(true);
+                    }
+
                 }
             }
         }
@@ -260,7 +261,6 @@ namespace Assets.Scripts.AI
 
         private void Idle()
         {
-
             ResetRBVelocities();
 
             agent.ResetPath();
@@ -275,7 +275,7 @@ namespace Assets.Scripts.AI
 
             StartCoroutine(TimeWait(randTime, AgentState.Move));
 
-            StopAgentMovement(false);
+           StopAgentMovement(false);
 
             randPos = Random.Range(0, goal.Length);
 
@@ -289,18 +289,8 @@ namespace Assets.Scripts.AI
             {   
                 UpdateDestination(randPos);
 
-                if (agent.isOnOffMeshLink && agent.speed == initialAgentSpeed)
-                {
-                    agent.speed *= 0.7f;
-                }
-                else
-                {
-                    agent.speed = initialAgentSpeed;
-                }
-
                 if (!agent.pathPending && agent.remainingDistance < 1f)
                 {
-                    // TODO: Check if agent in destination
                     NavState = AgentState.Idle;
                 }
             }
@@ -390,13 +380,15 @@ namespace Assets.Scripts.AI
         {
             if (stop)
             {
+                Debug.Log("Entered StopAgentMovement true");
                 agent.speed = Mathf.Lerp(agent.speed, 0,
-                                        Time.deltaTime * 20);
+                                        Time.deltaTime * 50);
             }
             else
             {   
+                Debug.Log("Entered StopAgentMovement false");
                 agent.speed = Mathf.Lerp(agent.speed, initialAgentSpeed,
-                                        Time.deltaTime * 20);
+                                        Time.deltaTime * 30);
             }
 
         }
