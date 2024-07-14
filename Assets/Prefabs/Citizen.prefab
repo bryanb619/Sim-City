@@ -178,7 +178,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 921492666294324077}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.37
+  m_Radius: 0.1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 99
@@ -209,3 +209,4 @@ MonoBehaviour:
   - {fileID: 4612973914379160555}
   materialForAccident: {fileID: 2100000, guid: 4537a06971fc3714680e6a17c2ae5507, type: 2}
   materialForChaos: {fileID: 2100000, guid: 4b6e4a7aceaf6cb48b08c8e7ef7be0c4, type: 2}
+  originalMaterial: {fileID: 2100000, guid: ba8cbac16a32f5949bd4f5605a59af73, type: 2}
