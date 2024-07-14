@@ -97,6 +97,10 @@ O objetivo deste artigo é demonstrar as capacidades de _Traffic3D_, bem como sa
 
 **Comparação entre projetos**:
 
+  Deteção de objetos
+
+  Ambos os projetos visam melhorar a percepção de veículos controlados por I.A, porém a forma realizada neste trabalho é demonstrar o uso de câmaras ou sensores (no mundo real) bem como o seu uso pode detetar obstáculos e demonstrar o pathfinding adaptavido do I.A. no seu percurso. O nosso trabalha implementa uma I.A. mais simples, com um pathfinding em malha pré-definido pois, o seu destino pode ser aleatório, mas o caminho possui sempre as mesmas regras.
+
 - **Parametrização da Simulação**
   
   Ambos os projetos permitem a edição de parâmetros relevantes à simulação. Tanto o nosso projeto quanto o projeto em análise possibilitam povoar o cenário da simulação com tráfego multimodal, ou seja, tráfego de veículos e pedestres, além de posicionar a posição de instanciação dos agentes móveis (criar agentes em um local pré-definido). Entretanto, _Traffic3D_ avança ainda mais e oferece múltiplas opções de parametrização:
@@ -120,6 +124,8 @@ O objetivo deste artigo é demonstrar as capacidades de _Traffic3D_, bem como sa
 Este estudo explora o desenvolvimento e experimento de uma simulação 3D no _Unity Engine_ para testar veículos  veículos autónomos registarem registarem dados com _stereo cameras_ representados nesta simulação por câmaras do próprio _engine_ situadas na frente do veículo. O objetivo deste experimento é demonstrar as capacidades de um veículo autónomo equipado com sensores(_omnipresent stereo cameras_). A terceira câmara ou a câmara central é bastante interessante porque, faz uso de um shader chamado _Z-buffer_ para representar a gravação de dados em profundidade.
 
 **Comparação entre projetos :**
+
+
 [[2]](https://ieeexplore.ieee.org/abstract/document/8756805)
 
 ### **_Unity 3D Simulator of Autonomous Motorway Traffic Applied to Emergency Corridor Building_**
@@ -347,7 +353,7 @@ Para concluir, o projeto desenvolvido consistiu em implementar uma simulação d
 - Transições do estado dos agentes
 - Alterações de estados os agentes a meio do programa
 - Múltiplos locais como destino
-- Escolha ao calhas dos locais para destino
+- Escolha aleatória dos locais para destino
 - Desaparecimento visual do agente, porem este mantém-se na cena
 
 ## Referências
