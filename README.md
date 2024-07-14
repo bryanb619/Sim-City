@@ -346,7 +346,13 @@ Ao analisar a simulação, é possível observar que os agentes se deslocam para
 
 Os artigos contribuiram a percepção de simulações de tráfegos, dando ideias a futuros trabalhos como termos uma sistame de comunicação mais complexo e a deteção de agentes serem mais realistas.
 
-Alguns objetivos não foram alcançados bem como uma alta realidade da simulação.
+Alguns objetivos não foram alcançados bem como alguma falta de realidade da simulação pelo facto de alguns agentes ainda colidiem com outros mesmo estando parados e também porque, os carros não abrandavam quando estavam atrás de outros veículos.
+
+Por vezes também os veículos estão numa espécie de movimento constante mesmo ao estarem parados (pelo _navMesh_), o que é algo que acreditamos ser feito pelo _RigidBody_ conectado no componente do veículo como o seu movimento é dinámico.
+
+### Discussão
+
+A análise dos resultados da simulação demonstrou que as configurações (opções parametrizaveis) definidas pelo _AIDirector_  e os comportamentos (pré-definidos) nas [FSM](#agentes-móveis) demonstraram-se eficazes no controlo dos agentes e da simulação. Tanto os agentes móveis como fixos cumprem as suas tarefas como ir para um destino, entrar no modo acidente e no caso dos sinais, simplesmente mudar de estado tiveram em sua ampla parte, os comportamentos esperados.
 
 ## Conclusões
 
@@ -359,6 +365,8 @@ Para concluir, o projeto desenvolvido consistiu em implementar uma simulação d
 - Múltiplos locais como destino
 - Escolha aleatória dos locais para destino
 - Desaparecimento visual do agente, porem este mantém-se na cena
+
+A simulação tem as suas semelhanças com a pesquisa realizada em diversos campos, como comunicação entre agentes, pathfinding, no caso de alguns foi também utilizado o motor de jogo _Unity_ e contribuiram para se perceber mais sobre os problemas de simuladores de tráfego bem como os seus uso e técnicas e vantagens para o mundo real.
 
 ## Referências
 
