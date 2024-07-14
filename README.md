@@ -42,7 +42,7 @@
     - _AIDirector_
     - _CarTrigger_
   - UI:
-    - Contador de Agentes (canto superio direito)
+    - Contador de Agentes (canto superior direito)
   - _Bug fixing_
   
 - XML:
@@ -80,7 +80,7 @@ A pesquisa para este projeto incluiu uma análise e estudo de trabalhos no campo
   - Implementar um modo de descontrole (caos) que escolhe um agente aleatório e aumenta o seu nível de "insanidade".
   
 - Objetivos alcançados:
-  - Implementação de sinais luminosos que transicionam entre verde e vermelho utilizando uma máquina de estado ([_FSM_](#agentes-móveis)).
+  - Implementação de sinais luminosos que transacionam entre verde e vermelho utilizando uma máquina de estado ([_FSM_](#agentes-móveis)).
   - Transição entre estado de agentes (automóveis e peões) que implementa uma máquina de estados([_FSM_](#agente-fixo-semáforo)).
   - Obedecer regras de trânsito
   - Estado descontrolo (caos)
@@ -101,7 +101,7 @@ O objetivo deste artigo é demonstrar as capacidades de _Traffic3D_, bem como sa
   
   Ambos os projetos permitem a edição de parâmetros relevantes à simulação. Tanto o nosso projeto quanto o projeto em análise possibilitam povoar o cenário da simulação com tráfego multimodal, ou seja, tráfego de veículos e pedestres, além de posicionar a posição de instanciação dos agentes móveis (criar agentes em um local pré-definido). Entretanto, _Traffic3D_ avança ainda mais e oferece múltiplas opções de parametrização:
 
-  - Peões: alterações principalmente a nível estético, como gênero, idade e aparência (roupas dos pedestres). Há também outras parametrizações, como andar ou correr, e comportamentos, como esperar em sinais vermelhos, atravessar nos sinais verdes e atravessar a rua em locais não designados para peões. Este poderoso simulador permite ainda estender os comportamentos e funcionalidades dos peões.
+  - Peões: alterações principalmente a nível estético, como género, idade e aparência (roupas dos pedestres). Há também outras parametrizações, como andar ou correr, e comportamentos, como esperar em sinais vermelhos, atravessar nos sinais verdes e atravessar a rua em locais não designados para peões. Este poderoso simulador permite ainda estender os comportamentos e funcionalidades dos peões.
 
   - Veículos: Existem diversos tipos de veículos nesta simulação, incluindo civis, de emergência, táxis e autocarros. Também é oferecida a opção para os veículos escolherem a condução pelo lado esquerdo ou direito da estrada, o que é relevante para países que conduzem pelo lado esquerdo, como a Inglaterra, entre outros. Estas parametrizações não estou disponíveis na nossa simulação ou são mais simples como no caso de apenas termos um tipo de carro e um peão.
 
@@ -109,9 +109,9 @@ O objetivo deste artigo é demonstrar as capacidades de _Traffic3D_, bem como sa
   
   _Traffic3D_ possui diversas características semelhantes ao _engine_ utilizado no nosso projeto, que permitem fazer o cenário da simulação parecer o mais realista possível, incluindo: iluminação global em tempo real, luzes, sombras, texturas e objetos nativos como veículos, céu e edifícios. Portanto, é possível inferir que ambas as simulações têm componentes visuais bastante semelhantes.
   
-    Alguns componentes importantes presentes no artigo referem-se às capacidades do Traffic3D, como a geração procedural que permite importar e criar cenários realistas com maior fidelidade. Essa versatilidade reduz o tempo necessário para os pesquisadores. Outro aspecto relevante que diferencia essa simulação da nossa é o fato de o Traffic3D oferecer um sistema abrangente e rigoroso para treinar agentes autônomos a lidar com uma variedade de cenários. Em nossa simulação, não há aprendizado por parte dos agentes, e também não implementamos condições meteorológicas como neve ou chuva.
+    Alguns componentes importantes presentes no artigo referem-se às capacidades do Traffic3D, como a geração procedural que permite importar e criar cenários realistas com maior fidelidade. Essa versatilidade reduz o tempo necessário para os pesquisadores. Outro aspeto relevante que diferencia essa simulação da nossa é o fato de o Traffic3D oferecer um sistema abrangente e rigoroso para treinar agentes autónomos a lidar com uma variedade de cenários. Em nossa simulação, não há aprendizado por parte dos agentes, e também não implementamos condições meteorológicas como neve ou chuva.
 
-    Alguns componentes importantes presentes no artigo referem-se às capacidades do Traffic3D, como a geração procedural que permite importar e criar cenários realistas com maior fidelidade. Essa versatilidade reduz o tempo necessário para os pesquisadores. Outro aspecto relevante que diferencia essa simulação da nossa é o fato de o Traffic3D oferecer um sistema abrangente e rigoroso para treinar agentes autônomos a lidar com uma variedade de cenários. Em nossa simulação, não há aprendizado por parte dos agentes, e também não implementamos condições meteorológicas como neve ou chuva.
+    Alguns componentes importantes presentes no artigo referem-se às capacidades do Traffic3D, como a geração procedural que permite importar e criar cenários realistas com maior fidelidade. Essa versatilidade reduz o tempo necessário para os pesquisadores. Outro aspeto relevante que diferencia essa simulação da nossa é o fato de o Traffic3D oferecer um sistema abrangente e rigoroso para treinar agentes autónomos a lidar com uma variedade de cenários. Em nossa simulação, não há aprendizado por parte dos agentes, e também não implementamos condições meteorológicas como neve ou chuva.
 
     O artigo menciona o treinamento de agentes móveis, mas vale ressaltar que em nossa simulação não realizamos esse tipo de treinamento. No entanto, o artigo explora outra abordagem, focando em agentes fixos, como semáforos. Além disso, a simulação implementou um sistema baseado em _deep reinforcement learning_ para otimizar semáforos no mundo real, evitando congestionamentos com base no treinamento obtido dentro da simulação. [[2]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4015243)
 
@@ -174,9 +174,9 @@ Na simulação existem também elementos visuais (_UI_) como informação e aç�
 
 - **Ação**
   
-  No campo das ações existem 2 ações possíveis, sendo estas respecitvamente aumentar a probabilidade de um carro em modo caos, como também aumentar essa probabilidade no peão.
+  No campo das ações existem 2 ações possíveis, sendo estas respetivamente aumentar a probabilidade de um carro em modo caos, como também aumentar essa probabilidade no peão.
 
-  Para utilizar estas ações, o utlizador deverá clicar com o botão: **rato esquerdo** no botão desejado para ativar a sua respectiva funcionalidade.
+  Para utilizar estas ações, o utilizador deverá clicar com o botão: **rato esquerdo** no botão desejado para ativar a sua respetiva funcionalidade.
 
   ![S](./Images/Buttons.png)
 
@@ -186,10 +186,10 @@ Na simulação existem também elementos visuais (_UI_) como informação e aç�
 
 As imagens nesta secção apresentam visualmente o código desenvolvido para efetuar as transições e estados tanto de agentes móveis (carros e peões) como também agentes fixos (sinais luminosos de transito)
 
-Os agentes móveis alternam entre 3 estados, sendo eles respectivamente:
+Os agentes móveis alternam entre 3 estados, sendo eles respetivamente:
 
 - **_Idle_**: neste estado, o agente fica invisível, aguardando até o momento em que deve sair deste estado.
-- **_Move_**: este estado é responsável por fazer o agente prosseguir até o seu destino e fazer checagem se chegou. Caso tenha chegado, volta ao estado anterior (_Idle_).
+- **_Move_**: este estado é responsável por fazer o agente prosseguir até o seu destino e fazer a verificação se chegou. Caso tenha chegado, volta ao estado anterior (_Idle_).
 - **_Acidente_**: O estado final desta máquina de estados define as ações a serem tomadas em caso de acidente, sendo estas mudar a cor do agente envolvido para vermelho e parar por completo o seu movimento. O agente regressa ao estado anterior (_Move_) ao fim de um determinado tempo.
 
 ![SimCity FSM](./Images/agentDrawio.png)
@@ -206,7 +206,7 @@ O estado inicial de um semáforo pode ser tanto verde quanto vermelho, mas, para
 
 Agentes móveis
 
-O carro é integrado por componentes como [_NavMeshAgent_](https://docs.unity3d.com/560/Documentation/Manual/class-NavMeshAgent.html), [_Rigidbody_](https://docs.unity3d.com/560/Documentation/Manual/class-Rigidbody.html) e [Box colliders](https://docs.unity3d.com/560/Documentation/Manual/class-BoxCollider.html) para garantir o seu funcionamento respectivamente a nível de _pathfinding_, colisões e deteção de outros componetes ou objetos na simulação.
+O carro é integrado por componentes como [_NavMeshAgent_](https://docs.unity3d.com/560/Documentation/Manual/class-NavMeshAgent.html), [_Rigidbody_](https://docs.unity3d.com/560/Documentation/Manual/class-Rigidbody.html) e [Box colliders](https://docs.unity3d.com/560/Documentation/Manual/class-BoxCollider.html) para garantir o seu funcionamento respetivamente a nível de _pathfinding_, colisões e deteção de outros componentes ou objetos na simulação.
 
 O carro possui movimento dinâmico.
 
@@ -260,14 +260,14 @@ Possui valores parametrizáveis como:
 
 ![SimCity Intersection Brain](./Images/IB.png)
 
-Exemplo de uma interseção com 4 conexões, isto é um componente _Intersection Brain_ com 4 compentes
-_Traffic Light_ e os seus respectivos colisores.
+Exemplo de uma interseção com 4 conexões, isto é um componente _Intersection Brain_ com 4 componentes
+_Traffic Light_ e os seus respetivos _colliders_.
 
 ![Sim city Intersection Prefab](./Images/intersection.png)
 
 ### Passadeiras
 
-Um sistema a parte dos componentes _Traffic Light_ e _Intersection Brain_ é um colisor responsável por detetar se há um peão na passadeira ou não. Isto é importante para os veículos poderem parar em zonas onde não existem semáforos.
+Um sistema a parte dos componentes _Traffic Light_ e _Intersection Brain_ é um _collider_ responsável por detetar se há um peão na passadeira ou não. Isto é importante para os veículos poderem parar em zonas onde não existem semáforos.
 
 ![SimCity crossWalk](./Images/croswalk.png)
 
@@ -285,7 +285,7 @@ Zona _Off-Mesh Link_: mostra uma zona de conexão para veículos.
 
 ### AI Director
 
-É um _Game Object_ que permite o controlo sobre certos aspectos da simulação. Aqui é permitido que a simulação seja personalizada com parâmetros ajustáveis, sendo estes respectivamente:
+É um _Game Object_ que permite o controlo sobre certos aspetos da simulação. Aqui é permitido que a simulação seja personalizada com parâmetros ajustáveis, sendo estes respetivamente:
 
 - Carros
   - **_Cars_**: número de veículos a serem instanciados no início da simulação.
