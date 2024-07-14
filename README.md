@@ -344,6 +344,10 @@ classDiagram
 
 Ao analisar a simulação, é possível observar que os agentes se deslocam para os seus alvos. Os semáforos (sinal luminoso) podem impedi-los de avançar e, se houver uma passadeira, os pedestres podem prosseguir, caso esta seja a situação na zona da simulação.
 
+Os artigos contribuiram a percepção de simulações de tráfegos, dando ideias a futuros trabalhos como termos uma sistame de comunicação mais complexo e a deteção de agentes serem mais realistas.
+
+Alguns objetivos não foram alcançados bem como uma alta realidade da simulação.
+
 ## Conclusões
 
 Para concluir, o projeto desenvolvido consistiu em implementar uma simulação de trânsito com automóveis, peões e sinais luminosos. Os resultados obtidos na simulação foram:
